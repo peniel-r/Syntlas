@@ -50,6 +50,22 @@ Syntlas is a revolutionary documentation navigator that treats knowledge as a ne
 **Current Phase**: Specification & Design
 **Next Phase**: Core Engine Development
 
+### Tracking
+
+| Phase | OpenSpec Change | Beads Issue |
+|-------|-----------------|-------------|
+| Phase 1: Foundation | `add-foundation` | Syntlas-2kd |
+| Phase 2: Index Engine | `add-index-engine` | Syntlas-x4i |
+| Phase 3: Search Algorithm | `add-search-algorithm` | Syntlas-ddo |
+| Phase 4: Tome System | `add-tome-system` | Syntlas-0wo |
+| Phase 5: Security Hardening | `add-security-hardening` | Syntlas-449 |
+| Phase 6: Embedded Tomes | `add-embedded-tomes` | Syntlas-3im |
+| Phase 7: CLI & Output | `add-cli-output` | Syntlas-agr |
+| Phase 8: Testing & Optimization | `add-testing-optimization` | Syntlas-jpm |
+| Phase 9: Alpha Release | `add-alpha-release` | Syntlas-gbw |
+| Phase 10: Post-Alpha | `add-post-alpha` | Syntlas-un9 |
+| Phase 11: Beta & Ecosystem | `add-beta-ecosystem` | Syntlas-gyw |
+
 ---
 
 ## Technical Architecture Overview
