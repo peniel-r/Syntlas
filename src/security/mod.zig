@@ -13,4 +13,5 @@ pub const SecurityError = error{
     InvalidSignature,
     ChecksumMismatch,
     UntrustedSource,
+    SandboxCreationFailed,
 };

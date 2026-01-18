@@ -331,7 +331,7 @@ syntlas/
 - [x] Command blocklist implementation (rm, del, format, etc.)
 - [x] Sandboxing foundation (Process isolation fallback)
 - [x] Checksum verification (SHA-256)
-- [ ] User confirmation prompts for shell commands
+- [ ] User confirmation prompts for shell commands - Deferred to Phase 7
 - [x] Trust level enforcement (embedded, official, community, untrusted)
 - [ ] Security test suite (In progress)
 
@@ -344,7 +344,7 @@ syntlas/
 - No path traversal possible in asset references
 - Dangerous patterns detected and blocked/flagged
 - Sandbox escapes: 0 (verified by security testing)
-- All shell commands require explicit user approval
+- [ ] All shell commands require explicit user approval - Moved to Phase 7
 - Signature verification works for GPG-signed tomes
 
 ---
@@ -360,6 +360,10 @@ syntlas/
 - [ ] Python tome (Python 3.12 stdlib, best practices)
 - [ ] Rust tome (stdlib, ownership, async)
 - [ ] Zig tome (stdlib, comptime, patterns)
+- [ ] 7.1 Prompt before executing shell commands - Moved to Phase 7
+- [ ] 7.2 Display command preview - Moved to Phase 7
+- [ ] 7.3 Allow skip with --yes flag - Moved to Phase 7
+- [ ] 7.4 Log executed commands - Moved to Phase 7
 - [ ] Tome validation passes
 - [ ] synapses tested
 - [ ] Search quality verified

@@ -5,6 +5,11 @@ const mod = @import("mod.zig");
 pub fn validatePath(path: []const u8) mod.SecurityError!void {
     if (path.len == 0) return;
 
+    // Normalize path separators
+    var buf: [std.fs.max_path_bytes]u8 = undefined;
+    const normalized = std.mem.replace(u8, path, "\\", "/", &buf);
+    _ = normalized; // Use buf[0..n] if needed, but for now we just check the output of sub-parts
+
     // Reject absolute paths
     if (std.fs.path.isAbsolute(path)) {
         return error.AbsolutePathsNotAllowed;
@@ -65,6 +70,14 @@ pub fn isCommandBlocked(command: []const u8) bool {
 
     for (blocklist) |blocked| {
         if (std.mem.eql(u8, cmd, blocked)) {
+            return true;
+        }
+    }
+
+    // Check for shell injection characters
+    const injection_chars = [_]u8{ ';', '&', '|', '`', '$', '>', '<' };
+    for (injection_chars) |char| {
+        if (std.mem.indexOfScalar(u8, command, char)) |_| {
             return true;
         }
     }

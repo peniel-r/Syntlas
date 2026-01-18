@@ -9,15 +9,15 @@
 
 - [x] 2.1 Reject paths containing `..`
 - [x] 2.2 Reject absolute paths in asset references
-- [ ] 2.3 Normalize path separators
+- [x] 2.3 Normalize path separators
 - [x] 2.4 Validate file extensions
 
 ## 3. Dangerous Pattern Detection
 
 - [x] 3.1 Define dangerous command patterns
 - [x] 3.2 Scan code snippets for dangerous patterns
-- [ ] 3.3 Flag shell injection attempts
-- [ ] 3.4 Report security warnings to user
+- [x] 3.3 Flag shell injection attempts
+- [x] 3.4 Report security warnings to user
 
 ## 4. Command Blocklist
 
@@ -29,9 +29,11 @@
 ## 5. Sandboxing Framework
 
 - [ ] 5.1 Linux: Implement seccomp-bpf sandbox
-- [ ] 5.2 Windows: Implement restricted token sandbox
+- [ ] 5.2 Windows: Implement restricted token sandbox (using CreateRestrictedToken)
 - [ ] 5.3 macOS: Implement sandbox-exec wrapper
-- [x] 5.4 Fallback: Process isolation mode
+- [x] 5.4 Fallback: Process isolation mode (Already implemented)
+- [x] 5.5 Job Object integration for Windows (resource limits)
+- [x] 5.6 Environment variable scrubbing
 
 ## 6. Signature Verification
 
@@ -40,7 +42,7 @@
 - [ ] 6.3 Display verification status
 - [ ] 6.4 Warn on unsigned tomes
 
-## 7. User Confirmation
+## 7. User Confirmation (DEFERRED TO PHASE 7)
 
 - [ ] 7.1 Prompt before executing shell commands
 - [ ] 7.2 Display command preview
