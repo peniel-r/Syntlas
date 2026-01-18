@@ -7,10 +7,19 @@ pub const Config = struct {
     index_path: []const u8,
     max_neuronas: usize,
     search_timeout_ms: u64,
+    custom_blocklist: [][]const u8,
+    trust_override: ?[]const u8,
 
     pub fn deinit(self: *const Config, allocator: std.mem.Allocator) void {
         allocator.free(self.tomes_path);
         allocator.free(self.index_path);
+        for (self.custom_blocklist) |item| {
+            allocator.free(item);
+        }
+        allocator.free(self.custom_blocklist);
+        if (self.trust_override) |val| {
+            allocator.free(val);
+        }
     }
 };
 
@@ -55,6 +64,9 @@ pub fn load(allocator: std.mem.Allocator) !Config {
     var index_path: ?[]const u8 = null;
     var max_neuronas: usize = DEFAULT_CONFIG.MAX_NEURONAS;
     var search_timeout_ms: u64 = DEFAULT_CONFIG.SEARCH_TIMEOUT_MS;
+    var custom_blocklist_list = std.ArrayListUnmanaged([]const u8){};
+    defer custom_blocklist_list.deinit(allocator);
+    var trust_override: ?[]const u8 = null;
 
     if (std.fs.cwd().openFile(config_path, .{})) |file| {
         defer file.close();
@@ -84,6 +96,18 @@ pub fn load(allocator: std.mem.Allocator) !Config {
 
         if (map.get("search_timeout_ms")) |val| {
             search_timeout_ms = try std.fmt.parseInt(u64, val, 10);
+        }
+
+        // Parse custom blocklist (array of strings)
+        if (map.get("custom_blocklist")) |val| {
+            // Simple comma-separated parsing
+            var it = std.mem.tokenizeScalar(u8, val, ',');
+            while (it.next()) |cmd| {
+                const trimmed = std.mem.trim(u8, cmd, " \t");
+                if (trimmed.len > 0) {
+                    try custom_blocklist_list.append(allocator, try allocator.dupe(u8, trimmed));
+                }
+            }
         }
     } else |err| switch (err) {
         error.FileNotFound => {
@@ -115,11 +139,18 @@ pub fn load(allocator: std.mem.Allocator) !Config {
         search_timeout_ms = try std.fmt.parseInt(u64, env_val, 10);
     } else |_| {}
 
+    if (std.process.getEnvVarOwned(allocator, "SYNTLAS_TRUST_OVERRIDE")) |env_val| {
+        if (trust_override) |old_val| allocator.free(old_val);
+        trust_override = env_val;
+    } else |_| {}
+
     return Config{
         .tomes_path = tomes_path orelse return error.InvalidConfig,
         .index_path = index_path orelse return error.InvalidConfig,
         .max_neuronas = max_neuronas,
         .search_timeout_ms = search_timeout_ms,
+        .custom_blocklist = try custom_blocklist_list.toOwnedSlice(allocator),
+        .trust_override = trust_override,
     };
 }
 

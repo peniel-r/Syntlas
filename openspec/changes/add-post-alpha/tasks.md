@@ -5,7 +5,17 @@
 - [ ] 1.3 Prioritize feature requests
 - [ ] 1.4 Create roadmap for beta
 
-## 2. Vector Search (Optional)
+## 2. Platform-Specific Sandboxes (From Phase 5)
+
+- [ ] 2.1 Linux seccomp-bpf sandbox - **From Phase 5**: Platform-specific BPF sandbox requires kernel version checks, complex setup, and careful tuning. Defer to comprehensive testing in Phase 10.
+- [ ] 2.2 Windows restricted token sandbox - **From Phase 5**: Windows token sandbox implementation requires compatibility testing across Windows versions. Defer to comprehensive testing in Phase 10.
+- [ ] 2.3 macOS sandbox-exec wrapper - **From Phase 5**: macOS sandbox-exec requires plist configuration and careful tuning. Defer to comprehensive testing in Phase 10.
+
+## 3. GPG Signature Verification (From Phase 5)
+
+- [ ] 3.1 GPG signature verification - **From Phase 5**: GPG adds significant complexity and external dependencies. SHA-256 checksums provide adequate security for MVP. Defer to Phase 10 (Post-Alpha) for comprehensive security review.
+
+## 4. Vector Search (Optional)
 
 - [ ] 2.1 Integrate embedding model
 - [ ] 2.2 Index neurona embeddings

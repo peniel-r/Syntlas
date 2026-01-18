@@ -204,7 +204,7 @@ pub fn main() !void {
     // Demo: Command blocklist
     const blocked_cmd = "format C:";
     std.debug.print("Checking command: {s} -> ", .{blocked_cmd});
-    if (security_mod.validator.isCommandBlocked(blocked_cmd)) {
+    if (security_mod.validator.isCommandBlocked(blocked_cmd, cfg.custom_blocklist, false)) {
         std.debug.print("BLOCKED\n", .{});
     }
 

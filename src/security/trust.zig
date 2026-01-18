@@ -19,7 +19,34 @@ pub const Policy = struct {
     require_sandbox: bool,
 };
 
-pub fn getPolicy(level: TrustLevel) Policy {
+pub fn getPolicy(level: TrustLevel, override: ?[]const u8) Policy {
+    // If trust override is provided, try to parse it as a trust level
+    if (override) |override_str| {
+        const lower_override = try std.ascii.allocLowerString(std.heap.page_allocator, override_str);
+        defer std.heap.page_allocator.free(lower_override);
+
+        // Simple string comparison for override
+        if (std.mem.eql(u8, lower_override, "untrusted")) {
+            return getPolicyFromString(.untrusted);
+        }
+        if (std.mem.eql(u8, lower_override, "community")) {
+            return getPolicyFromString(.community);
+        }
+        if (std.mem.eql(u8, lower_override, "official")) {
+            return getPolicyFromString(.official);
+        }
+        if (std.mem.eql(u8, lower_override, "embedded")) {
+            return getPolicyFromString(.embedded);
+        }
+
+        // If override is invalid, log warning but continue with original level
+        std.debug.print("⚠ Warning: Invalid trust override '{s}', using original level.\n", .{override_str});
+    }
+
+    return getPolicyFromString(level);
+}
+
+fn getPolicyFromString(level: TrustLevel) Policy {
     return switch (level) {
         .untrusted => .{
             .name = "untrusted",

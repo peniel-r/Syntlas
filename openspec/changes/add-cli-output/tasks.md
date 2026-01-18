@@ -53,6 +53,19 @@
 - [ ] 7.3 Add --debug flag for verbose errors
 - [ ] 7.4 Log errors to file (optional)
 
+## 8. Trust Levels (From Phase 5)
+
+- [ ] 8.3 Display trust level in UI
+- **Note**: 8.1 Define trust levels and 8.2 Apply security policies completed in Phase 5
+- **Note**: 8.4 Allow user trust overrides via config completed in Phase 5
+
+## 9. User Confirmation (From Phase 5)
+
+- [ ] 9.1 Prompt before executing shell commands
+- [ ] 9.2 Display command preview
+- [ ] 9.3 Allow skip with --yes flag
+- [ ] 9.4 Log executed commands
+
 ## Validation
 
 - [ ] All commands documented in --help
@@ -60,4 +73,3 @@
 - [ ] Syntax highlighting works for code snippets
 - [ ] Error messages are actionable
 - [ ] Command completion in <10ms
-

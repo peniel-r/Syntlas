@@ -57,8 +57,8 @@ pub fn validateSnippet(snippet: []const u8) mod.SecurityError!void {
 }
 
 /// Checks if a command is blocked.
-pub fn isCommandBlocked(command: []const u8) bool {
-    const blocklist = [_][]const u8{
+pub fn isCommandBlocked(command: []const u8, custom_blocklist: []const []const u8, allow_network: bool) bool {
+    const builtin_blocklist = [_][]const u8{
         "rm",     "del",    "erase",
         "mkfs",   "format", "shred",
         "wget",   "curl",   "nc",
@@ -68,7 +68,15 @@ pub fn isCommandBlocked(command: []const u8) bool {
     var it = std.mem.tokenizeAny(u8, command, " ");
     const cmd = it.next() orelse return false;
 
-    for (blocklist) |blocked| {
+    // Check built-in blocklist
+    for (builtin_blocklist) |blocked| {
+        if (std.mem.eql(u8, cmd, blocked)) {
+            return true;
+        }
+    }
+
+    // Check custom blocklist from config
+    for (custom_blocklist) |blocked| {
         if (std.mem.eql(u8, cmd, blocked)) {
             return true;
         }
@@ -79,6 +87,16 @@ pub fn isCommandBlocked(command: []const u8) bool {
     for (injection_chars) |char| {
         if (std.mem.indexOfScalar(u8, command, char)) |_| {
             return true;
+        }
+    }
+
+    // Check network commands if network is not allowed
+    if (!allow_network) {
+        const network_commands = [_][]const u8{ "wget", "curl", "nc", "netcat", "ping", "telnet" };
+        for (network_commands) |net_cmd| {
+            if (std.mem.eql(u8, cmd, net_cmd)) {
+                return true;
+            }
         }
     }
 
@@ -104,6 +122,22 @@ pub fn verifyChecksum(allocator: std.mem.Allocator, file_path: []const u8, expec
     }
 }
 
+/// Display verification status for SHA-256 checksum.
+pub fn displayChecksumStatus(verified: bool, file_path: []const u8) void {
+    if (verified) {
+        std.debug.print("✓ SHA-256 checksum verified: {s}\n", .{file_path});
+    } else {
+        std.debug.print("✗ SHA-256 checksum mismatch: {s}\n", .{file_path});
+    }
+}
+
+/// Warn about unsigned tomes.
+pub fn warnUnsignedTome(tome_name: []const u8) void {
+    std.debug.print("⚠ Warning: Tome '{s}' is not digitally signed.\n", .{tome_name});
+    std.debug.print("  Unsigned tomes may have been modified or contain malicious content.\n", .{});
+    std.debug.print("  Only install tomes from trusted sources.\n", .{});
+}
+
 test "validatePath" {
     try validatePath("assets/image.png");
     try std.testing.expectError(error.PathTraversalDetected, validatePath("assets/../../etc/passwd"));
@@ -119,6 +153,15 @@ test "validateSnippet" {
 }
 
 test "isCommandBlocked" {
-    try std.testing.expect(isCommandBlocked("rm -rf /"));
-    try std.testing.expect(!isCommandBlocked("ls -l"));
+    // Test built-in blocklist
+    try std.testing.expect(isCommandBlocked("rm -rf /", &.{}, true));
+    try std.testing.expect(!isCommandBlocked("ls -l", &.{}, true));
+
+    // Test custom blocklist
+    try std.testing.expect(isCommandBlocked("dangerous-cmd", &.{"dangerous-cmd"}, true));
+
+    // Test network blocking
+    try std.testing.expect(isCommandBlocked("curl http://example.com", &.{}, false));
+    try std.testing.expect(isCommandBlocked("wget http://example.com", &.{}, true));
+    try std.testing.expect(!isCommandBlocked("ls -l", &.{}, false));
 }

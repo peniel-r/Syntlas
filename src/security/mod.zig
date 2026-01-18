@@ -14,4 +14,5 @@ pub const SecurityError = error{
     ChecksumMismatch,
     UntrustedSource,
     SandboxCreationFailed,
+    UnsignedTome,
 };

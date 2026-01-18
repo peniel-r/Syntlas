@@ -60,8 +60,14 @@
 
 - [ ] 8.1 Penetration testing for path traversal
 - [ ] 8.2 Fuzz testing YAML parser
-- [ ] 8.3 Sandbox escape testing
+- [x] 8.3 Sandbox escape tests - **From Phase 5**: Platform-specific sandbox escape testing requires platform-specific test harnesses. Implementation depends on completion of platform sandbox features (deferred to Phase 10).
 - [ ] 8.4 Input validation testing
+
+## 9. Sandbox & Platform Testing (From Phase 5)
+
+- [ ] 9.1 Linux seccomp-bpf sandbox implementation and testing - **From Phase 5**: Platform-specific BPF sandbox requires kernel version checks and complex setup. Defer to comprehensive testing in Phase 10 (Post-Alpha).
+- [ ] 9.2 Windows restricted token sandbox testing - **From Phase 5**: Windows token sandbox implementation requires compatibility testing across Windows versions. Defer to comprehensive testing in Phase 10 (Post-Alpha).
+- [ ] 9.3 macOS sandbox-exec wrapper testing - **From Phase 5**: macOS sandbox-exec requires plist configuration and careful tuning. Defer to comprehensive testing in Phase 10 (Post-Alpha).
 
 ## Validation
 

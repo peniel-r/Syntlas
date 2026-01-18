@@ -285,7 +285,7 @@ The real power of Syntlas comes from community-created tomes. See:
 
 - [x] Core search engine (multi-index, 7-stage pipeline)
 - [x] Tome installation system (local, git, tar, http)
-- [x] Security hardening (path validation, command blocklist, trust levels)
+- [x] Security hardening (path validation, command blocklist, trust levels, checksums, configurable policies)
 - [ ] Embedded tomes (C, C++, Python, Rust, Zig) - Phase 6
 - [ ] CLI & JSON output for agents - Phase 7
 - [ ] Vector search (semantic embeddings)

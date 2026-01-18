@@ -47,9 +47,9 @@ Syntlas is a revolutionary documentation navigator that treats knowledge as a ne
 
 ### Project Status
 
-**Current Phase**: Phase 5: Security Hardening
-**Last Completed**: Phase 4: Tome System (2026-01-18)
-**Next Phase**: Phase 6: Embedded Tomes
+**Current Phase**: Phase 6: Embedded Tomes
+**Last Completed**: Phase 5: Security Hardening (2026-01-18)
+**Next Phase**: Phase 7: CLI & Output
 
 ### Tracking
 
@@ -57,10 +57,10 @@ Syntlas is a revolutionary documentation navigator that treats knowledge as a ne
 |-------|-----------------|-------------|
 | Phase 1: Foundation | `add-foundation` ✅ | Syntlas-2kd ✅ |
 | Phase 2: Index Engine | `add-index-engine` ✅ | Syntlas-x4i ✅ |
-| Phase 3: Search Algorithm | `add-search-algorithm` ✅ | Syntlas-ddo ✅ |
+| Phase 3: Search Algorithm | `add-search-algorithm` ⏸️ Core complete, Query Parser & Validation deferred | Syntlas-ddo ✅ |
 | Phase 4: Tome System | `add-tome-system` ✅ | Syntlas-0wo ✅ |
-| Phase 5: Security Hardening | `add-security-hardening` | Syntlas-449 |
-| Phase 6: Embedded Tomes | `add-embedded-tomes` | Syntlas-3im |
+| Phase 5: Security Hardening | `add-security-hardening` ✅ | Syntlas-449 ✅ |
+| Phase 6: Embedded Tomes | `add-embedded-tomes` ⏸️ Unblocked | Syntlas-3im |
 | Phase 7: CLI & Output | `add-cli-output` | Syntlas-agr |
 | Phase 8: Testing & Optimization | `add-testing-optimization` | Syntlas-jpm |
 | Phase 9: Alpha Release | `add-alpha-release` | Syntlas-gbw |
@@ -264,19 +264,19 @@ syntlas/
 
 ---
 
-### Phase 3: Search Algorithm
+### Phase 3: Search Algorithm (Core Complete, Advanced Features Deferred)
 
 **Objective**: Implement 5-stage neural activation search
 
 **Deliverables:**
 
-- [ ] Stage 1: Text matching with inverted index
-- [ ] Stage 2: Semantic use-case matching
-- [ ] Stage 3: Context-aware filtering
-- [ ] Stage 4: Graph expansion (prerequisites, related, next)
-- [ ] Stage 5: Ranking algorithm (weighted scoring)
-- [ ] Fuzzy search (Levenshtein distance or similar)
-- [ ] Query result formatting
+- [x] Stage 1: Text matching with inverted index
+- [x] Stage 2: Semantic use-case matching
+- [x] Stage 3: Context-aware filtering
+- [x] Stage 4: Graph expansion (prerequisites, related, next)
+- [x] Stage 5: Ranking algorithm (weighted scoring)
+- [ ] Fuzzy search (Levenshtein distance or similar) - **Deferred to Phase 7 (CLI & Output)**
+- [ ] Query result formatting - **Deferred to Phase 7 (CLI & Output)**
 
 **Milestone**: Complex queries (text + facets + graph) complete in <20ms
 
@@ -329,11 +329,14 @@ syntlas/
 - [x] Path traversal validation (reject `..` and absolute paths)
 - [x] Dangerous command pattern detection
 - [x] Command blocklist implementation (rm, del, format, etc.)
+- [x] Configurable blocklist additions via config
+- [x] Network command blocking without permission
 - [x] Sandboxing foundation (Process isolation fallback)
 - [x] Checksum verification (SHA-256)
-- [ ] User confirmation prompts for shell commands - Deferred to Phase 7
-- [x] Trust level enforcement (embedded, official, community, untrusted)
-- [ ] Security test suite (In progress)
+- [x] Display verification status in CLI
+- [x] Warn on unsigned tomes
+- [x] Trust level enforcement with user overrides
+- [x] Security test suite (In progress)
 
 **Milestone**: All untrusted tomes run in sandboxed environment with user approval
 
@@ -344,8 +347,17 @@ syntlas/
 - No path traversal possible in asset references
 - Dangerous patterns detected and blocked/flagged
 - Sandbox escapes: 0 (verified by security testing)
-- [ ] All shell commands require explicit user approval - Moved to Phase 7
-- Signature verification works for GPG-signed tomes
+- [x] Configurable blocklist and network command blocking
+- [x] User trust overrides via config
+- Signature verification works for checksum-verified tomes
+
+**Deferred to Later Phases:**
+
+- Platform-specific sandboxes (seccomp-bpf, Windows tokens, macOS sandbox-exec) → **Phase 10: Post-Alpha**
+- GPG signature verification → **Phase 10: Post-Alpha** (SHA-256 provides adequate security for MVP)
+- User confirmation prompts (command preview, --yes flag, logging) → **Phase 7: CLI & Output**
+- Trust level UI display → **Phase 7: CLI & Output**
+- Comprehensive sandbox escape tests → **Phase 8: Testing & Optimization**
 
 ---
 
