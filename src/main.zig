@@ -8,6 +8,7 @@ const graph = @import("index/graph.zig");
 const metadata = @import("index/metadata.zig");
 const use_case = @import("index/use_case.zig");
 const tome = @import("tome/mod.zig");
+const embedded = @import("embedded.zig");
 
 const Neurona = schema.Neurona;
 const Synapse = schema.Synapse;
@@ -22,7 +23,8 @@ pub fn main() !void {
 
     const cfg = try config_mod.manager.load(allocator);
     defer cfg.deinit(allocator);
-    std.debug.print("Config: {s}\n\n", .{cfg.tomes_path});
+    std.debug.print("Config: {s}\n", .{cfg.tomes_path});
+    std.debug.print("Embedded Tomes: {d} bytes\n\n", .{embedded.tomes_archive.len});
 
     // Create sample neuronas for indexing
     const tags1 = [_][]const u8{ "python", "async", "concurrency" };
