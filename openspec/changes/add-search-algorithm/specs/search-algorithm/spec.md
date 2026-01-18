@@ -4,7 +4,7 @@
 
 The system SHALL implement a 5-stage search pipeline:
 
-1. Text Matching - Initial neuron activation via inverted index
+1. Text Matching - Initial neurona activation via inverted index
 2. Semantic Matching - Use-case based discovery
 3. Context Filtering - User skill/platform/goals
 4. Graph Expansion - Traverse neural connections
@@ -13,7 +13,7 @@ The system SHALL implement a 5-stage search pipeline:
 #### Scenario: Complete neural search
 
 - **WHEN** user searches "how to handle async errors in Python"
-- **THEN** text matching activates neurons containing "async", "errors", "Python"
+- **THEN** text matching activates neuronas containing "async", "errors", "Python"
 - **AND** semantic matching finds use-cases about error handling
 - **AND** context filters to user's skill level
 - **AND** graph expansion includes prerequisite topics
@@ -32,13 +32,13 @@ The system SHALL perform text matching via inverted index lookup, supporting:
 #### Scenario: Single keyword search
 
 - **WHEN** user searches "generator"
-- **THEN** all neurons with "generator" keyword are activated
+- **THEN** all neuronas with "generator" keyword are activated
 
 ---
 
 ### Requirement: Semantic Use-Case Matching
 
-The system SHALL match queries against neuron use_cases, supporting:
+The system SHALL match queries against neurona use_cases, supporting:
 
 - Problem-solution discovery
 - Intent-based matching
@@ -47,7 +47,7 @@ The system SHALL match queries against neuron use_cases, supporting:
 #### Scenario: Problem-based query
 
 - **WHEN** user searches "fix memory leak"
-- **THEN** neurons with use_cases mentioning memory management are prioritized
+- **THEN** neuronas with use_cases mentioning memory management are prioritized
 
 ---
 
@@ -62,7 +62,7 @@ The system SHALL filter results based on user context:
 #### Scenario: Beginner user filtering
 
 - **WHEN** user skill is set to "beginner"
-- **THEN** advanced/expert neurons are deprioritized
+- **THEN** advanced/expert neuronas are deprioritized
 
 ---
 
@@ -78,7 +78,7 @@ The system SHALL expand search results via graph traversal:
 
 #### Scenario: Prerequisite discovery
 
-- **WHEN** user views "async/await" neuron
+- **WHEN** user views "async/await" neurona
 - **THEN** "generators" and "promises" prerequisites are surfaced
 
 ---
@@ -94,7 +94,7 @@ The system SHALL rank results using weighted factors:
 
 #### Scenario: Quality-weighted ranking
 
-- **WHEN** two neurons have equal relevance
+- **WHEN** two neuronas have equal relevance
 - **THEN** the one with quality.tested=true ranks higher
 
 ---

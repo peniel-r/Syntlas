@@ -187,7 +187,7 @@ Syntlas uses a neural network-inspired documentation model:
 
 - **Neurona** - Each document is a node with unique ID
 - **Synapse** - Documents link via prerequisites, related topics, next steps
-- **Activation** - Search activates neurons and propagates through connections
+- **Activation** - Search activates neuronas and propagates through synapses
 - **Learning Path** - Graph traversal generates personalized learning sequences
 
 ### Performance

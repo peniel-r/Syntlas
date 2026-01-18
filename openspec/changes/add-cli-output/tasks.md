@@ -2,10 +2,10 @@
 
 - [ ] 1.1 Implement argument parsing
 - [ ] 1.2 Add `search` command
-- [ ] 1.3 Add `docs` command (view full neuron)
+- [ ] 1.3 Add `docs` command (view full neurona)
 - [ ] 1.4 Add `snippet` command (extract code)
 - [ ] 1.5 Add `install` command
-- [ ] 1.6 Add `list` command (list neurons/tomes)
+- [ ] 1.6 Add `list` command (list neuronas/tomes)
 - [ ] 1.7 Add `create-tome` command
 - [ ] 1.8 Add `validate-tome` command
 - [ ] 1.9 Add global flags (--json, --color, --help)

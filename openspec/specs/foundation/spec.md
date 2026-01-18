@@ -1,8 +1,14 @@
-## ADDED Requirements
+# foundation Specification
 
-### Requirement: Neuron Data Structure
+## Purpose
 
-The system SHALL define a Neuron struct as the atomic unit of knowledge containing:
+TBD - created by archiving change add-foundation. Update Purpose after archive.
+
+## Requirements
+
+### Requirement: Neurona Data Structure
+
+The system SHALL define a Neurona struct as the atomic unit of knowledge containing:
 
 - Unique identifier (hierarchical dotted notation)
 - Title and category metadata
@@ -11,10 +17,10 @@ The system SHALL define a Neuron struct as the atomic unit of knowledge containi
 - Quality indicators and search weights
 - Content file path and offset
 
-#### Scenario: Parse neuron from markdown file
+#### Scenario: Parse neurona from markdown file
 
 - **WHEN** a markdown file with YAML frontmatter is processed
-- **THEN** all metadata fields are extracted into a Neuron struct
+- **THEN** all metadata fields are extracted into a Neurona struct
 - **AND** the struct is validated for required fields
 
 #### Scenario: Missing required field

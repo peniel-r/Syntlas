@@ -27,7 +27,7 @@ The system SHALL reject all path traversal attempts in asset references:
 
 #### Scenario: Path traversal blocked
 
-- **WHEN** a neuron references `../../etc/passwd`
+- **WHEN** a neurona references `../../etc/passwd`
 - **THEN** the reference is rejected with a security error
 
 ---

@@ -12,7 +12,7 @@ Before alpha release, Syntlas needs comprehensive testing and performance optimi
 - Add memory leak detection (Zig sanitizers)
 - Perform cross-platform testing (Linux, macOS, Windows)
 - Profile and optimize hot paths
-- Conduct stress testing (100,000+ neurons)
+- Conduct stress testing (100,000+ neuronas)
 - Execute security penetration testing
 
 ## Impact

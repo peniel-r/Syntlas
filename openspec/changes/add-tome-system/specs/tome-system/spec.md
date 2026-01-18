@@ -5,14 +5,14 @@
 The system SHALL validate tomes against the NEURONA_SPEC, checking:
 
 - tome.json structure and required fields
-- Neuron frontmatter compliance
+- Neurona frontmatter compliance
 - Neural connection integrity (no broken links)
 - Required quality indicators
 
 #### Scenario: Valid tome validation
 
 - **WHEN** `syntlas validate-tome ./my-tome` is executed
-- **THEN** all neurons are checked against the spec
+- **THEN** all neuronas are checked against the spec
 - **AND** a success message is displayed
 
 #### Scenario: Invalid tome detection

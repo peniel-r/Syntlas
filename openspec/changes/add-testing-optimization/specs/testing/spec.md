@@ -29,7 +29,7 @@ The system SHALL include integration tests for end-to-end workflows:
 #### Scenario: End-to-end search test
 
 - **WHEN** integration test performs search query
-- **THEN** results match expected neurons from test tome
+- **THEN** results match expected neuronas from test tome
 
 ---
 
@@ -40,7 +40,7 @@ The system SHALL meet performance targets verified by benchmarks:
 - Text search: <10ms p50, <15ms p99
 - Graph traversal: <5ms per hop
 - Faceted filter: <3ms
-- Index build: <100ms for 1,000 neurons
+- Index build: <100ms for 1,000 neuronas
 - Cold start: <200ms
 
 #### Scenario: Search latency benchmark
@@ -84,11 +84,11 @@ The system SHALL work correctly on all supported platforms:
 
 The system SHALL handle large datasets:
 
-- 100,000+ neurons indexed
+- 100,000+ neuronas indexed
 - Concurrent query handling
 - Memory stability under load
 
 #### Scenario: Large dataset stress test
 
-- **WHEN** 100,000 neurons are indexed
+- **WHEN** 100,000 neuronas are indexed
 - **THEN** search still completes in <50ms

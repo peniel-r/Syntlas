@@ -4,23 +4,23 @@
 
 The system SHALL provide a command-line interface with the following commands:
 
-- `search <query>` - Search neurons
-- `docs <neuron-id>` - View full neuron documentation
-- `snippet <neuron-id>` - Extract code snippets
+- `search <query>` - Search neuronas
+- `docs <neurona-id>` - View full neurona documentation
+- `snippet <neurona-id>` - Extract code snippets
 - `install <source>` - Install tome
-- `list [--tomes|--neurons]` - List items
+- `list [--tomes|--neuronas]` - List items
 - `create-tome <path>` - Create new tome
 - `validate-tome <path>` - Validate tome
 
 #### Scenario: Basic search command
 
 - **WHEN** `syntlas search "async await"` is executed
-- **THEN** matching neurons are displayed with relevance scores
+- **THEN** matching neuronas are displayed with relevance scores
 
 #### Scenario: View documentation
 
 - **WHEN** `syntlas docs py.async.basics` is executed
-- **THEN** the full neuron content is displayed
+- **THEN** the full neurona content is displayed
 
 ---
 

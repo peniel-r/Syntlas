@@ -10,7 +10,7 @@
 |------|----------|
 | **Beads** | `bd show` · `bd ready` · `bd update <id> --status in_progress` · `bd close <id>` |
 | **OpenSpec** | `/openspec-proposal` · `/openspec-apply` · `/openspec-archive` |
-| **Zig** | `zig build check` · `zig build run` · `zig build test` |
+| **Zig** | `zig build` · `zig build run` · `zig build test` |
 | **Git** | `git pull --rebase` · `bd sync` · `git push` |
 
 ---
@@ -110,7 +110,7 @@ var global_buffer: [1024]u8 = undefined;
 
 **During implementation:**
 
-- Run `zig build check` frequently
+- Run `zig build` frequently
 - Handle comptime errors: Read → Think → Fix
 
 ---
@@ -196,13 +196,13 @@ doc/
 **Build failures:**
 
 ```
-Read error → Identify cause → Fix → zig build check → Repeat → zig build run
+Read error → Identify cause → Fix → zig build  → Repeat → zig build run
 ```
 
 **Comptime errors:**
 
 ```
-Read trace → Understand check → Fix types → zig build check
+Read trace → Understand check → Fix types → zig build 
 ```
 
 ---

@@ -51,7 +51,7 @@
 
 ## 7. Stress Testing
 
-- [ ] 7.1 Test with 100,000+ neurons
+- [ ] 7.1 Test with 100,000+ neuronas
 - [ ] 7.2 Test concurrent queries
 - [ ] 7.3 Test memory under load
 - [ ] 7.4 Test index rebuild under load

@@ -1,7 +1,7 @@
 ## 1. Tome Validator
 
 - [ ] 1.1 Validate tome.json structure
-- [ ] 1.2 Validate neuron frontmatter against NEURONA_SPEC
+- [ ] 1.2 Validate neurona frontmatter against NEURONA_SPEC
 - [ ] 1.3 Check for required fields
 - [ ] 1.4 Validate neural connections (no broken links)
 - [ ] 1.5 Report validation errors with file locations
@@ -53,7 +53,7 @@
 
 ## Validation
 
-- [ ] Install time: <5s for 1000-neuron tome
+- [ ] Install time: <5s for 1000-neurona tome
 - [ ] Validation: All spec rules enforced
 - [ ] Embedded tomes: <15MB binary size
 - [ ] Multi-tome search: <5ms overhead

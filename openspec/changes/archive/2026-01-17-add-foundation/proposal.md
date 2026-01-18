@@ -6,7 +6,7 @@ Syntlas requires a solid foundation of core data structures, parsers, and build 
 
 ## What Changes
 
-- Define Neuron, Connection, and SearchResult data structures in Zig
+- Define Neurona, Synapse, and Activation data structures in Zig
 - Implement YAML frontmatter parser for Markdown files
 - Create Markdown content extractor
 - Set up build.zig with dependencies

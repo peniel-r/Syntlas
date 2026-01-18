@@ -1,46 +1,46 @@
 ## 1. C Tome
 
 - [ ] 1.1 Create tome.json metadata
-- [ ] 1.2 Write neurons for stdlib (stdio, stdlib, string, etc.)
-- [ ] 1.3 Write neurons for common patterns (memory management, pointers)
+- [ ] 1.2 Write neuronas for stdlib (stdio, stdlib, string, etc.)
+- [ ] 1.3 Write neuronas for common patterns (memory management, pointers)
 - [ ] 1.4 Establish neural connections
-- [ ] 1.5 Target: 100+ neurons
+- [ ] 1.5 Target: 100+ neuronas
 
 ## 2. C++ Tome
 
 - [ ] 2.1 Create tome.json metadata
-- [ ] 2.2 Write neurons for STL containers
-- [ ] 2.3 Write neurons for modern C++ (C++17/20 features)
-- [ ] 2.4 Write neurons for idioms (RAII, move semantics)
+- [ ] 2.2 Write neuronas for STL containers
+- [ ] 2.3 Write neuronas for modern C++ (C++17/20 features)
+- [ ] 2.4 Write neuronas for idioms (RAII, move semantics)
 - [ ] 2.5 Establish neural connections
-- [ ] 2.6 Target: 100+ neurons
+- [ ] 2.6 Target: 100+ neuronas
 
 ## 3. Python Tome
 
 - [ ] 3.1 Create tome.json metadata
-- [ ] 3.2 Write neurons for stdlib modules
-- [ ] 3.3 Write neurons for async/await patterns
-- [ ] 3.4 Write neurons for best practices
+- [ ] 3.2 Write neuronas for stdlib modules
+- [ ] 3.3 Write neuronas for async/await patterns
+- [ ] 3.4 Write neuronas for best practices
 - [ ] 3.5 Establish neural connections
-- [ ] 3.6 Target: 100+ neurons
+- [ ] 3.6 Target: 100+ neuronas
 
 ## 4. Rust Tome
 
 - [ ] 4.1 Create tome.json metadata
-- [ ] 4.2 Write neurons for ownership/borrowing
-- [ ] 4.3 Write neurons for stdlib (std::collections, std::io)
-- [ ] 4.4 Write neurons for async patterns
+- [ ] 4.2 Write neuronas for ownership/borrowing
+- [ ] 4.3 Write neuronas for stdlib (std::collections, std::io)
+- [ ] 4.4 Write neuronas for async patterns
 - [ ] 4.5 Establish neural connections
-- [ ] 4.6 Target: 100+ neurons
+- [ ] 4.6 Target: 100+ neuronas
 
 ## 5. Zig Tome
 
 - [ ] 5.1 Create tome.json metadata
-- [ ] 5.2 Write neurons for stdlib
-- [ ] 5.3 Write neurons for comptime patterns
-- [ ] 5.4 Write neurons for memory management
+- [ ] 5.2 Write neuronas for stdlib
+- [ ] 5.3 Write neuronas for comptime patterns
+- [ ] 5.4 Write neuronas for memory management
 - [ ] 5.5 Establish neural connections
-- [ ] 5.6 Target: 100+ neurons
+- [ ] 5.6 Target: 100+ neuronas
 
 ## 6. Validation
 
@@ -57,7 +57,7 @@
 
 ## Validation Criteria
 
-- [ ] Each tome: 100-500 neurons
+- [ ] Each tome: 100-500 neuronas
 - [ ] All spec fields populated
 - [ ] Neural connections create valid DAG
 - [ ] Search returns relevant results

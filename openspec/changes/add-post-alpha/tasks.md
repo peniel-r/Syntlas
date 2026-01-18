@@ -8,7 +8,7 @@
 ## 2. Vector Search (Optional)
 
 - [ ] 2.1 Integrate embedding model
-- [ ] 2.2 Index neuron embeddings
+- [ ] 2.2 Index neurona embeddings
 - [ ] 2.3 Implement semantic search
 - [ ] 2.4 Hybrid text + vector ranking
 

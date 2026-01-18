@@ -11,7 +11,7 @@ When enabled, the system SHALL provide semantic vector search:
 #### Scenario: Semantic search
 
 - **WHEN** user searches "how to handle errors gracefully"
-- **THEN** semantically similar neurons are returned
+- **THEN** semantically similar neuronas are returned
 - **EVEN IF** exact keywords don't match
 
 ---
@@ -54,7 +54,7 @@ When implemented, the system SHALL provide an LSP server for editor integration:
 
 - Hover documentation
 - Code completion with Syntlas results
-- Go-to-definition for neuron references
+- Go-to-definition for neurona references
 
 #### Scenario: Hover documentation
 

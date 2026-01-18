@@ -21,7 +21,7 @@ The system SHALL include embedded tomes for 5 core programming languages:
 
 Each embedded tome SHALL meet minimum quality standards:
 
-- 100-500 neurons per tome
+- 100-500 neuronas per tome
 - All NEURONA_SPEC fields populated
 - Valid neural connection graph (no broken links)
 - Tested search quality
@@ -76,4 +76,4 @@ Searches against embedded tomes SHALL return highly relevant results:
 #### Scenario: Python async search
 
 - **WHEN** user searches "python async await"
-- **THEN** top results include async/await neurons from Python tome
+- **THEN** top results include async/await neuronas from Python tome

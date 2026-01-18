@@ -47,15 +47,16 @@ Syntlas is a revolutionary documentation navigator that treats knowledge as a ne
 
 ### Project Status
 
-**Current Phase**: Specification & Design
-**Next Phase**: Core Engine Development
+**Current Phase**: Core Engine Development
+**Last Completed**: Phase 2: Index Engine (2026-01-17)
+**Next Phase**: Search Algorithm (Phase 3)
 
 ### Tracking
 
 | Phase | OpenSpec Change | Beads Issue |
 |-------|-----------------|-------------|
-| Phase 1: Foundation | `add-foundation` | Syntlas-2kd |
-| Phase 2: Index Engine | `add-index-engine` | Syntlas-x4i |
+| Phase 1: Foundation | `add-foundation` ✅ | Syntlas-2kd ✅ |
+| Phase 2: Index Engine | `add-index-engine` ✅ | Syntlas-x4i ✅ |
 | Phase 3: Search Algorithm | `add-search-algorithm` | Syntlas-ddo |
 | Phase 4: Tome System | `add-tome-system` | Syntlas-0wo |
 | Phase 5: Security Hardening | `add-security-hardening` | Syntlas-449 |
@@ -97,7 +98,7 @@ Syntlas implements a neural network-inspired documentation model:
 
 **Five-Layer Index System:**
 
-1. **Inverted Index** - Text keyword search (hash map: keyword → neuron_ids)
+1. **Inverted Index** - Text keyword search (hash map: keyword → neurona_ids)
 2. **Graph Index** - Neural connections (adjacency lists with weights)
 3. **Metadata Index** - Faceted filtering (bitmap indices for speed)
 4. **Use-Case Index** - Semantic matching (intent-based discovery)
@@ -106,7 +107,7 @@ Syntlas implements a neural network-inspired documentation model:
 **Search Algorithm (5-Stage Pipeline):**
 
 ```text
-1. Text Matching → Initial neuron activation (inverted index)
+1. Text Matching → Initial neurona activation (inverted index)
 2. Semantic Matching → Use-case based discovery
 3. Context Filtering → User skill/platform/goals
 4. Graph Expansion → Traverse connections (prerequisites, related, next)
@@ -129,7 +130,7 @@ Syntlas implements a neural network-inspired documentation model:
 ```zig
 // Core data structures (Zig pseudocode)
 
-const Neuron = struct {
+const Neurona = struct {
     id: []const u8,
     title: []const u8,
     category: Category,
@@ -137,10 +138,10 @@ const Neuron = struct {
     tags: [][]const u8,
     keywords: [][]const u8,
     
-    // Neural connections
-    prerequisites: []Connection,
-    related: []Connection,
-    next_topics: []Connection,
+    // Neural Synapses
+    prerequisites: []Synapse,
+    related: []Synapse,
+    next_topics: []Synapse,
     
     // Metadata indices
     search_weight: f32,
@@ -151,15 +152,15 @@ const Neuron = struct {
     content_offset: usize,
 };
 
-const Connection = struct {
+const Synapse = struct {
     id: []const u8,
     weight: f32,        // 0.0-1.0
     optional: bool,
     relationship: RelationshipType,
 };
 
-const SearchResult = struct {
-    neuron: *Neuron,
+const Activation = struct {
+    neurona: *Neurona,
     relevance_score: f32,
     match_type: MatchType,
 };
@@ -217,14 +218,14 @@ syntlas/
 **Deliverables:**
 
 - [ ] Build system configured (build.zig, dependencies)
-- [ ] Neuron data structures defined
+- [ ] Neurona data structures defined
 - [ ] YAML frontmatter parser (custom or library)
 - [ ] Markdown content extractor
 - [ ] Basic file I/O and path handling
 - [ ] Configuration management (~/.config/syntlas/)
 - [ ] Test framework setup
 
-**Milestone**: Can parse a single markdown file with YAML frontmatter into a Neuron struct
+**Milestone**: Can parse a single markdown file with YAML frontmatter into a Neurona struct
 
 **Dependencies**: None
 
@@ -242,24 +243,24 @@ syntlas/
 
 **Deliverables:**
 
-- [ ] Inverted index implementation (keyword → neuron_ids)
-- [ ] Graph index (adjacency lists for neural connections)
-- [ ] Metadata index (faceted filtering)
-- [ ] Index builder (scan tome, build all indices)
-- [ ] Index persistence (save/load from disk)
-- [ ] Memory mapping for large indices
-- [ ] Basic search query parser
+- [x] Inverted index implementation (keyword → neurona_ids)
+- [x] Graph index (adjacency lists for neural connections)
+- [x] Metadata index (faceted filtering)
+- [x] Index builder (scan tome, build all indices)
+- [ ] Index persistence (save/load from disk) - Deferred to Phase 3
+- [ ] Memory mapping for large indices - Deferred to Phase 3
+- [ ] Basic search query parser - Moved to Phase 3
 
-**Milestone**: Text search returns <10ms for 10,000+ neurons
+**Milestone**: Text search returns <10ms for 10,000+ neuronas
 
 **Dependencies**: Phase 1 complete
 
 **Success Criteria:**
 
 - Text search: <10ms p50, <15ms p99
-- Index build time: <100ms for 1,000 neurons
+- Index build time: <100ms for 1,000 neuronas
 - Index load time: <50ms from disk
-- Memory footprint: <20MB for 10,000 neurons
+- Memory footprint: <20MB for 10,000 neuronas
 
 ---
 
@@ -311,7 +312,7 @@ syntlas/
 
 **Success Criteria:**
 
-- Install time: <5s for 1000-neuron tome
+- Install time: <5s for 1000-neurona tome
 - Validation: All spec rules enforced
 - Embedded tomes: <15MB binary size
 - Multi-tome search: <5ms overhead
@@ -363,13 +364,13 @@ syntlas/
 - [ ] Neural connections tested
 - [ ] Search quality verified
 
-**Milestone**: All 5 embedded tomes with 100+ neurons each
+**Milestone**: All 5 embedded tomes with 100+ neuronas each
 
 **Dependencies**: Phase 5 complete (security validation needed)
 
 **Success Criteria:**
 
-- Each tome: 100-500 neurons
+- Each tome: 100-500 neuronas
 - All spec fields populated
 - Neural connections create valid DAG
 - Search returns relevant results
@@ -417,7 +418,7 @@ syntlas/
 - [ ] Memory leak detection (Valgrind/Zig sanitizers)
 - [ ] Cross-platform testing (Linux, macOS, Windows)
 - [ ] Profiling and hot-path optimization
-- [ ] Stress testing (100,000+ neurons)
+- [ ] Stress testing (100,000+ neuronas)
 - [ ] Security penetration testing
 
 **Milestone**: All performance targets met, zero critical bugs
@@ -897,7 +898,7 @@ syntlas/
 | Binary size | <15MB (with embedded tomes) | Build artifacts |
 | Memory usage | <50MB typical, <100MB peak | Runtime profiling |
 | Index load time | <50ms | Startup benchmarks |
-| Tome installation | <5s for 1000-neuron tome | Timer |
+| Tome installation | <5s for 1000-neurona tome | Timer |
 | Cold start | <200ms | Startup benchmarks |
 | Zero memory leaks | 0 leaks in Valgrind | Memory analysis |
 | Test coverage | >80% | Code coverage tools |
@@ -913,7 +914,7 @@ syntlas/
 | Embedded tomes | 5 languages (C, C++, Python, Rust, Zig) | Alpha (Week 32) |
 | Official community tomes | 10+ tomes (JavaScript, Go, TypeScript, etc.) | Beta (Week 40) |
 | Community-created tomes | 50+ tomes | 1.0 (Week 52) |
-| Total neurons indexed | 5,000+ neurons | 1.0 |
+| Total neuronas indexed | 5,000+ neuronas | 1.0 |
 | GitHub stars | 500+ stars | Alpha, 1,000+ stars by Beta, 5,000+ by 1.0 |
 | Contributors | 10+ contributors | 1.0 |
 | External integrations | 3+ (Vim plugin, AI assistant, etc.) | 1.0 |
@@ -1095,7 +1096,7 @@ Beyond 1.0, Syntlas can evolve into:
 - **Universal Knowledge Graph**: Cross-language cross-references
 - **AI Agent Standard**: Built into Claude, GPT, Copilot
 - **Learning Platform**: Quizzes, assessments, certifications
-- **Community Hub**: Thousands of tomes, millions of neurons
+- **Community Hub**: Thousands of tomes, millions of neuronas
 - **Editor Integration**: Standard plugin for all IDEs
 
 The Neurona specification is open and extensible, allowing the ecosystem to grow organically without central control.
@@ -1109,7 +1110,7 @@ The Neurona specification is open and extensible, allowing the ecosystem to grow
 "Integrate Syntlas into your agents. Leverage our structured knowledge graph for better code generation."
 
 **For Documentation Writers:**
-"Transform your docs into intelligent neurons. Join the neural documentation revolution."
+"Transform your docs into intelligent neuronas. Join the neural documentation revolution."
 
 **For the Community:**
 "Let's build the world's most comprehensive, intelligent, and accessible programming knowledge network—together."

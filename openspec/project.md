@@ -73,7 +73,7 @@ fn processData(allocator: std.mem.Allocator, data: []const u8) !void {
 
 **Search Algorithm (5-Stage Pipeline):**
 
-1. Text Matching → Initial neuron activation
+1. Text Matching → Initial neurona activation
 2. Semantic Matching → Use-case based discovery
 3. Context Filtering → User skill/platform/goals
 4. Graph Expansion → Traverse connections

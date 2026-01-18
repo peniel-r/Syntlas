@@ -33,7 +33,7 @@
 ## 5. Example Content
 
 - [ ] 5.1 Create example tome structure
-- [ ] 5.2 Create sample neurons
+- [ ] 5.2 Create sample neuronas
 - [ ] 5.3 Document tome creation workflow
 
 ## 6. GitHub Setup

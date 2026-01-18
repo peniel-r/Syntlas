@@ -206,7 +206,7 @@ mylang.tome/
 id: "py.async.basics"              # Unique identifier (dot-notation or numeric UID)
 title: "Async Basics"              # Human-readable title
 tags: [python, async, beginner]    # 3-15 searchable tags
-links: ["py.async.advanced"]       # Related neuron IDs (simple references)
+links: ["py.async.advanced"]       # Related Neurona IDs (simple references)
 hash: "sha256:a7ffc6f8..."         # Content hash for integrity (optional but recommended)
 ---
 ```
@@ -218,7 +218,7 @@ hash: "sha256:a7ffc6f8..."         # Content hash for integrity (optional but re
 | `id` | string | Yes | Unique identifier. Supports dot-notation (`py.async.basics`) or numeric UID (`202601171200`) |
 | `title` | string | Yes | Human-readable title (5-100 chars) |
 | `tags` | string[] | Yes | 3-15 searchable tags, lowercase |
-| `links` | string[] | No | Related neuron IDs for graph traversal |
+| `links` | string[] | No | Related Neurona IDs for graph traversal |
 | `hash` | string | No | SHA256 of content body (for tamper detection) |
 
 ### Zettelkasten Compatibility
@@ -285,7 +285,7 @@ updated: "2026-01-17"
 | `keywords` | string[] | Additional search terms |
 | `prerequisites` | string[] | IDs of required prior knowledge |
 | `next` | string[] | IDs of suggested next topics |
-| `related` | object[] | Related neurons with relationship type |
+| `related` | object[] | Related neuronas with relationship type |
 | `version` | object | Language/framework version requirements |
 | `platforms` | enum[] | Supported platforms |
 | `updated` | date | Last modification date (ISO 8601) |
@@ -447,7 +447,7 @@ The following sections document legacy fields for backwards compatibility.
 ```yaml
 # Prerequisites (incoming edges - what must be learned first)
 prerequisites:
-  - id: string              # Neuron ID
+  - id: string              # Neurona ID
     strength: float         # 0.0-1.0, how critical (default: 1.0)
     optional: boolean       # Can be skipped? (default: false)
 
@@ -462,7 +462,7 @@ prerequisites:
 ```
 
 ```yaml
-# Related neurons (bidirectional edges - complementary topics)
+# Related neuronas (bidirectional edges - complementary topics)
 related:
   - id: string
     relationship: enum      # [similar, alternative, complement, contrast]
@@ -497,7 +497,7 @@ next_topics:
 supersedes: string[]
 # Example: ["py.async.old-coroutines", "py.threading.basics"]
 
-# Deprecated by (this neuron is outdated)
+# Deprecated by (this Neurona is outdated)
 deprecated_by: string
 # Example: "py.async.modern-approach"
 
@@ -848,7 +848,7 @@ agent_hints:
   recommendation_score: float
   
   # Context requirements (other docs needed for full understanding)
-  requires_context: string[]   # Neuron IDs
+  requires_context: string[]   # Neurona IDs
   
   # Preferred output format when using this doc
   preferred_output: enum       # [code, explanation, both, visual, interactive]
@@ -1090,29 +1090,29 @@ FUNCTION search_neurona(query, context):
   
   // Stage 4: Graph Expansion (Neural Activation)
   expanded = []
-  FOR each neuron in filtered:
-    // Add neuron itself
-    expanded.add(neuron, weight=1.0)
+  FOR each Neurona in filtered:
+    // Add Neurona itself
+    expanded.add(Neurona, weight=1.0)
     
     // Traverse prerequisites (if user missing them)
-    IF NOT all_prerequisites_met(neuron, context):
-      FOR each prereq in neuron.prerequisites:
+    IF NOT all_prerequisites_met(Neurona, context):
+      FOR each prereq in Neurona.prerequisites:
         expanded.add(prereq.id, weight=prereq.strength * 0.8)
     
-    // Traverse related neurons (breadth-first)
-    FOR each related in neuron.related:
+    // Traverse related neuronas (breadth-first)
+    FOR each related in Neurona.related:
       IF related.weight > 0.5:
         expanded.add(related.id, weight=related.weight * 0.6)
     
     // Suggest next topics (if prerequisites met)
-    IF all_prerequisites_met(neuron, context):
-      FOR each next in neuron.next_topics:
+    IF all_prerequisites_met(Neurona, context):
+      FOR each next in Neurona.next_topics:
         IF next.confidence > 0.7:
           expanded.add(next.id, weight=next.confidence * 0.7)
   
   // Stage 5: Ranking
   ranked = rank_neurons(
-    neurons = deduplicate(expanded),
+    neuronas = deduplicate(expanded),
     factors = [
       relevance_score (40%),
       search_weight (20%),
@@ -1128,12 +1128,12 @@ FUNCTION search_neurona(query, context):
 
 ---
 
-## Complete Example Neuron
+## Complete Example Neurona
 
 ```yaml
 ---
 # ============================================================
-# NEURON IDENTITY
+# NEURONA IDENTITY
 # ============================================================
 id: "py.async.aiohttp.client"
 title: "Async HTTP Client with aiohttp"
@@ -1516,7 +1516,7 @@ Can include: >=, <=, ~, ^, || operators
 
 - Must have at least one H1 heading (`# Title`)
 - Code blocks must specify language (```python, not```)
-- Internal links should use neuron IDs: `[Link](neuron.id)`
+- Internal links should use Neurona IDs: `[Link](Neurona.id)`
 - External links must be absolute URLs
 
 **Code Snippets:**
@@ -1542,7 +1542,7 @@ Can include: >=, <=, ~, ^, || operators
 **File Organization:**
 
 - Each category should have its own directory
-- File names should match neuron IDs (lowercase, hyphens)
+- File names should match Neurona IDs (lowercase, hyphens)
 - Assets referenced must exist in tome
 
 ---

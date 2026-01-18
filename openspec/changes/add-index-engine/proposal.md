@@ -6,7 +6,7 @@ Fast search requires specialized indices. Syntlas needs an inverted index for te
 
 ## What Changes
 
-- Implement inverted index (keyword → neuron_ids mapping)
+- Implement inverted index (keyword → neurona_ids mapping)
 - Implement graph index (adjacency lists for neural connections)
 - Implement metadata index (bitmap indices for faceted filtering)
 - Build index construction pipeline

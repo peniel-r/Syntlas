@@ -2,7 +2,7 @@
 
 - [ ] 1.1 Query tokenization
 - [ ] 1.2 Inverted index lookup
-- [ ] 1.3 Initial neuron activation scoring
+- [ ] 1.3 Initial neurona activation scoring
 - [ ] 1.4 Partial match support
 
 ## 2. Stage 2: Semantic Matching
