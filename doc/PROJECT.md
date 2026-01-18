@@ -87,16 +87,16 @@ The breakthrough innovation in Syntlas is the **Neurona specification** - treati
    ```yaml
    prerequisites:     # What you need to know first
      - id: "py.async.basics"
-       strength: 0.9
+       strength: 90
    
    related:          # Complementary/alternative topics
      - id: "py.async.httpx"
        relationship: alternative
-       weight: 0.8
+       weight: 80
    
    next_topics:      # Natural progression
      - id: "py.async.error-handling"
-       confidence: 0.9
+       confidence: 90
    ```
 
 3. **Search Activates the Network**
@@ -191,20 +191,20 @@ id: "py.async.aiohttp.client"
 
 prerequisites:
   - id: "py.async.basics"        # Must understand async first
-    strength: 0.9                # Critical prerequisite
+    strength: 90                # Critical prerequisite
     optional: false
 
 related:
   - id: "py.async.httpx"         # Alternative library
     relationship: alternative
-    weight: 0.8
+    weight: 80
   - id: "py.async.asyncio"       # Complementary topic
     relationship: complement
-    weight: 0.7
+    weight: 70
 
 next_topics:
   - id: "py.async.error-handling"  # Natural next step
-    confidence: 0.9
+    confidence: 90
 ```
 
 ---
@@ -514,7 +514,7 @@ keywords:        # Inverted index (text search)
 use_cases:       # Semantic index (intent matching)
 answers:         # Natural language queries
 not_about:       # Negative filtering
-search_weight:   # Ranking boost (0.0-2.0)
+search_weight:   # Ranking boost (0-200, default 100)
 ```
 
 **Quality Indicators:**
@@ -679,4 +679,3 @@ By combining human-readable simplicity with machine-queryable intelligence, and 
 **Status**: Specification & Design
 
 *Made with ⚡ and 🧠 by the Syntlas Community*
-

@@ -14,9 +14,9 @@ pub const GraphIndex = struct {
     pub const Synapse = struct {
         target_id: []const u8,
         relationship: RelationshipType,
-        weight: f32, // 0.0 - 1.0
+        weight: u8, // 0 - 100
 
-        pub fn init(target_id: []const u8, relationship: RelationshipType, weight: f32) Synapse {
+        pub fn init(target_id: []const u8, relationship: RelationshipType, weight: u8) Synapse {
             return .{
                 .target_id = target_id,
                 .relationship = relationship,
@@ -39,7 +39,7 @@ pub const GraphIndex = struct {
             self.synapses.deinit(allocator);
         }
 
-        pub fn add(self: *SynapseList, allocator: Allocator, target_id: []const u8, relationship: RelationshipType, weight: f32) !void {
+        pub fn add(self: *SynapseList, allocator: Allocator, target_id: []const u8, relationship: RelationshipType, weight: u8) !void {
             const id_copy = try allocator.dupe(u8, target_id);
             errdefer allocator.free(id_copy);
 
@@ -89,7 +89,7 @@ pub const GraphIndex = struct {
         source_id: []const u8,
         target_id: []const u8,
         relationship: RelationshipType,
-        weight: f32,
+        weight: u8,
     ) !void {
         // Add to forward index
         try self.addToIndex(&self.forward, source_id, target_id, relationship, weight);
@@ -104,7 +104,7 @@ pub const GraphIndex = struct {
         from_id: []const u8,
         to_id: []const u8,
         relationship: RelationshipType,
-        weight: f32,
+        weight: u8,
     ) !void {
         const from_copy = try self.allocator.dupe(u8, from_id);
         errdefer self.allocator.free(from_copy);
@@ -171,8 +171,8 @@ test "GraphIndex basic operations" {
     var graph = GraphIndex.init(allocator);
     defer graph.deinit();
 
-    try graph.addSynapse("py.async.coroutines", "py.functions.generators", .prerequisite, 0.9);
-    try graph.addSynapse("py.async.coroutines", "py.async.await", .related, 0.8);
+    try graph.addSynapse("py.async.coroutines", "py.functions.generators", .prerequisite, 90);
+    try graph.addSynapse("py.async.coroutines", "py.async.await", .related, 80);
 
     const outgoing = graph.getOutgoing("py.async.coroutines").?;
     try std.testing.expectEqual(@as(usize, 2), outgoing.synapses.items.len);
@@ -183,7 +183,7 @@ test "GraphIndex bidirectional lookup" {
     var graph = GraphIndex.init(allocator);
     defer graph.deinit();
 
-    try graph.addSynapse("A", "B", .prerequisite, 0.9);
+    try graph.addSynapse("A", "B", .prerequisite, 90);
 
     // Forward lookup
     const outgoing = graph.getOutgoing("A").?;
@@ -199,9 +199,9 @@ test "GraphIndex filter by relationship" {
     var graph = GraphIndex.init(allocator);
     defer graph.deinit();
 
-    try graph.addSynapse("A", "B", .prerequisite, 0.9);
-    try graph.addSynapse("A", "C", .related, 0.7);
-    try graph.addSynapse("A", "D", .prerequisite, 0.8);
+    try graph.addSynapse("A", "B", .prerequisite, 90);
+    try graph.addSynapse("A", "C", .related, 70);
+    try graph.addSynapse("A", "D", .prerequisite, 80);
 
     const prereqs = try graph.getPrerequisites("A", allocator);
     defer allocator.free(prereqs);
@@ -214,9 +214,9 @@ test "GraphIndex weighted sorting" {
     var graph = GraphIndex.init(allocator);
     defer graph.deinit();
 
-    try graph.addSynapse("A", "B", .related, 0.5);
-    try graph.addSynapse("A", "C", .related, 0.9);
-    try graph.addSynapse("A", "D", .related, 0.7);
+    try graph.addSynapse("A", "B", .related, 50);
+    try graph.addSynapse("A", "C", .related, 90);
+    try graph.addSynapse("A", "D", .related, 70);
 
     var synapses = graph.getOutgoing("A").?;
     const sorted = try synapses.getSortedByWeight(allocator);

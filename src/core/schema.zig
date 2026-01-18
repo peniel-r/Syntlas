@@ -35,7 +35,7 @@ pub const MatchType = enum {
 
 pub const Synapse = struct {
     id: []const u8,
-    weight: f32, // 0.0 - 1.0
+    weight: u8, // 0 - 100 (quantized)
     optional: bool,
     relationship: RelationshipType,
 };
@@ -63,7 +63,7 @@ pub const Neurona = struct {
     next_topics: []Synapse,
 
     // Metadata
-    search_weight: f32 = 1.0,
+    search_weight: u8 = 100, // 0 - 100 (quantized)
     quality: QualityFlags = .{},
 
     // Content location

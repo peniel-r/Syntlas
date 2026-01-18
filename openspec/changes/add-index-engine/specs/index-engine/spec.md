@@ -27,7 +27,7 @@ The system SHALL maintain a graph index representing Synaptics via adjacency lis
 - Prerequisite relationships
 - Related topic connections
 - Next topic recommendations
-- Synapse weights (0.0-1.0)
+- Synapse weights (0-100)
 
 #### Scenario: Prerequisite lookup
 
@@ -89,5 +89,3 @@ The system SHALL support memory-mapped file access for large indices, enabling:
 
 - **WHEN** index exceeds available RAM
 - **THEN** memory mapping allows access without full loading
-
-

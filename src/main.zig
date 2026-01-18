@@ -21,10 +21,10 @@ pub fn main() !void {
     const keywords1 = [_][]const u8{ "async", "await", "coroutine" };
     const use_cases1 = [_][]const u8{};
     const prereqs1 = [_]core.schema.Synapse{
-        .{ .id = "py.functions.generators", .weight = 0.9, .optional = false, .relationship = .prerequisite },
+        .{ .id = "py.functions.generators", .weight = 90, .optional = false, .relationship = .prerequisite },
     };
     const related1 = [_]core.schema.Synapse{
-        .{ .id = "py.async.await", .weight = 0.8, .optional = false, .relationship = .related },
+        .{ .id = "py.async.await", .weight = 80, .optional = false, .relationship = .related },
     };
     const next1 = [_]core.schema.Synapse{};
 
@@ -96,7 +96,7 @@ pub fn main() !void {
     defer allocator.free(prereqs);
     std.debug.print("Prerequisites for 'py.async.coroutines': {d}\n", .{prereqs.len});
     for (prereqs) |conn| {
-        std.debug.print("  - {s} (weight: {d:.2})\n", .{ conn.target_id, conn.weight });
+        std.debug.print("  - {s} (weight: {d})\n", .{ conn.target_id, conn.weight });
     }
     std.debug.print("\n", .{});
 

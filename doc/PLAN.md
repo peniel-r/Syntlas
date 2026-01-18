@@ -154,7 +154,7 @@ const Neurona = struct {
 
 const Synapse = struct {
     id: []const u8,
-    weight: f32,        // 0.0-1.0
+    weight: u8,         // 0-100 (quantized)
     optional: bool,
     relationship: RelationshipType,
 };
@@ -1125,4 +1125,3 @@ The Neurona specification is open and extensible, allowing the ecosystem to grow
 **Target Release**: Alpha v0.1.0 - Week 32, 1.0.0 - Week 52
 
 *Made with ⚡ and 🧠 by the Syntlas Community*
-

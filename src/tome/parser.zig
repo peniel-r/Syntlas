@@ -46,7 +46,7 @@ fn parseSynapses(allocator: std.mem.Allocator, value: []const u8) ![]core.Synaps
                 if (item.len > 0) {
                     try synapses.append(allocator, .{
                         .id = try allocator.dupe(u8, item),
-                        .weight = 1.0,
+                        .weight = 100,
                         .optional = false,
                         .relationship = .prerequisite,
                     });
@@ -61,7 +61,7 @@ fn parseSynapses(allocator: std.mem.Allocator, value: []const u8) ![]core.Synaps
         if (item.len > 0) {
             try synapses.append(allocator, .{
                 .id = try allocator.dupe(u8, item),
-                .weight = 1.0,
+                .weight = 100,
                 .optional = false,
                 .relationship = .prerequisite,
             });

@@ -448,16 +448,16 @@ The following sections document legacy fields for backwards compatibility.
 # Prerequisites (incoming edges - what must be learned first)
 prerequisites:
   - id: string              # Neurona ID
-    strength: float         # 0.0-1.0, how critical (default: 1.0)
+    strength: integer       # 0-100, how critical (default: 100)
     optional: boolean       # Can be skipped? (default: false)
 
 # Example:
 prerequisites:
   - id: "py.async.basics"
-    strength: 0.9
+    strength: 90                # 0-100
     optional: false
   - id: "py.async.context-managers"
-    strength: 0.6
+    strength: 60
     optional: true
 ```
 
@@ -466,30 +466,30 @@ prerequisites:
 related:
   - id: string
     relationship: enum      # [similar, alternative, complement, contrast]
-    weight: float           # 0.0-1.0, strength of relationship
+    weight: integer         # 0-100, strength of relationship
 
 # Example:
 related:
   - id: "py.async.httpx"
     relationship: alternative
-    weight: 0.8
+    weight: 80              # 0-100
   - id: "py.async.asyncio"
     relationship: complement
-    weight: 0.7
+    weight: 70
 ```
 
 ```yaml
 # Next topics (outgoing edges - natural progression)
 next_topics:
   - id: string
-    confidence: float       # 0.0-1.0, how confident is this path
+    confidence: integer       # 0-100, how confident is this path
 
 # Example:
 next_topics:
   - id: "py.async.aiohttp.server"
-    confidence: 0.8
+    confidence: 80
   - id: "py.async.error-handling"
-    confidence: 0.9
+    confidence: 90
 ```
 
 ```yaml
@@ -542,8 +542,8 @@ answers: string[]
 not_about: string[]
 # Example: [synchronous, requests library, urllib, threading]
 
-# Search boost (0.0-2.0, default 1.0)
-search_weight: float
+# Search boost (0-200, 100 is neutral)
+search_weight: integer      # 0-200, 100 is neutral (default)
 ```
 
 ---
@@ -844,7 +844,7 @@ agent_hints:
   # Primary intent this document serves
   intent: enum[]            # [learn, reference, debug, optimize, migrate, compare]
   
-  # Confidence level for AI recommendations (0.0-1.0)
+  # Confidence level for AI recommendations (0-100)
   recommendation_score: float
   
   # Context requirements (other docs needed for full understanding)
@@ -1014,9 +1014,9 @@ Structure:
 
 Example:
   "py.async.aiohttp" -> {
-    prerequisites: [("py.async.basics", 0.9, false)],
-    related: [("py.async.httpx", 0.8, "alternative")],
-    next_topics: [("py.async.error-handling", 0.9)]
+    prerequisites: [("py.async.basics", 90, false)],
+    related: [("py.async.httpx", 80, "alternative")],
+    next_topics: [("py.async.error-handling", 90)]
   }
 ```
 
@@ -1042,9 +1042,9 @@ Structure:
 
 Example:
   "web-scraping" -> [
-    ("py.async.aiohttp", 0.95),
-    ("py.beautifulsoup", 0.90),
-    ("py.selenium", 0.85)
+    ("py.async.aiohttp", 95),
+    ("py.beautifulsoup", 90),
+    ("py.selenium", 85)
   ]
 ```
 
@@ -1092,23 +1092,23 @@ FUNCTION search_neurona(query, context):
   expanded = []
   FOR each Neurona in filtered:
     // Add Neurona itself
-    expanded.add(Neurona, weight=1.0)
+    expanded.add(Neurona, weight=100)
     
     // Traverse prerequisites (if user missing them)
     IF NOT all_prerequisites_met(Neurona, context):
       FOR each prereq in Neurona.prerequisites:
-        expanded.add(prereq.id, weight=prereq.strength * 0.8)
+        expanded.add(prereq.id, weight=prereq.strength * 80 / 100)
     
     // Traverse related neuronas (breadth-first)
     FOR each related in Neurona.related:
-      IF related.weight > 0.5:
-        expanded.add(related.id, weight=related.weight * 0.6)
+      IF related.weight > 50:
+        expanded.add(related.id, weight=related.weight * 60 / 100)
     
     // Suggest next topics (if prerequisites met)
     IF all_prerequisites_met(Neurona, context):
       FOR each next in Neurona.next_topics:
-        IF next.confidence > 0.7:
-          expanded.add(next.id, weight=next.confidence * 0.7)
+        IF next.confidence > 70:
+          expanded.add(next.id, weight=next.confidence * 70 / 100)
   
   // Stage 5: Ranking
   ranked = rank_neuronas(
@@ -1147,30 +1147,30 @@ tags: [async, http, aiohttp, client, networking, io-bound, requests, api]
 # ============================================================
 prerequisites:
   - id: "py.async.basics"
-    strength: 0.9
+    strength: 90
     optional: false
   - id: "py.async.context-managers"
-    strength: 0.6
+    strength: 60
     optional: true
 
 related:
   - id: "py.async.httpx"
     relationship: alternative
-    weight: 0.8
+    weight: 80
   - id: "py.async.asyncio"
     relationship: complement
-    weight: 0.7
+    weight: 70
   - id: "py.requests"
     relationship: contrast
-    weight: 0.5
+    weight: 50
 
 next_topics:
   - id: "py.async.aiohttp.server"
-    confidence: 0.8
+    confidence: 80
   - id: "py.async.error-handling"
-    confidence: 0.9
+    confidence: 90
   - id: "py.async.connection-pooling"
-    confidence: 0.7
+    confidence: 70
 
 part_of:
   - "py.async.web-scraping-guide"
@@ -1190,7 +1190,7 @@ answers:
   - "async web scraping python"
   - "concurrent http requests python"
 not_about: [synchronous, requests library, urllib, threading, multiprocessing]
-search_weight: 1.5
+search_weight: 150
 
 # ============================================================
 # TECHNICAL SPECS
@@ -1474,10 +1474,10 @@ prerequisites: 0-5 items
 next_topics: 0-10 items
 
 # Numeric ranges
-search_weight: 0.0-2.0
-strength: 0.0-1.0
-weight: 0.0-1.0
-confidence: 0.0-1.0
+search_weight: 0-200 (100 = neutral)
+strength: 0-100
+weight: 0-100
+confidence: 0-100
 complexity_score: 0.0-10.0
 recommendation_score: 0.0-1.0
 success_rate: 0.0-1.0
@@ -1609,4 +1609,3 @@ Tomes created using this specification may use any license chosen by the author.
 
 **The Neurona System Specification v0.2.0**  
 *A Neurona is knowledge. A Tome is a library.*
-
