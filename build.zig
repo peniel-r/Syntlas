@@ -142,6 +142,24 @@ pub fn build(b: *std.Build) void {
     test_step.dependOn(&run_mod_tests.step);
     test_step.dependOn(&run_exe_tests.step);
 
+    // Performance test executable
+    const perf_exe = b.addExecutable(.{
+        .name = "performance",
+        .root_module = b.createModule(.{
+            .root_source_file = b.path("tests/performance.zig"),
+            .target = target,
+            .optimize = optimize,
+            .imports = &.{
+                .{ .name = "Syntlas", .module = mod },
+            },
+        }),
+    });
+
+    // Performance test run step
+    const perf_step = b.step("perf", "Run performance tests");
+    const run_perf = b.addRunArtifact(perf_exe);
+    perf_step.dependOn(&run_perf.step);
+
     // Just like flags, top level steps are also listed in the `--help` menu.
     //
     // The Zig build system is entirely implemented in userland, which means

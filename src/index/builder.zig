@@ -81,6 +81,7 @@ pub const IndexBuilder = struct {
             neurona.tags,
             neurona.quality,
             neurona.search_weight,
+            neurona.last_updated,
         );
 
         // Build use-case index

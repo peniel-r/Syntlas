@@ -49,6 +49,8 @@ pub fn main() !void {
         .file_path = "python/async/coroutines.md",
         .content_offset = 0,
         .quality = .{ .tested = true, .production_ready = true },
+        .search_weight = 100,
+        .last_updated = 1737139200, // 2025-01-17
     };
 
     const tags2 = [_][]const u8{ "javascript", "async" };
@@ -71,6 +73,9 @@ pub fn main() !void {
         .next_topics = @as([]Synapse, @constCast(&next2)),
         .file_path = "javascript/async/promises.md",
         .content_offset = 0,
+        .quality = .{},
+        .search_weight = 100,
+        .last_updated = 1737052800, // 2025-01-16
     };
 
     const neuronas = [_]Neurona{ neurona1, neurona2 };

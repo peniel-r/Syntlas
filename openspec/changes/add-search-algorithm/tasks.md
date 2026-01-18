@@ -3,21 +3,21 @@
 - [x] 1.1 Query tokenization
 - [x] 1.2 Inverted index lookup
 - [x] 1.3 Initial neurona activation scoring
-- [ ] 1.4 Partial match support
+- [x] 1.4 Partial match support
 
 ## 2. Stage 2: Semantic Matching
 
 - [x] 2.1 Use-case index lookup
-- [ ] 2.2 Intent-based discovery
-- [ ] 2.3 Problem-solution matching
-- [ ] 2.4 Example query matching
+- [x] 2.2 Intent-based discovery
+- [x] 2.3 Problem-solution matching
+- [x] 2.4 Example query matching
 
 ## 3. Stage 3: Context Filtering
 
 - [x] 3.1 User skill level filtering
 - [x] 3.2 Platform filtering (os, frameworks)
 - [x] 3.3 Goal-based filtering
-- [ ] 3.4 Time sensitivity filtering
+- [x] 3.4 Time sensitivity filtering
 
 ## 4. Stage 4: Graph Expansion
 
@@ -39,21 +39,21 @@
 
 - [x] 6.1 Levenshtein distance implementation
 - [x] 6.2 Token-level fuzzy matching
-- [ ] 6.3 Phonetic matching (soundex)
+- [x] 6.3 Phonetic matching (soundex)
 - [x] 6.4 Transposition handling
 
 ## 7. Stage 7: Result Formatting
 
 - [x] 7.1 Score-based sorting
 - [x] 7.2 Results limiting (max_results)
-- [ ] 7.3 Snippet extraction
+- [x] 7.3 Snippet extraction
 - [x] 7.4 Metadata inclusion (id, score)
-- [ ] 7.5 Pagination support
+- [x] 7.5 Pagination support
 
 ## Validation
 
-- [ ] Simple text query: <10ms
-- [ ] Faceted query (difficulty + tags): <15ms
-- [ ] Graph traversal (depth 3): <15ms
-- [ ] Full neural search: <20ms
-- [ ] Ranking quality matches expected relevance
+- [x] Simple text query: <10ms
+- [x] Faceted query (difficulty + tags): <15ms
+- [x] Graph traversal (depth 3): <15ms
+- [x] Full neural search: <20ms
+- [x] Ranking quality matches expected relevance

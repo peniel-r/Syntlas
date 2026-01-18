@@ -20,6 +20,8 @@ pub const MetadataIndex = struct {
     quality_flags: std.ArrayListUnmanaged(schema.QualityFlags),
     /// parallel to position_neuronas
     search_weights: std.ArrayListUnmanaged(u8),
+    /// parallel to position_neuronas
+    last_updated: std.ArrayListUnmanaged(i64),
     allocator: Allocator,
 
     pub const Bitmap = struct {
@@ -118,6 +120,7 @@ pub const MetadataIndex = struct {
             .position_neuronas = .{},
             .quality_flags = .{},
             .search_weights = .{},
+            .last_updated = .{},
             .allocator = allocator,
         };
     }
@@ -152,6 +155,7 @@ pub const MetadataIndex = struct {
         self.position_neuronas.deinit(self.allocator);
         self.quality_flags.deinit(self.allocator);
         self.search_weights.deinit(self.allocator);
+        self.last_updated.deinit(self.allocator);
     }
 
     /// Add a neurona to the index
@@ -163,6 +167,7 @@ pub const MetadataIndex = struct {
         tags: []const []const u8,
         quality: schema.QualityFlags,
         search_weight: u8,
+        last_updated_ts: i64,
     ) !void {
         // Get or assign position for this neurona
         const position = self.position_neuronas.items.len;
@@ -177,6 +182,7 @@ pub const MetadataIndex = struct {
         try self.position_neuronas.append(self.allocator, id_copy2);
         try self.quality_flags.append(self.allocator, quality);
         try self.search_weights.append(self.allocator, search_weight);
+        try self.last_updated.append(self.allocator, last_updated_ts);
 
         // Set category bitmap
         if (self.category_bitmaps.getPtr(category)) |bitmap| {
@@ -281,6 +287,34 @@ pub const MetadataIndex = struct {
         return self.search_weights.items[position];
     }
 
+    pub fn getLastUpdated(self: *const MetadataIndex, neurona_id: []const u8) i64 {
+        const position = self.neurona_positions.get(neurona_id) orelse return 0;
+        return self.last_updated.items[position];
+    }
+
+    /// Filter by time sensitivity: return neuronas updated within the last N seconds
+    pub fn filterByTime(
+        self: *const MetadataIndex,
+        max_age_seconds: i64,
+        current_time: i64,
+        allocator: Allocator,
+    ) ![][]const u8 {
+        var neurona_ids = std.ArrayListUnmanaged([]const u8){};
+        errdefer neurona_ids.deinit(allocator);
+
+        var i: usize = 0;
+        while (i < self.last_updated.items.len) : (i += 1) {
+            const last_updated = self.last_updated.items[i];
+            const age = current_time - last_updated;
+            if (age <= max_age_seconds or last_updated == 0) {
+                // Include if within time limit or no timestamp (0 means unknown/always include)
+                try neurona_ids.append(allocator, self.position_neuronas.items[i]);
+            }
+        }
+
+        return neurona_ids.toOwnedSlice(allocator);
+    }
+
     fn cloneBitmap(self: *const MetadataIndex, source: *const Bitmap, allocator: Allocator) !Bitmap {
         _ = self;
         var clone = Bitmap.init();
@@ -318,8 +352,8 @@ test "MetadataIndex basic operations" {
     var index = MetadataIndex.init(allocator);
     defer index.deinit();
 
-    try index.addNeurona("neuron1", .concept, .intermediate, &[_][]const u8{"async"}, .{}, 100);
-    try index.addNeurona("neuron2", .snippet, .novice, &[_][]const u8{"async"}, .{}, 100);
+    try index.addNeurona("neuron1", .concept, .intermediate, &[_][]const u8{"async"}, .{}, 100, 0);
+    try index.addNeurona("neuron2", .snippet, .novice, &[_][]const u8{"async"}, .{}, 100, 0);
 
     const concepts = try index.filterByCategory(.concept, allocator);
     defer allocator.free(concepts);
@@ -331,9 +365,9 @@ test "MetadataIndex combined filter" {
     var index = MetadataIndex.init(allocator);
     defer index.deinit();
 
-    try index.addNeurona("neuron1", .concept, .novice, &[_][]const u8{"async"}, .{}, 100);
-    try index.addNeurona("neuron2", .concept, .intermediate, &[_][]const u8{"async"}, .{}, 100);
-    try index.addNeurona("neuron3", .snippet, .novice, &[_][]const u8{"async"}, .{}, 100);
+    try index.addNeurona("neuron1", .concept, .novice, &[_][]const u8{"async"}, .{}, 100, 0);
+    try index.addNeurona("neuron2", .concept, .intermediate, &[_][]const u8{"async"}, .{}, 100, 0);
+    try index.addNeurona("neuron3", .snippet, .novice, &[_][]const u8{"async"}, .{}, 100, 0);
 
     const results = try index.filterCombined(.concept, .novice, &[_][]const u8{"async"}, allocator);
     defer allocator.free(results);

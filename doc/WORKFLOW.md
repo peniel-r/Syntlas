@@ -8,7 +8,7 @@
 
 | Tool | Commands |
 |------|----------|
-| **Beads** | `bd show` · `bd ready` · `bd update <id> --status in_progress` · `bd close <id>` |
+| **Beads** | `bd list` · `bd ready` · `bd update <id> --status in_progress` · `bd close <id>` |
 | **OpenSpec** | `/openspec-proposal` · `/openspec-apply` · `/openspec-archive` |
 | **Zig** | `zig build` · `zig build run` · `zig build test` |
 | **Git** | `git pull --rebase` · `bd sync` · `git push` |
@@ -41,7 +41,7 @@
 ### Step 1: Select Task (Beads)
 
 ```bash
-bd show                              # Read current high-priority issue
+bd list                              # Read current high-priority issue
 bd ready                             # Find available work
 bd update <id> --status in_progress  # Claim the task
 ```

@@ -65,6 +65,7 @@ pub const Neurona = struct {
     // Metadata
     search_weight: u8 = 100, // 0 - 100 (quantized)
     quality: QualityFlags = .{},
+    last_updated: i64 = 0, // Unix timestamp (seconds since epoch)
 
     // Content location
     file_path: []const u8,
@@ -81,6 +82,7 @@ pub const Activation = struct {
 pub const ActivationSummary = struct {
     id: []const u8,
     score: f32,
+    snippet: ?[]const u8 = null,
 };
 
 test "Category enum values" {
