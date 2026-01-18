@@ -142,6 +142,20 @@ pub fn build(b: *std.Build) void {
     test_step.dependOn(&run_mod_tests.step);
     test_step.dependOn(&run_exe_tests.step);
 
+    // Security specific tests
+    const security_tests = b.addTest(.{
+        .root_module = b.createModule(.{
+            .root_source_file = b.path("tests/security_tests.zig"),
+            .target = target,
+            .optimize = optimize,
+            .imports = &.{
+                .{ .name = "Syntlas", .module = mod },
+            },
+        }),
+    });
+    const run_security_tests = b.addRunArtifact(security_tests);
+    test_step.dependOn(&run_security_tests.step);
+
     // Performance test executable
     const perf_exe = b.addExecutable(.{
         .name = "performance",

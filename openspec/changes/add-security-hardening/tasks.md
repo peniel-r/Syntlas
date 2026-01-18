@@ -10,7 +10,7 @@
 - [x] 2.1 Reject paths containing `..`
 - [x] 2.2 Reject absolute paths in asset references
 - [ ] 2.3 Normalize path separators
-- [ ] 2.4 Validate file extensions
+- [x] 2.4 Validate file extensions
 
 ## 3. Dangerous Pattern Detection
 
@@ -56,9 +56,9 @@
 
 ## 9. Security Test Suite
 
-- [ ] 9.1 Path traversal attack tests
-- [ ] 9.2 YAML injection tests
-- [ ] 9.3 Command injection tests
+- [x] 9.1 Path traversal attack tests
+- [x] 9.2 YAML injection tests
+- [x] 9.3 Command injection tests
 - [ ] 9.4 Sandbox escape tests
 
 ## Validation

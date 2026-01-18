@@ -17,6 +17,20 @@ pub fn validatePath(path: []const u8) mod.SecurityError!void {
             return error.PathTraversalDetected;
         }
     }
+
+    // Validate file extensions (if present)
+    const ext = std.fs.path.extension(path);
+    if (ext.len > 0) {
+        const allowed_exts = [_][]const u8{ ".md", ".json", ".png", ".jpg", ".jpeg", ".svg", ".yaml", ".yml", ".tome" };
+        var allowed = false;
+        for (allowed_exts) |allowed_ext| {
+            if (std.mem.eql(u8, ext, allowed_ext)) {
+                allowed = true;
+                break;
+            }
+        }
+        if (!allowed) return error.InvalidFileExtension;
+    }
 }
 
 /// Checks if a code snippet contains dangerous patterns.
