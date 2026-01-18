@@ -21,3 +21,4 @@ Syntlas processes untrusted content from community tomes. Defense-in-depth secur
 - Affected specs: `security`
 - Affected code: `src/security/`, `src/tome/validator.zig`
 - Dependencies: Phase 4 (Tome System) must be complete
+

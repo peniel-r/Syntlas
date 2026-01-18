@@ -80,3 +80,4 @@ The project SHALL define security disclosure process:
 
 - **WHEN** security researcher finds vulnerability
 - **THEN** they know how to report privately via SECURITY.md
+

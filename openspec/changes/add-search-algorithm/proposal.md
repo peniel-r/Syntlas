@@ -19,3 +19,4 @@ Syntlas's core value proposition is intelligent search through neural activation
 - Affected specs: `search-algorithm`
 - Affected code: `src/search/engine.zig`, `src/search/ranking.zig`
 - Dependencies: Phase 2 (Index Engine) must be complete
+

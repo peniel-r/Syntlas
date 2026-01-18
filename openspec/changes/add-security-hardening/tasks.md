@@ -68,3 +68,4 @@
 - [ ] Sandbox escapes: 0 (verified by security testing)
 - [ ] All shell commands require explicit user approval
 - [ ] Signature verification works for GPG-signed tomes
+

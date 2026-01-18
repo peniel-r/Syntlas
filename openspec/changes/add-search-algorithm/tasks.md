@@ -25,7 +25,7 @@
 - [ ] 4.2 Related topic discovery
 - [ ] 4.3 Next topic recommendations
 - [ ] 4.4 Depth-limited expansion (max 3 hops)
-- [ ] 4.5 Connection weight propagation
+- [ ] 4.5 Synapse weight propagation
 
 ## 5. Stage 5: Ranking Algorithm
 
@@ -55,3 +55,5 @@
 - [ ] Graph traversal (depth 3): <15ms
 - [ ] Full neural search: <20ms
 - [ ] Ranking quality matches expected relevance
+
+

@@ -992,7 +992,7 @@ Syntlas builds multiple indices for fast queries:
 
 ```text
 Structure:
-  keyword -> [neuron_ids]
+  keyword -> [neurona_ids]
 
 Example:
   "async" -> ["py.async.basics", "py.async.aiohttp", "js.async.promises"]
@@ -1004,7 +1004,7 @@ Example:
 ```text
 Structure:
   Adjacency List Format
-  neuron_id -> {
+  neurona_id -> {
     prerequisites: [(id, strength, optional), ...],
     related: [(id, weight, relationship), ...],
     next_topics: [(id, confidence), ...],
@@ -1024,21 +1024,21 @@ Example:
 
 ```text
 Structure:
-  attribute:value -> [neuron_ids]
+  attribute:value -> [neurona_ids]
 
 Examples:
-  category:patterns -> [neuron_ids]
-  difficulty:beginner -> [neuron_ids]
-  tags:async -> [neuron_ids]
-  platforms:linux -> [neuron_ids]
-  quality.production_ready:true -> [neuron_ids]
+  category:patterns -> [neurona_ids]
+  difficulty:beginner -> [neurona_ids]
+  tags:async -> [neurona_ids]
+  platforms:linux -> [neurona_ids]
+  quality.production_ready:true -> [neurona_ids]
 ```
 
 ### 4. Use-Case Index (Semantic Search)
 
 ```text
 Structure:
-  use_case -> [(neuron_id, relevance_score), ...]
+  use_case -> [(neurona_id, relevance_score), ...]
 
 Example:
   "web-scraping" -> [
@@ -1052,7 +1052,7 @@ Example:
 
 ```text
 Structure:
-  error_signature -> [neuron_ids]
+  error_signature -> [neurona_ids]
 
 Example:
   "ModuleNotFoundError" -> ["py.errors.import", "py.venv.setup"]
@@ -1081,7 +1081,7 @@ FUNCTION search_neurona(query, context):
     filtered = filter_results(
       results = text_matches + semantic_matches,
       user_skill = context.skill_level,
-      completed = context.completed_neurons,
+      completed = context.completed_neuronas,
       goals = context.goals,
       platforms = context.platforms
     )
@@ -1111,7 +1111,7 @@ FUNCTION search_neurona(query, context):
           expanded.add(next.id, weight=next.confidence * 0.7)
   
   // Stage 5: Ranking
-  ranked = rank_neurons(
+  ranked = rank_neuronas(
     neuronas = deduplicate(expanded),
     factors = [
       relevance_score (40%),
@@ -1609,3 +1609,4 @@ Tomes created using this specification may use any license chosen by the author.
 
 **The Neurona System Specification v0.2.0**  
 *A Neurona is knowledge. A Tome is a library.*
+

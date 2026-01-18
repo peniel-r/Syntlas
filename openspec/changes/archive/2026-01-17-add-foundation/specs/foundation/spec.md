@@ -7,7 +7,7 @@ The system SHALL define a neurona struct as the atomic unit of knowledge contain
 - Unique identifier (hierarchical dotted notation)
 - Title and category metadata
 - Difficulty level and tags
-- Neural connections (prerequisites, related, next_topics)
+- synapses (prerequisites, related, next_topics)
 - Quality indicators and search weights
 - Content file path and offset
 
@@ -77,3 +77,4 @@ The system SHALL provide a Zig build configuration supporting:
 
 - **WHEN** `zig build -Dtarget=x86_64-linux` is executed
 - **THEN** a Linux binary is produced
+

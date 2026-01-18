@@ -17,7 +17,7 @@ Syntlas is a revolutionary documentation navigator that treats knowledge as a ne
 **For Developers:**
 
 - Instant offline access to documentation (<10ms search)
-- Intelligent learning paths through neural connections
+- Intelligent learning paths through synapses
 - Cross-language knowledge discovery
 - No vendor lock-in (Markdown format works everywhere)
 
@@ -99,7 +99,7 @@ Syntlas implements a neural network-inspired documentation model:
 **Five-Layer Index System:**
 
 1. **Inverted Index** - Text keyword search (hash map: keyword → neurona_ids)
-2. **Graph Index** - Neural connections (adjacency lists with weights)
+2. **Graph Index** - synapses (adjacency lists with weights)
 3. **Metadata Index** - Faceted filtering (bitmap indices for speed)
 4. **Use-Case Index** - Semantic matching (intent-based discovery)
 5. **Error Index** - Debugging support (error signatures → solutions)
@@ -244,7 +244,7 @@ syntlas/
 **Deliverables:**
 
 - [x] Inverted index implementation (keyword → neurona_ids)
-- [x] Graph index (adjacency lists for neural connections)
+- [x] Graph index (adjacency lists for synapses)
 - [x] Metadata index (faceted filtering)
 - [x] Index builder (scan tome, build all indices)
 - [ ] Index persistence (save/load from disk) - Deferred to Phase 3
@@ -361,7 +361,7 @@ syntlas/
 - [ ] Rust tome (stdlib, ownership, async)
 - [ ] Zig tome (stdlib, comptime, patterns)
 - [ ] Tome validation passes
-- [ ] Neural connections tested
+- [ ] synapses tested
 - [ ] Search quality verified
 
 **Milestone**: All 5 embedded tomes with 100+ neuronas each
@@ -372,7 +372,7 @@ syntlas/
 
 - Each tome: 100-500 neuronas
 - All spec fields populated
-- Neural connections create valid DAG
+- synapses create valid DAG
 - Search returns relevant results
 - Total binary size: <15MB
 
@@ -1063,7 +1063,7 @@ Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 6 → Phase 7 → Phase 8
 Syntlas represents a paradigm shift in how programming documentation is structured, navigated, and discovered. By treating documentation as a neural network (the Neurona system), Syntlas enables:
 
 1. **Lightning-fast search** (<10ms) through optimized Zig implementation
-2. **Intelligent navigation** via graph traversal and neural connections
+2. **Intelligent navigation** via graph traversal and synapses
 3. **Dual interface** for both human developers and AI coding agents
 4. **True decentralization** through manual distribution and community ownership
 5. **No lock-in** philosophy with human-readable Markdown format
@@ -1125,3 +1125,4 @@ The Neurona specification is open and extensible, allowing the ecosystem to grow
 **Target Release**: Alpha v0.1.0 - Week 32, 1.0.0 - Week 52
 
 *Made with ⚡ and 🧠 by the Syntlas Community*
+

@@ -19,3 +19,4 @@ Syntlas's decentralized architecture requires a robust tome management system. U
 - Affected specs: `tome-system`
 - Affected code: `src/tome/`, `tomes/`
 - Dependencies: Phase 2 (Index Engine) must be complete
+

@@ -3,11 +3,11 @@ const Allocator = std.mem.Allocator;
 const schema = @import("../core/schema.zig");
 const RelationshipType = schema.RelationshipType;
 
-/// Graph index: neurona connections via adjacency lists
+/// Graph index: neurona synapses via adjacency lists
 pub const GraphIndex = struct {
-    /// Forward connections: neurona_id → list of outgoing synapses
+    /// Forward synapses: neurona_id → list of outgoing synapses
     forward: std.StringHashMapUnmanaged(SynapseList),
-    /// Backward connections: neurona_id → list of incoming synapses
+    /// Backward synapses: neurona_id → list of incoming synapses
     backward: std.StringHashMapUnmanaged(SynapseList),
     allocator: Allocator,
 
@@ -83,8 +83,8 @@ pub const GraphIndex = struct {
         self.backward.deinit(self.allocator);
     }
 
-    /// Add a directed connection from source to target
-    pub fn addConnection(
+    /// Add a directed synapse from source to target
+    pub fn addSynapse(
         self: *GraphIndex,
         source_id: []const u8,
         target_id: []const u8,
@@ -171,8 +171,8 @@ test "GraphIndex basic operations" {
     var graph = GraphIndex.init(allocator);
     defer graph.deinit();
 
-    try graph.addConnection("py.async.coroutines", "py.functions.generators", .prerequisite, 0.9);
-    try graph.addConnection("py.async.coroutines", "py.async.await", .related, 0.8);
+    try graph.addSynapse("py.async.coroutines", "py.functions.generators", .prerequisite, 0.9);
+    try graph.addSynapse("py.async.coroutines", "py.async.await", .related, 0.8);
 
     const outgoing = graph.getOutgoing("py.async.coroutines").?;
     try std.testing.expectEqual(@as(usize, 2), outgoing.synapses.items.len);
@@ -183,7 +183,7 @@ test "GraphIndex bidirectional lookup" {
     var graph = GraphIndex.init(allocator);
     defer graph.deinit();
 
-    try graph.addConnection("A", "B", .prerequisite, 0.9);
+    try graph.addSynapse("A", "B", .prerequisite, 0.9);
 
     // Forward lookup
     const outgoing = graph.getOutgoing("A").?;
@@ -199,9 +199,9 @@ test "GraphIndex filter by relationship" {
     var graph = GraphIndex.init(allocator);
     defer graph.deinit();
 
-    try graph.addConnection("A", "B", .prerequisite, 0.9);
-    try graph.addConnection("A", "C", .related, 0.7);
-    try graph.addConnection("A", "D", .prerequisite, 0.8);
+    try graph.addSynapse("A", "B", .prerequisite, 0.9);
+    try graph.addSynapse("A", "C", .related, 0.7);
+    try graph.addSynapse("A", "D", .prerequisite, 0.8);
 
     const prereqs = try graph.getPrerequisites("A", allocator);
     defer allocator.free(prereqs);
@@ -214,9 +214,9 @@ test "GraphIndex weighted sorting" {
     var graph = GraphIndex.init(allocator);
     defer graph.deinit();
 
-    try graph.addConnection("A", "B", .related, 0.5);
-    try graph.addConnection("A", "C", .related, 0.9);
-    try graph.addConnection("A", "D", .related, 0.7);
+    try graph.addSynapse("A", "B", .related, 0.5);
+    try graph.addSynapse("A", "C", .related, 0.9);
+    try graph.addSynapse("A", "D", .related, 0.7);
 
     var synapses = graph.getOutgoing("A").?;
     const sorted = try synapses.getSortedByWeight(allocator);

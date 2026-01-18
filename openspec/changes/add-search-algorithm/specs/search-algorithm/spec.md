@@ -7,7 +7,7 @@ The system SHALL implement a 5-stage search pipeline:
 1. Text Matching - Initial neurona activation via inverted index
 2. Semantic Matching - Use-case based discovery
 3. Context Filtering - User skill/platform/goals
-4. Graph Expansion - Traverse neural connections
+4. Graph Expansion - Traverse Synaptics
 5. Ranking - Weighted scoring for relevance
 
 #### Scenario: Complete neural search
@@ -74,7 +74,7 @@ The system SHALL expand search results via graph traversal:
 - Related topic connections
 - Next topic recommendations
 - Maximum depth of 3 hops
-- Connection weight propagation
+- Synapse weight propagation
 
 #### Scenario: Prerequisite discovery
 
@@ -111,3 +111,5 @@ The system SHALL support fuzzy matching with:
 
 - **WHEN** user searches "asyncronous" (typo)
 - **THEN** results for "asynchronous" are returned
+
+

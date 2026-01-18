@@ -92,3 +92,4 @@ The project SHALL achieve stability standards for 1.0:
 
 - **WHEN** 1.0 release is proposed
 - **THEN** all stability criteria are verified met
+

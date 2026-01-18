@@ -19,3 +19,4 @@ The CLI is the primary user interface for Syntlas. This phase implements all com
 - Affected specs: `cli`
 - Affected code: `src/cli/`, `src/output/`, `src/main.zig`
 - Dependencies: Phase 3 (Search Algorithm) must be complete
+

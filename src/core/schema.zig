@@ -57,7 +57,7 @@ pub const Neurona = struct {
     keywords: [][]const u8,
     use_cases: [][]const u8,
 
-    // Neural connections
+    // Synapses
     prerequisites: []Synapse,
     related: []Synapse,
     next_topics: []Synapse,

@@ -101,3 +101,4 @@ The system SHALL provide user-friendly error messages:
 
 - **WHEN** user runs `syntlas serach` (typo)
 - **THEN** error message suggests "Did you mean: search?"
+

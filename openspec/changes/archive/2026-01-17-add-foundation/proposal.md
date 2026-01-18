@@ -18,3 +18,4 @@ Syntlas requires a solid foundation of core data structures, parsers, and build 
 - Affected specs: `foundation`
 - Affected code: `src/core/`, `src/config/`, `src/tome/parser.zig`, `build.zig`
 - Dependencies: None (this is the first phase)
+

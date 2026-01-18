@@ -12,7 +12,7 @@ Syntlas ships with embedded tomes for the 5 core languages (C, C++, Python, Rust
 - Create Rust tome (stdlib, ownership, async)
 - Create Zig tome (stdlib, comptime, patterns)
 - Validate all tomes against NEURONA_SPEC
-- Test neural connections
+- Test synapses
 - Verify search quality
 
 ## Impact
@@ -20,3 +20,4 @@ Syntlas ships with embedded tomes for the 5 core languages (C, C++, Python, Rust
 - Affected specs: `embedded-tomes`
 - Affected code: `tomes/embedded/`
 - Dependencies: Phase 5 (Security) must be complete
+

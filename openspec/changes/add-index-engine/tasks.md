@@ -51,3 +51,4 @@
 - [ ] Index build time: <100ms for 1,000 neuronas
 - [ ] Index load time: <50ms from disk
 - [ ] Memory footprint: <20MB for 10,000 neuronas
+

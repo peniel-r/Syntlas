@@ -20,3 +20,4 @@ Before alpha release, Syntlas needs comprehensive testing and performance optimi
 - Affected specs: `testing`
 - Affected code: `tests/`, `src/` (optimizations)
 - Dependencies: Phase 7 (CLI) and Phase 6 (Embedded Tomes) must be complete
+

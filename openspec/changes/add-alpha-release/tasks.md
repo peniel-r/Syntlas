@@ -69,3 +69,4 @@
 - [ ] At least 10 alpha testers recruited
 - [ ] GitHub issues workflow tested
 - [ ] Community channels established
+

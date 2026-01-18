@@ -3,7 +3,7 @@
 - [ ] 1.1 Validate tome.json structure
 - [ ] 1.2 Validate neurona frontmatter against NEURONA_SPEC
 - [ ] 1.3 Check for required fields
-- [ ] 1.4 Validate neural connections (no broken links)
+- [ ] 1.4 Validate synapses (no broken links)
 - [ ] 1.5 Report validation errors with file locations
 
 ## 2. Tome Installer
@@ -57,3 +57,4 @@
 - [ ] Validation: All spec rules enforced
 - [ ] Embedded tomes: <15MB binary size
 - [ ] Multi-tome search: <5ms overhead
+

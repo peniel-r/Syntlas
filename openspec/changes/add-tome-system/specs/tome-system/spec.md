@@ -6,7 +6,7 @@ The system SHALL validate tomes against the NEURONA_SPEC, checking:
 
 - tome.json structure and required fields
 - Neurona frontmatter compliance
-- Neural connection integrity (no broken links)
+- synapse integrity (no broken links)
 - Required quality indicators
 
 #### Scenario: Valid tome validation
@@ -109,3 +109,4 @@ The system SHALL parse tome.json metadata containing:
 
 - **WHEN** `syntlas info python-tome` is executed
 - **THEN** tome metadata is displayed (author, version, license)
+

@@ -115,3 +115,4 @@ The system SHALL enforce trust levels with graduated security policies:
 
 - **WHEN** a community tome is installed
 - **THEN** sandbox and confirmation policies are applied
+

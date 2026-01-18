@@ -23,7 +23,7 @@ Each embedded tome SHALL meet minimum quality standards:
 
 - 100-500 neuronas per tome
 - All NEURONA_SPEC fields populated
-- Valid neural connection graph (no broken links)
+- Valid neural Synapse Graph (no broken links)
 - Tested search quality
 
 #### Scenario: Tome validation passes
@@ -33,14 +33,14 @@ Each embedded tome SHALL meet minimum quality standards:
 
 ---
 
-### Requirement: Neural Connection Graph
+### Requirement: Neural Synapse Graph
 
-Embedded tomes SHALL establish meaningful neural connections:
+Embedded tomes SHALL establish meaningful Synaptics:
 
 - Prerequisites form learning paths
 - Related topics enable discovery
 - Next topics guide progression
-- Connection weights reflect importance
+- Synapse weights reflect importance
 
 #### Scenario: Learning path traversal
 
@@ -77,3 +77,5 @@ Searches against embedded tomes SHALL return highly relevant results:
 
 - **WHEN** user searches "python async await"
 - **THEN** top results include async/await neuronas from Python tome
+
+

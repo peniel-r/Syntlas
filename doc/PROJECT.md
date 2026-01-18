@@ -100,7 +100,7 @@ The breakthrough innovation in Syntlas is the **Neurona specification** - treati
    ```
 
 3. **Search Activates the Network**
-   - Query triggers initial neurons (text match)
+   - Query triggers initial neuronas (text match)
    - Activation propagates through connections
    - Graph traversal finds related/prerequisite topics
    - Results ranked by relevance + connection strength
@@ -151,7 +151,7 @@ The breakthrough innovation in Syntlas is the **Neurona specification** - treati
 **Multi-Index Architecture:**
 
 1. **Inverted Index** - Text keyword search (<10ms)
-2. **Graph Index** - Neural connections (adjacency lists)
+2. **Graph Index** - Synapses (adjacency lists)
 3. **Metadata Index** - Faceted search (difficulty, tags, etc.)
 4. **Use-Case Index** - Semantic matching
 5. **Error Index** - Debugging by error signatures
@@ -159,7 +159,7 @@ The breakthrough innovation in Syntlas is the **Neurona specification** - treati
 **Search Algorithm (5 Stages):**
 
 ```text
-1. Text Matching → Initial neuron activation
+1. Text Matching → Initial neurona activation
 2. Semantic Matching → Use-case based discovery
 3. Context Filtering → User skill/platform/goals
 4. Graph Expansion → Traverse connections (prerequisites, related)
@@ -172,8 +172,8 @@ The breakthrough innovation in Syntlas is the **Neurona specification** - treati
 
 ### 10 Core Metadata Sections
 
-1. **Neuron Identity** - ID, title, category, difficulty, tags
-2. **Neural Connections** - Prerequisites, related, next topics, hierarchies
+1. **Neurona Identity** - ID, title, category, difficulty, tags
+2. **Synapses** - Prerequisites, related, next topics, hierarchies
 3. **Search Optimization** - Keywords, use cases, semantic hints
 4. **Technical Specs** - Versions, dependencies, performance characteristics
 5. **Execution Context** - For runnable code snippets
@@ -183,7 +183,7 @@ The breakthrough innovation in Syntlas is the **Neurona specification** - treati
 9. **Error Handling** - For troubleshooting documents
 10. **Versioning** - API versions, deprecations, migrations
 
-### Example Neural Connection
+### Example Synapse
 
 ```yaml
 # A document about async HTTP in Python
@@ -389,7 +389,7 @@ syntlas related py.async.basics --depth=2 --format=json
 ### What Makes Syntlas Different?
 
 1. **Neural Documentation Network**
-   - First system to treat docs as interconnected neurons
+   - First system to treat docs as interconnected neuronas
    - Explicit relationship modeling (prerequisites, alternatives)
    - Graph-based navigation and discovery
 
@@ -652,7 +652,7 @@ Syntlas embodies this by:
 
 ### For Documentation Writers
 
-"Turn your docs into intelligent, interconnected neurons that help developers learn efficiently."
+"Turn your docs into intelligent, interconnected neuronas that help developers learn efficiently."
 
 ### For the Community
 
@@ -679,3 +679,4 @@ By combining human-readable simplicity with machine-queryable intelligence, and 
 **Status**: Specification & Design
 
 *Made with ⚡ and 🧠 by the Syntlas Community*
+

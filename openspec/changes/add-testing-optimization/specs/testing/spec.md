@@ -92,3 +92,4 @@ The system SHALL handle large datasets:
 
 - **WHEN** 100,000 neuronas are indexed
 - **THEN** search still completes in <50ms
+

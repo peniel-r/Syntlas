@@ -60,3 +60,4 @@
 - [ ] Syntax highlighting works for code snippets
 - [ ] Error messages are actionable
 - [ ] Command completion in <10ms
+

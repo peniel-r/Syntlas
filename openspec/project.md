@@ -108,7 +108,7 @@ fn processData(allocator: std.mem.Allocator, data: []const u8) !void {
 
 The `doc/NEURONA_SPEC.md` is **IMMUTABLE** for AI agents. It defines:
 
-- 10 core metadata sections (Identity, Connections, Search, Technical, etc.)
+- 10 core metadata sections (Identity, Synapses, Search, Technical, etc.)
 - Graph relationships (prerequisites, related, next_topics, part_of)
 - Search optimization fields (keywords, use_cases, answers)
 - Quality indicators (tested, production_ready, benchmarked)
@@ -203,3 +203,5 @@ The `doc/NEURONA_SPEC.md` is **IMMUTABLE** for AI agents. It defines:
 ---
 
 *Last updated: 2026-01-17*
+
+

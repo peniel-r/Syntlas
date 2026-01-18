@@ -36,9 +36,9 @@ pub const IndexBuilder = struct {
             try self.inverted_index.addKeyword(keyword, neurona.id, tf);
         }
 
-        // Build graph index from connections
+        // Build graph index from synapses
         for (neurona.prerequisites) |synapse| {
-            try self.graph_index.addConnection(
+            try self.graph_index.addSynapse(
                 neurona.id,
                 synapse.id,
                 .prerequisite,
@@ -47,7 +47,7 @@ pub const IndexBuilder = struct {
         }
 
         for (neurona.related) |synapse| {
-            try self.graph_index.addConnection(
+            try self.graph_index.addSynapse(
                 neurona.id,
                 synapse.id,
                 .related,
@@ -56,7 +56,7 @@ pub const IndexBuilder = struct {
         }
 
         for (neurona.next_topics) |synapse| {
-            try self.graph_index.addConnection(
+            try self.graph_index.addSynapse(
                 neurona.id,
                 synapse.id,
                 .next_topic,

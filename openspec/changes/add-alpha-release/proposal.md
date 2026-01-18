@@ -21,3 +21,4 @@ The alpha release marks Syntlas's first public availability. This phase focuses 
 - Affected specs: `release`
 - Affected code: CI/CD, documentation
 - Dependencies: Phase 8 (Testing) must be complete
+
