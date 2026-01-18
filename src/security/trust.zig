@@ -22,20 +22,17 @@ pub const Policy = struct {
 pub fn getPolicy(level: TrustLevel, override: ?[]const u8) Policy {
     // If trust override is provided, try to parse it as a trust level
     if (override) |override_str| {
-        const lower_override = try std.ascii.allocLowerString(std.heap.page_allocator, override_str);
-        defer std.heap.page_allocator.free(lower_override);
-
-        // Simple string comparison for override
-        if (std.mem.eql(u8, lower_override, "untrusted")) {
+        // Case-insensitive comparison for override
+        if (std.ascii.eqlIgnoreCase(override_str, "untrusted")) {
             return getPolicyFromString(.untrusted);
         }
-        if (std.mem.eql(u8, lower_override, "community")) {
+        if (std.ascii.eqlIgnoreCase(override_str, "community")) {
             return getPolicyFromString(.community);
         }
-        if (std.mem.eql(u8, lower_override, "official")) {
+        if (std.ascii.eqlIgnoreCase(override_str, "official")) {
             return getPolicyFromString(.official);
         }
-        if (std.mem.eql(u8, lower_override, "embedded")) {
+        if (std.ascii.eqlIgnoreCase(override_str, "embedded")) {
             return getPolicyFromString(.embedded);
         }
 

