@@ -261,7 +261,8 @@ pub const Parser = struct {
 
             if (self.current.tag == .string) {
                 const val_token = try self.expect(.string);
-                try map.put(key_token.value, val_token.value);
+                // Allocate the value so all map values are consistently owned
+                try map.put(key_token.value, try self.allocator.dupe(u8, val_token.value));
             } else if (self.current.tag == .l_bracket) {
                 var array_list = std.ArrayListUnmanaged(u8){};
                 defer array_list.deinit(self.allocator);

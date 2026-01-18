@@ -81,7 +81,16 @@ pub fn parse(allocator: std.mem.Allocator, content: []const u8) !core.Neurona {
 
     var parser = yaml.Parser.init(allocator, frontmatter);
     var map = try parser.parse();
-    defer map.deinit();
+    defer {
+        // Free all allocated values in the map
+        // Since yaml.zig now consistently allocates all values (via dupe or toOwnedSlice),
+        // we need to free them all before deinit
+        var it = map.valueIterator();
+        while (it.next()) |value| {
+            allocator.free(value.*);
+        }
+        map.deinit();
+    }
 
     const id = if (map.get("id")) |val| try allocator.dupe(u8, val) else try allocator.dupe(u8, "unknown");
     const title = if (map.get("title")) |val| try allocator.dupe(u8, val) else try allocator.dupe(u8, "Untitled");
