@@ -157,6 +157,9 @@ git status            # Must show "up to date with origin"
 /openspec-archive     # Merges deltas into openspec/specs/
 ```
 
+> [!IMPORTANT]
+> **You cannot archive an OpenSpec proposal unless there are no pending tasks.** Ensure all tasks in `tasks.md` are completed (marked with `- [x]`) before running `/openspec-archive`.
+
 **Update documentation:**
 
 | Document | Update When |
