@@ -297,7 +297,7 @@ test "MetadataIndex basic operations" {
     defer index.deinit();
 
     try index.addNeurona("neuron1", .concept, .intermediate, &[_][]const u8{"async"});
-    try index.addNeurona("neuron2", .tutorial, .novice, &[_][]const u8{"async"});
+    try index.addNeurona("neuron2", .snippet, .novice, &[_][]const u8{"async"});
 
     const concepts = try index.filterByCategory(.concept, allocator);
     defer allocator.free(concepts);
@@ -311,7 +311,7 @@ test "MetadataIndex combined filter" {
 
     try index.addNeurona("neuron1", .concept, .novice, &[_][]const u8{"async"});
     try index.addNeurona("neuron2", .concept, .intermediate, &[_][]const u8{"async"});
-    try index.addNeurona("neuron3", .tutorial, .novice, &[_][]const u8{"async"});
+    try index.addNeurona("neuron3", .snippet, .novice, &[_][]const u8{"async"});
 
     const results = try index.filterCombined(.concept, .novice, &[_][]const u8{"async"}, allocator);
     defer allocator.free(results);

@@ -1,8 +1,10 @@
 const std = @import("std");
-const core = @import("core/mod.zig");
-const config = @import("config/mod.zig");
-const tome = @import("tome/mod.zig");
-const index = @import("index/mod.zig");
+const Syntlas = @import("Syntlas");
+const core = Syntlas.core;
+const config = Syntlas.config;
+const tome = Syntlas.tome;
+const index = Syntlas.index;
+const search = Syntlas.search;
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
@@ -19,7 +21,7 @@ pub fn main() !void {
     // Create sample neuronas for indexing
     const tags1 = [_][]const u8{ "python", "async", "concurrency" };
     const keywords1 = [_][]const u8{ "async", "await", "coroutine" };
-    const use_cases1 = [_][]const u8{};
+    const use_cases1 = [_][]const u8{ "handle concurrent requests", "optimize io bound tasks" };
     const prereqs1 = [_]core.schema.Synapse{
         .{ .id = "py.functions.generators", .weight = 90, .optional = false, .relationship = .prerequisite },
     };
@@ -45,7 +47,7 @@ pub fn main() !void {
 
     const tags2 = [_][]const u8{ "javascript", "async" };
     const keywords2 = [_][]const u8{ "async", "promise", "then" };
-    const use_cases2 = [_][]const u8{};
+    const use_cases2 = [_][]const u8{ "handle api response", "chain async operations" };
     const prereqs2 = [_]core.schema.Synapse{};
     const related2 = [_]core.schema.Synapse{};
     const next2 = [_]core.schema.Synapse{};
@@ -130,6 +132,36 @@ pub fn main() !void {
     for (filtered) |id| {
         std.debug.print("  - {s}\n", .{id});
     }
+    std.debug.print("\n", .{});
+
+    // Demonstrate Search Engine Stage 1 & 2
+    // std.debug.print("=== Search Engine Demo ===\n", .{});
+    // var engine = search.engine.SearchEngine.init(
+    //     allocator,
+    //     &builder.inverted_index,
+    //     &builder.graph_index,
+    //     &builder.metadata_index,
+    //     &builder.use_case_index,
+    // );
+
+    // var stage1_results = try engine.stage1_TextMatch("async python");
+    // defer stage1_results.deinit(allocator);
+
+    // std.debug.print("Stage 1 'async python' activations: {d}\n", .{stage1_results.count()});
+    // var it = stage1_results.iterator();
+    // while (it.next()) |entry| {
+    //     std.debug.print("  - {s}: {d:.4}\n", .{ entry.key_ptr.*, entry.value_ptr.* });
+    // }
+    // std.debug.print("\n", .{});
+
+    // var stage2_results = try engine.stage2_SemanticMatch("optimize tasks");
+    // defer stage2_results.deinit(allocator);
+
+    // std.debug.print("Stage 2 'optimize tasks' activations: {d}\n", .{stage2_results.count()});
+    // var it2 = stage2_results.iterator();
+    // while (it2.next()) |entry| {
+    //     std.debug.print("  - {s}: {d:.4}\n", .{ entry.key_ptr.*, entry.value_ptr.* });
+    // }
 
     std.debug.print("\n✓ Index engine operational\n", .{});
 }

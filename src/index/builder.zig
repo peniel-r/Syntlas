@@ -5,12 +5,14 @@ const Neurona = schema.Neurona;
 const inverted = @import("inverted.zig");
 const graph = @import("graph.zig");
 const metadata = @import("metadata.zig");
+const use_case = @import("use_case.zig");
 
 /// Index builder: scans tomes and builds all indices
 pub const IndexBuilder = struct {
     inverted_index: inverted.InvertedIndex,
     graph_index: graph.GraphIndex,
     metadata_index: metadata.MetadataIndex,
+    use_case_index: use_case.UseCaseIndex,
     allocator: Allocator,
 
     pub fn init(allocator: Allocator) IndexBuilder {
@@ -18,6 +20,7 @@ pub const IndexBuilder = struct {
             .inverted_index = inverted.InvertedIndex.init(allocator),
             .graph_index = graph.GraphIndex.init(allocator),
             .metadata_index = metadata.MetadataIndex.init(allocator),
+            .use_case_index = use_case.UseCaseIndex.init(allocator),
             .allocator = allocator,
         };
     }
@@ -26,6 +29,7 @@ pub const IndexBuilder = struct {
         self.inverted_index.deinit();
         self.graph_index.deinit();
         self.metadata_index.deinit();
+        self.use_case_index.deinit();
     }
 
     /// Add a neurona to all indices
@@ -71,6 +75,11 @@ pub const IndexBuilder = struct {
             neurona.difficulty,
             neurona.tags,
         );
+
+        // Build use-case index
+        for (neurona.use_cases) |uc| {
+            try self.use_case_index.addUseCase(uc, neurona.id);
+        }
     }
 
     /// Build indices from a collection of neuronas
@@ -111,17 +120,24 @@ test "IndexBuilder basic operations" {
     var builder = IndexBuilder.init(allocator);
     defer builder.deinit();
 
+    var tags = [_][]const u8{"test"};
+    var keywords = [_][]const u8{ "async", "await" };
+    var use_cases = [_][]const u8{};
+    var prereqs = [_]schema.Synapse{};
+    var related = [_]schema.Synapse{};
+    var next_topics = [_]schema.Synapse{};
+
     const neurona = Neurona{
         .id = "test.neurona",
         .title = "Test Neurona",
         .category = .concept,
         .difficulty = .intermediate,
-        .tags = &[_][]const u8{"test"},
-        .keywords = &[_][]const u8{ "async", "await" },
-        .use_cases = &[_][]const u8{},
-        .prerequisites = &[_]schema.Synapse{},
-        .related = &[_]schema.Synapse{},
-        .next_topics = &[_]schema.Synapse{},
+        .tags = &tags,
+        .keywords = &keywords,
+        .use_cases = &use_cases,
+        .prerequisites = &prereqs,
+        .related = &related,
+        .next_topics = &next_topics,
         .file_path = "test.md",
         .content_offset = 0,
     };

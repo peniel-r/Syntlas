@@ -93,7 +93,7 @@ pub fn tokenize(allocator: Allocator, text: []const u8) ![][]const u8 {
         for (tokens.items) |token| {
             allocator.free(token);
         }
-        tokens.deinit();
+        tokens.deinit(allocator);
     }
 
     var iter = std.mem.tokenizeAny(u8, text, " \t\n\r.,;:!?()[]{}\"'`");

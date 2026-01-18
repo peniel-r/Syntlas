@@ -1,13 +1,13 @@
 ## 1. Stage 1: Text Matching
 
-- [ ] 1.1 Query tokenization
-- [ ] 1.2 Inverted index lookup
-- [ ] 1.3 Initial neurona activation scoring
+- [x] 1.1 Query tokenization
+- [x] 1.2 Inverted index lookup
+- [x] 1.3 Initial neurona activation scoring
 - [ ] 1.4 Partial match support
 
 ## 2. Stage 2: Semantic Matching
 
-- [ ] 2.1 Use-case index lookup
+- [x] 2.1 Use-case index lookup
 - [ ] 2.2 Intent-based discovery
 - [ ] 2.3 Problem-solution matching
 - [ ] 2.4 Example query matching
@@ -55,5 +55,3 @@
 - [ ] Graph traversal (depth 3): <15ms
 - [ ] Full neural search: <20ms
 - [ ] Ranking quality matches expected relevance
-
-

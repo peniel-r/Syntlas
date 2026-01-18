@@ -78,7 +78,7 @@ pub const Activation = struct {
 };
 
 test "Category enum values" {
-    try std.testing.expectEqual(@as(i32, 6), @typeInfo(Category).@"enum".fields.len);
+    try std.testing.expectEqual(@as(i32, 7), @typeInfo(Category).@"enum".fields.len);
 }
 
 test "Difficulty enum values" {

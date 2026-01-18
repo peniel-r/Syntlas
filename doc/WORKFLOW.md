@@ -38,7 +38,7 @@
 
 ---
 
-### Phase 1: Select Task (Beads)
+### Step 1: Select Task (Beads)
 
 ```bash
 bd show                              # Read current high-priority issue
@@ -51,7 +51,7 @@ bd update <id> --status in_progress  # Claim the task
 
 ---
 
-### Phase 2: Specify Intent (OpenSpec)
+### Step 2: Specify Intent (OpenSpec)
 
 Before writing code, lock intent with a spec proposal:
 
@@ -80,7 +80,7 @@ openspec/changes/<change-name>/
 
 ---
 
-### Phase 3: Implement (Zig)
+### Step 3: Implement (Zig)
 
 After spec approval, implement using `/openspec-apply`:
 
@@ -115,7 +115,7 @@ var global_buffer: [1024]u8 = undefined;
 
 ---
 
-### Phase 4: Verify (Build + Runtime)
+### Step 4: Verify (Build + Runtime)
 
 > [!CAUTION]
 > Work is **NOT complete** until all verification passes.
@@ -135,7 +135,7 @@ zig build test        # Run tests if applicable
 
 ---
 
-### Phase 5: Commit & Archive
+### Step 5: Commit & Archive
 
 > [!WARNING]
 > Always ask for approval before committing.

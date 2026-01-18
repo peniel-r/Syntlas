@@ -48,7 +48,7 @@ pub const GraphIndex = struct {
         }
 
         /// Get synapses sorted by weight (descending)
-        pub fn getSortedByWeight(self: *SynapseList, allocator: Allocator) ![]Synapse {
+        pub fn getSortedByWeight(self: *const SynapseList, allocator: Allocator) ![]Synapse {
             const sorted = try allocator.dupe(Synapse, self.synapses.items);
             std.mem.sort(Synapse, sorted, {}, compareWeight);
             return sorted;
