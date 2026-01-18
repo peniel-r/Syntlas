@@ -1,0 +1,17 @@
+{
+  "name": "c",
+  "version": "c23",
+  "language": "C",
+  "author": "Syntlas Community",
+  "description": "C documentation tome covering ISO C standard, stdlib, and common patterns",
+  "homepage": "https://en.cppreference.com/w/c",
+  "created": "2026-01-18",
+  "updated": "2026-01-18",
+  "tags": ["systems", "manual-memory", "portable", "low-level"],
+  "license": "MIT",
+  "spec_version": "0.2.0",
+  "integrity": {
+    "algorithm": "sha256",
+    "manifest_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000000"
+  }
+}

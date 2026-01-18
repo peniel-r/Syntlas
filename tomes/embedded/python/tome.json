@@ -1,0 +1,17 @@
+{
+  "name": "python",
+  "version": "3.12.1",
+  "language": "Python",
+  "author": "Syntlas Community",
+  "description": "Comprehensive Python 3.12 documentation tome covering stdlib, OOP, async/await, typing, and best practices",
+  "homepage": "https://python.org",
+  "created": "2026-01-18",
+  "updated": "2026-01-18",
+  "tags": ["scripting", "general-purpose", "interpreted", "typing", "async"],
+  "license": "MIT",
+  "spec_version": "0.2.0",
+  "integrity": {
+    "algorithm": "sha256",
+    "manifest_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000000"
+  }
+}

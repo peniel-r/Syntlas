@@ -1,0 +1,17 @@
+{
+  "name": "zig",
+  "version": "0.15.2",
+  "language": "Zig",
+  "author": "Syntlas Community",
+  "description": "Comprehensive Zig documentation tome covering stdlib, manual memory management, build system, and comptime features",
+  "homepage": "https://ziglang.org",
+  "created": "2026-01-18",
+  "updated": "2026-01-18",
+  "tags": ["systems", "manual-memory", "comptime", "c-compatible", "build-system"],
+  "license": "MIT",
+  "spec_version": "0.2.0",
+  "integrity": {
+    "algorithm": "sha256",
+    "manifest_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000000"
+  }
+}

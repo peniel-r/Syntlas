@@ -1,0 +1,17 @@
+{
+  "name": "rust",
+  "version": "1.83.0",
+  "language": "Rust",
+  "author": "Syntlas Community",
+  "description": "Rust documentation tome covering ownership, stdlib, async patterns, and advanced topics",
+  "homepage": "https://rust-lang.org",
+  "created": "2026-01-18",
+  "updated": "2026-01-18",
+  "tags": ["systems", "memory-safe", "concurrent", "compiled", "ffi", "async"],
+  "license": "MIT",
+  "spec_version": "0.2.0",
+  "integrity": {
+    "algorithm": "sha256",
+    "manifest_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000000"
+  }
+}

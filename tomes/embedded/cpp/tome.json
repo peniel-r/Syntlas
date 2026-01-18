@@ -1,0 +1,17 @@
+{
+  "name": "cpp",
+  "version": "c++23",
+  "language": "C++",
+  "author": "Syntlas Community",
+  "description": "Comprehensive C++ documentation tome covering STL, modern C++17/20/23 features, metaprogramming, and best practices.",
+  "homepage": "https://en.cppreference.com/w/cpp",
+  "created": "2026-01-18",
+  "updated": "2026-01-18",
+  "tags": ["systems", "object-oriented", "generic", "memory-safe", "modern-cpp"],
+  "license": "MIT",
+  "spec_version": "0.2.0",
+  "integrity": {
+    "algorithm": "sha256",
+    "manifest_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000000"
+  }
+}
