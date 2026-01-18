@@ -211,19 +211,19 @@ syntlas/
 
 ## Phased Development Roadmap
 
-### Phase 1: Foundation
+### Phase 1: Foundation (Complete)
 
 **Objective**: Establish core data structures and build system
 
 **Deliverables:**
 
-- [ ] Build system configured (build.zig, dependencies)
-- [ ] Neurona data structures defined
-- [ ] YAML frontmatter parser (custom or library)
-- [ ] Markdown content extractor
-- [ ] Basic file I/O and path handling
-- [ ] Configuration management (~/.config/syntlas/)
-- [ ] Test framework setup
+- [x] Build system configured (build.zig, dependencies)
+- [x] Neurona data structures defined
+- [x] YAML frontmatter parser (custom or library)
+- [x] Markdown content extractor
+- [x] Basic file I/O and path handling
+- [x] Configuration management (~/.config/syntlas/)
+- [x] Test framework setup
 
 **Milestone**: Can parse a single markdown file with YAML frontmatter into a Neurona struct
 
@@ -237,7 +237,7 @@ syntlas/
 
 ---
 
-### Phase 2: Index Engine
+### Phase 2: Index Engine (Complete)
 
 **Objective**: Build multi-index search system
 
