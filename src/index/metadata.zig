@@ -16,6 +16,10 @@ pub const MetadataIndex = struct {
     neurona_positions: std.StringHashMapUnmanaged(usize),
     /// Reverse map: position to neurona_id
     position_neuronas: std.ArrayListUnmanaged([]const u8),
+    /// parallel to position_neuronas
+    quality_flags: std.ArrayListUnmanaged(schema.QualityFlags),
+    /// parallel to position_neuronas
+    search_weights: std.ArrayListUnmanaged(u8),
     allocator: Allocator,
 
     pub const Bitmap = struct {
@@ -112,6 +116,8 @@ pub const MetadataIndex = struct {
             .tag_bitmaps = .{},
             .neurona_positions = .{},
             .position_neuronas = .{},
+            .quality_flags = .{},
+            .search_weights = .{},
             .allocator = allocator,
         };
     }
@@ -144,6 +150,8 @@ pub const MetadataIndex = struct {
             self.allocator.free(id);
         }
         self.position_neuronas.deinit(self.allocator);
+        self.quality_flags.deinit(self.allocator);
+        self.search_weights.deinit(self.allocator);
     }
 
     /// Add a neurona to the index
@@ -153,6 +161,8 @@ pub const MetadataIndex = struct {
         category: Category,
         difficulty: Difficulty,
         tags: []const []const u8,
+        quality: schema.QualityFlags,
+        search_weight: u8,
     ) !void {
         // Get or assign position for this neurona
         const position = self.position_neuronas.items.len;
@@ -165,6 +175,8 @@ pub const MetadataIndex = struct {
 
         try self.neurona_positions.put(self.allocator, id_copy1, position);
         try self.position_neuronas.append(self.allocator, id_copy2);
+        try self.quality_flags.append(self.allocator, quality);
+        try self.search_weights.append(self.allocator, search_weight);
 
         // Set category bitmap
         if (self.category_bitmaps.getPtr(category)) |bitmap| {
@@ -259,6 +271,16 @@ pub const MetadataIndex = struct {
         return self.bitmapToNeuronaIds(&result_bitmap, allocator);
     }
 
+    pub fn getQuality(self: *const MetadataIndex, neurona_id: []const u8) ?schema.QualityFlags {
+        const position = self.neurona_positions.get(neurona_id) orelse return null;
+        return self.quality_flags.items[position];
+    }
+
+    pub fn getSearchWeight(self: *const MetadataIndex, neurona_id: []const u8) u8 {
+        const position = self.neurona_positions.get(neurona_id) orelse return 100;
+        return self.search_weights.items[position];
+    }
+
     fn cloneBitmap(self: *const MetadataIndex, source: *const Bitmap, allocator: Allocator) !Bitmap {
         _ = self;
         var clone = Bitmap.init();
@@ -296,8 +318,8 @@ test "MetadataIndex basic operations" {
     var index = MetadataIndex.init(allocator);
     defer index.deinit();
 
-    try index.addNeurona("neuron1", .concept, .intermediate, &[_][]const u8{"async"});
-    try index.addNeurona("neuron2", .snippet, .novice, &[_][]const u8{"async"});
+    try index.addNeurona("neuron1", .concept, .intermediate, &[_][]const u8{"async"}, .{}, 100);
+    try index.addNeurona("neuron2", .snippet, .novice, &[_][]const u8{"async"}, .{}, 100);
 
     const concepts = try index.filterByCategory(.concept, allocator);
     defer allocator.free(concepts);
@@ -309,9 +331,9 @@ test "MetadataIndex combined filter" {
     var index = MetadataIndex.init(allocator);
     defer index.deinit();
 
-    try index.addNeurona("neuron1", .concept, .novice, &[_][]const u8{"async"});
-    try index.addNeurona("neuron2", .concept, .intermediate, &[_][]const u8{"async"});
-    try index.addNeurona("neuron3", .snippet, .novice, &[_][]const u8{"async"});
+    try index.addNeurona("neuron1", .concept, .novice, &[_][]const u8{"async"}, .{}, 100);
+    try index.addNeurona("neuron2", .concept, .intermediate, &[_][]const u8{"async"}, .{}, 100);
+    try index.addNeurona("neuron3", .snippet, .novice, &[_][]const u8{"async"}, .{}, 100);
 
     const results = try index.filterCombined(.concept, .novice, &[_][]const u8{"async"}, allocator);
     defer allocator.free(results);

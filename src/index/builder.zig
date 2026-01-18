@@ -40,6 +40,11 @@ pub const IndexBuilder = struct {
             try self.inverted_index.addKeyword(keyword, neurona.id, tf);
         }
 
+        // Index tags as keywords with high weight (1.0)
+        for (neurona.tags) |tag| {
+            try self.inverted_index.addKeyword(tag, neurona.id, 1.0);
+        }
+
         // Build graph index from synapses
         for (neurona.prerequisites) |synapse| {
             try self.graph_index.addSynapse(
@@ -74,6 +79,8 @@ pub const IndexBuilder = struct {
             neurona.category,
             neurona.difficulty,
             neurona.tags,
+            neurona.quality,
+            neurona.search_weight,
         );
 
         // Build use-case index

@@ -77,6 +77,12 @@ pub const Activation = struct {
     match_type: MatchType,
 };
 
+/// Lightweight summary of an activated Neurona for search results
+pub const ActivationSummary = struct {
+    id: []const u8,
+    score: f32,
+};
+
 test "Category enum values" {
     try std.testing.expectEqual(@as(i32, 7), @typeInfo(Category).@"enum".fields.len);
 }

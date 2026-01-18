@@ -80,6 +80,27 @@ pub const InvertedIndex = struct {
         return self.index.getPtr(lower[0..keyword.len]);
     }
 
+    /// Fuzzy search for neuronas containing keywords similar to the input
+    pub fn fuzzySearch(self: *const InvertedIndex, keyword: []const u8, max_distance: usize) !std.StringHashMapUnmanaged(*const PostingList) {
+        var results = std.StringHashMapUnmanaged(*const PostingList){};
+        errdefer results.deinit(self.allocator);
+
+        var lower_buf: [256]u8 = undefined;
+        if (keyword.len > lower_buf.len) return results;
+        const lower_query = std.ascii.lowerString(&lower_buf, keyword);
+        const query = lower_query[0..keyword.len];
+
+        var it = self.index.iterator();
+        while (it.next()) |entry| {
+            const dist = try levenshteinDistance(self.allocator, query, entry.key_ptr.*);
+            if (dist <= max_distance) {
+                try results.put(self.allocator, entry.key_ptr.*, entry.value_ptr);
+            }
+        }
+
+        return results;
+    }
+
     /// Get the number of unique keywords indexed
     pub fn keywordCount(self: *const InvertedIndex) usize {
         return self.index.count();
@@ -122,6 +143,34 @@ pub fn calculateTermFrequency(text: []const u8, keyword: []const u8) f32 {
 
     if (total == 0) return 0.0;
     return @as(f32, @floatFromInt(count)) / @as(f32, @floatFromInt(total));
+}
+
+/// Calculate Levenshtein distance between two strings
+pub fn levenshteinDistance(allocator: Allocator, a: []const u8, b: []const u8) !usize {
+    const n = a.len;
+    const m = b.len;
+
+    if (n == 0) return m;
+    if (m == 0) return n;
+
+    // Standard iterative Levenshtein distance with Two-Row optimization
+    const v0 = try allocator.alloc(usize, m + 1);
+    defer allocator.free(v0);
+    const v1 = try allocator.alloc(usize, m + 1);
+    defer allocator.free(v1);
+
+    for (v0, 0..) |*v, i| v.* = i;
+
+    for (a, 0..) |char_a, i| {
+        v1[0] = i + 1;
+        for (b, 0..) |char_b, j| {
+            const cost: usize = if (char_a == char_b) 0 else 1;
+            v1[j + 1] = @min(v1[j] + 1, @min(v0[j + 1] + 1, v0[j] + cost));
+        }
+        @memcpy(v0, v1);
+    }
+
+    return v0[m];
 }
 
 test "InvertedIndex basic operations" {
@@ -171,4 +220,32 @@ test "calculateTermFrequency" {
     const tf = calculateTermFrequency(text, "async");
     try std.testing.expect(tf > 0.0);
     try std.testing.expect(tf < 1.0);
+}
+
+test "levenshteinDistance" {
+    const allocator = std.testing.allocator;
+    try std.testing.expectEqual(@as(usize, 0), try levenshteinDistance(allocator, "test", "test"));
+    try std.testing.expectEqual(@as(usize, 1), try levenshteinDistance(allocator, "test", "tent"));
+    try std.testing.expectEqual(@as(usize, 4), try levenshteinDistance(allocator, "test", "texting"));
+    // test -> text (1) -> texting (3 more) -> 4?
+    // let's re-eval: test vs tent is 1 (s -> n)
+    try std.testing.expectEqual(@as(usize, 1), try levenshteinDistance(allocator, "test", "tests"));
+    try std.testing.expectEqual(@as(usize, 1), try levenshteinDistance(allocator, "test", "est"));
+}
+
+test "InvertedIndex fuzzy search" {
+    const allocator = std.testing.allocator;
+    var index = InvertedIndex.init(allocator);
+    defer index.deinit();
+
+    try index.addKeyword("python", "id1", 1.0);
+    try index.addKeyword("cython", "id2", 1.0);
+    try index.addKeyword("java", "id3", 1.0);
+
+    var results = try index.fuzzySearch("pyton", 1);
+    defer results.deinit(allocator);
+
+    try std.testing.expectEqual(@as(usize, 1), results.count());
+    try std.testing.expect(results.contains("python"));
+    try std.testing.expect(!results.contains("cython"));
 }
