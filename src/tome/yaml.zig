@@ -144,6 +144,9 @@ pub const Parser = struct {
     tokenizer: Tokenizer,
     current: Token,
 
+    const MAX_DEPTH = 10;
+    const MAX_SIZE = 1024 * 1024; // 1MB
+
     pub fn init(allocator: std.mem.Allocator, source: []const u8) Parser {
         var tokenizer = Tokenizer.init(source);
         const current = tokenizer.next();
@@ -175,7 +178,8 @@ pub const Parser = struct {
         return error.UnexpectedToken;
     }
 
-    fn parseArray(self: *Parser) ![][]const u8 {
+    fn parseArray(self: *Parser, depth: usize) ![][]const u8 {
+        if (depth > MAX_DEPTH) return error.YamlDepthExceeded;
         var list = std.ArrayListUnmanaged([]const u8){};
         errdefer list.deinit(self.allocator);
 
@@ -186,8 +190,9 @@ pub const Parser = struct {
                 const val_token = try self.expect(.string);
                 try list.append(self.allocator, val_token.value);
             } else if (self.current.tag == .l_bracket) {
-                // Nested array - skip for now
-                _ = try self.parseArray();
+                // Nested array
+                const nested = try self.parseArray(depth + 1);
+                self.allocator.free(nested); // Just eat it for now
             } else {
                 self.advance();
             }
@@ -202,6 +207,7 @@ pub const Parser = struct {
     }
 
     pub fn parse(self: *Parser) !std.StringHashMap([]const u8) {
+        if (self.tokenizer.source.len > MAX_SIZE) return error.YamlSizeExceeded;
         var map = std.StringHashMap([]const u8).init(self.allocator);
         errdefer map.deinit();
 
@@ -215,11 +221,11 @@ pub const Parser = struct {
                 const val_token = try self.expect(.string);
                 try map.put(key_token.value, val_token.value);
             } else if (self.current.tag == .l_bracket) {
-                // Array value - for now, store as comma-separated string
+                // Array value
                 var array_list = std.ArrayListUnmanaged(u8){};
                 defer array_list.deinit(self.allocator);
 
-                const array = try self.parseArray();
+                const array = try self.parseArray(0);
                 for (array, 0..) |item, i| {
                     if (i > 0) try array_list.append(self.allocator, ',');
                     try array_list.appendSlice(self.allocator, item);

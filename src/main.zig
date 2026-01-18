@@ -18,7 +18,7 @@ pub fn main() !void {
     const allocator = gpa.allocator();
 
     std.debug.print("Syntlas - The Neurona System\n", .{});
-    std.debug.print("Phase 4: Tome System Demo\n\n", .{});
+    std.debug.print("Phase 5: Security Hardening Demo\n\n", .{});
 
     const cfg = try config_mod.manager.load(allocator);
     defer cfg.deinit(allocator);
@@ -182,4 +182,39 @@ pub fn main() !void {
     }
 
     std.debug.print("\n✓ Tome system operational\n", .{});
+
+    // Security Hardening Demo
+    std.debug.print("\n=== Security Hardening Demo ===\n", .{});
+
+    // Demo: Path Validation
+    const bad_path = "../../etc/passwd";
+    std.debug.print("Validating path: {s} -> ", .{bad_path});
+    const security_mod = @import("security/mod.zig");
+    security_mod.validator.validatePath(bad_path) catch |err| {
+        std.debug.print("REJECTED: {}\n", .{err});
+    };
+
+    // Demo: dangerous snippet detection
+    const bad_snippet = "```bash\nrm -rf /\n```";
+    std.debug.print("Scanning snippet for danger -> ", .{});
+    security_mod.validator.validateSnippet(bad_snippet) catch |err| {
+        std.debug.print("DANGER DETECTED: {}\n", .{err});
+    };
+
+    // Demo: Command blocklist
+    const blocked_cmd = "format C:";
+    std.debug.print("Checking command: {s} -> ", .{blocked_cmd});
+    if (security_mod.validator.isCommandBlocked(blocked_cmd)) {
+        std.debug.print("BLOCKED\n", .{});
+    }
+
+    // Demo: YAML Limits
+    const deep_yaml = "tags: [[[[[[[[[[[[depth]]]]]]]]]]]]";
+    std.debug.print("Parsing deep YAML -> ", .{});
+    var yaml_parser = @import("tome/yaml.zig").Parser.init(allocator, deep_yaml);
+    _ = yaml_parser.parse() catch |err| {
+        std.debug.print("LIMIT EXCEEDED: {}\n", .{err});
+    };
+
+    std.debug.print("\n✓ Security hardening foundations operational\n", .{});
 }

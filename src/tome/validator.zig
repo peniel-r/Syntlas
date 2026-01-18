@@ -2,6 +2,7 @@ const std = @import("std");
 const core = @import("../core/mod.zig");
 const parser = @import("parser.zig");
 const metadata = @import("metadata.zig");
+const security = @import("../security/mod.zig");
 
 pub const ValidationError = struct {
     file_path: []const u8,
@@ -113,6 +114,16 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
         if (entry.kind != .file) continue;
         if (!std.mem.endsWith(u8, entry.path, ".md")) continue;
 
+        // Security check: Validate path
+        security.validator.validatePath(entry.path) catch |err| {
+            try errors.append(.{
+                .file_path = try allocator.dupe(u8, entry.path),
+                .line = null,
+                .message = try std.fmt.allocPrint(allocator, "Security violation in path: {}", .{err}),
+            });
+            continue;
+        };
+
         const full_path = try std.fs.path.join(allocator, &.{ neuronas_path, entry.path });
         defer allocator.free(full_path);
 
@@ -132,6 +143,15 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
             continue;
         };
         defer neurona.deinit(allocator);
+
+        // Security check: Validate code snippets in content
+        security.validator.validateSnippet(content) catch |err| {
+            try errors.append(.{
+                .file_path = try allocator.dupe(u8, full_path),
+                .line = null,
+                .message = try std.fmt.allocPrint(allocator, "Security violation in content: {}", .{err}),
+            });
+        };
 
         // Check for duplicate IDs
         if (neurona_ids.contains(neurona.id)) {
