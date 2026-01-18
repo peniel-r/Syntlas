@@ -283,10 +283,11 @@ The real power of Syntlas comes from community-created tomes. See:
 
 ## Roadmap
 
-- [ ] Core search engine
-- [ ] Embedded tomes (C, C++, Python, Rust, Zig)
-- [ ] Tome installation system
-- [ ] JSON output for agents
+- [x] Core search engine (multi-index, 7-stage pipeline)
+- [x] Tome installation system (local, git, tar, http)
+- [x] Security hardening (path validation, command blocklist, trust levels)
+- [ ] Embedded tomes (C, C++, Python, Rust, Zig) - Phase 6
+- [ ] CLI & JSON output for agents - Phase 7
 - [ ] Vector search (semantic embeddings)
 - [ ] Interactive TUI mode
 - [ ] LSP integration

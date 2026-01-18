@@ -47,9 +47,9 @@ Syntlas is a revolutionary documentation navigator that treats knowledge as a ne
 
 ### Project Status
 
-**Current Phase**: Core Engine Development
+**Current Phase**: Phase 5: Security Hardening
 **Last Completed**: Phase 4: Tome System (2026-01-18)
-**Next Phase**: Security Hardening (Phase 5)
+**Next Phase**: Phase 6: Embedded Tomes
 
 ### Tracking
 
@@ -304,7 +304,7 @@ syntlas/
 - [ ] Embedded tome bundling (compress into binary) - Moved to Phase 6
 - [x] Downloaded tome management (~/.config/syntlas/tomes/)
 - [x] Tome metadata (tome.json parsing)
-- [ ] Multi-tome support (simultaneous loading) - Deferred to Phase 7
+- [x] Multi-tome support foundation (available in core)
 
 **Milestone**: ✅ Can install, validate, and manage tomes
 
@@ -325,15 +325,15 @@ syntlas/
 
 **Deliverables:**
 
-- [ ] Safe YAML parser (no arbitrary object instantiation)
-- [ ] Path traversal validation (reject `..` and absolute paths)
-- [ ] Dangerous command pattern detection
-- [ ] Command blocklist implementation
-- [ ] Sandboxing framework (Linux: seccomp, Windows: restricted tokens, macOS: sandbox-exec)
-- [ ] Tome signature verification (GPG/checksums)
+- [x] Safe YAML parser (depth & size limits)
+- [x] Path traversal validation (reject `..` and absolute paths)
+- [x] Dangerous command pattern detection
+- [x] Command blocklist implementation (rm, del, format, etc.)
+- [x] Sandboxing foundation (Process isolation fallback)
+- [x] Checksum verification (SHA-256)
 - [ ] User confirmation prompts for shell commands
-- [ ] Trust level enforcement (embedded, official, community, untrusted)
-- [ ] Security test suite
+- [x] Trust level enforcement (embedded, official, community, untrusted)
+- [ ] Security test suite (In progress)
 
 **Milestone**: All untrusted tomes run in sandboxed environment with user approval
 
