@@ -7,6 +7,7 @@ const inverted = @import("index/inverted.zig");
 const graph = @import("index/graph.zig");
 const metadata = @import("index/metadata.zig");
 const use_case = @import("index/use_case.zig");
+const tome = @import("tome/mod.zig");
 
 const Neurona = schema.Neurona;
 const Synapse = schema.Synapse;
@@ -17,7 +18,7 @@ pub fn main() !void {
     const allocator = gpa.allocator();
 
     std.debug.print("Syntlas - The Neurona System\n", .{});
-    std.debug.print("Phase 3: Search Algorithm Demo\n\n", .{});
+    std.debug.print("Phase 4: Tome System Demo\n\n", .{});
 
     const cfg = try config_mod.manager.load(allocator);
     defer cfg.deinit(allocator);
@@ -130,4 +131,55 @@ pub fn main() !void {
     }
 
     std.debug.print("\n✓ Index & Search engines operational\n", .{});
+
+    // Tome System Demo
+    std.debug.print("\n=== Tome System Demo ===\n", .{});
+
+    // Demo: Parse tome metadata
+    const sample_tome_json =
+        \\{
+        \\  "name": "python-tome",
+        \\  "version": "1.0.0",
+        \\  "author": "Syntlas Team",
+        \\  "license": "MIT",
+        \\  "description": "Python 3.12+ documentation tome",
+        \\  "languages": ["python"],
+        \\  "dependencies": [],
+        \\  "min_syntlas_version": "0.1.0"
+        \\}
+    ;
+
+    var tome_metadata = try tome.metadata.parseMetadata(allocator, sample_tome_json);
+    defer tome_metadata.deinit(allocator);
+
+    std.debug.print("Tome Metadata:\n", .{});
+    std.debug.print("  Name: {s}\n", .{tome_metadata.name});
+    std.debug.print("  Version: {s}\n", .{tome_metadata.version});
+    std.debug.print("  Author: {s}\n", .{tome_metadata.author});
+    std.debug.print("  License: {s}\n", .{tome_metadata.license});
+    std.debug.print("  Description: {s}\n", .{tome_metadata.description});
+    std.debug.print("  Languages: ", .{});
+    for (tome_metadata.languages, 0..) |lang, i| {
+        if (i > 0) std.debug.print(", ", .{});
+        std.debug.print("{s}", .{lang});
+    }
+    std.debug.print("\n", .{});
+
+    // Demo: List installed tomes
+    std.debug.print("\nListing installed tomes...\n", .{});
+    const installed_tomes = try tome.installer.listInstalled(allocator);
+    defer {
+        for (installed_tomes) |*t| t.deinit(allocator);
+        allocator.free(installed_tomes);
+    }
+
+    if (installed_tomes.len == 0) {
+        std.debug.print("  No tomes installed yet\n", .{});
+    } else {
+        for (installed_tomes) |t| {
+            std.debug.print("  - {s} v{s} by {s}\n", .{ t.name, t.version, t.author });
+        }
+    }
+
+    std.debug.print("\n✓ Tome system operational\n", .{});
 }
