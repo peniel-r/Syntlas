@@ -1,17 +1,17 @@
 ---
 id: "c.stdlib.time"
-title: "Time Functions (time, ctime, strftime)"
+title: "Time  (time, ctime, strftime)"
 category: stdlib
 difficulty: beginner
 tags: [c, time, ctime, strftime, gmtime, localtime]
 keywords: [time, time_t, tm, strftime, ctime, gmtime, localtime]
-use_cases: [logging, scheduling, timestamps]
+use_cases: [, scheduling, timestamps]
 prerequisites: []
 related: ["c.stdlib.stdio"]
 next_topics: ["c.stdlib.process"]
 ---
 
-# Time Functions
+# Time 
 
 ## time - Current Time
 
@@ -81,7 +81,7 @@ int main() {
 }
 ```
 
-## gmtime - UTC Time
+## gmtime - UTc.stdlib.time
 
 ```c
 #include <stdio.h>
@@ -96,7 +96,7 @@ int main() {
         return 1;
     }
 
-    printf("UTC time: %d/%d/%d %d:%d:%d\n",
+    printf("UTc.stdlib.time: %d/%d/%d %d:%d:%d\n",
            utc->tm_year + 1900,
            utc->tm_mon + 1,
            utc->tm_mday,

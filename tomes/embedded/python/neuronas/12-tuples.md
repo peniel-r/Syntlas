@@ -7,7 +7,7 @@ tags: [python, tuples, immutability, sequences]
 keywords: [tuple, namedtuple, unpacking, slicing]
 use_cases: [returning multiple values, fixed sequences, immutable data]
 prerequisites: ["python.basics.types"]
-related: ["python.datastructures.lists", "python.stdlib.typing"]
+related: ["python.datastructures.lists", "python.typing"]
 next_topics: ["python.datastructures.sets"]
 ---
 

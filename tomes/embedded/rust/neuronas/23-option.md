@@ -6,9 +6,9 @@ difficulty: beginner
 tags: [rust, option, null, safety]
 keywords: [Option, Some, None]
 use_cases: [optional values, null safety, default arguments]
-prerequisites: ["rust.enums", "rust.generics"]
-related: ["rust.result", "rust.match"]
-next_topics: ["rust.collections"]
+prerequisites: ["rust.patterns.enums", "rust.generics"]
+related: ["rust.result", "rust.patterns.match"]
+next_topics: ["rust.stdlib.collections"]
 ---
 
 # The Option Enum

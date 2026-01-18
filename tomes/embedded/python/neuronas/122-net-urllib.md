@@ -7,7 +7,7 @@ tags: [python, net, http, client]
 keywords: [urllib, request, urlopen]
 use_cases: [http requests, downloading files]
 prerequisites: ["py.io.bytes"]
-related: ["py.lib.json"]
+related: ["python.stdlib.json"]
 next_topics: []
 ---
 

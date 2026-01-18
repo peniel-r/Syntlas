@@ -7,7 +7,7 @@ tags: [rust, macros, derive, traits]
 keywords: [derive, Debug, Clone, Copy]
 use_cases: [boilerplate reduction, default implementations]
 prerequisites: ["rust.traits"]
-related: ["rust.macros"]
+related: ["rust.macros.declarative"]
 next_topics: []
 ---
 

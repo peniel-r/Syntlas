@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [cpp, templates, variadic, pack]
 keywords: [template, typename..., parameter pack]
 use_cases: [tuple implementation, type-safe printf]
-prerequisites: ["cpp.modern.templates"]
+prerequisites: ["cpp.basic.templates"]
 related: ["cpp.meta.fold"]
 next_topics: ["cpp.meta.fold"]
 ---

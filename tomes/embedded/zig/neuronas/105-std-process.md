@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [zig, stdlib, os, process]
 keywords: [args, exit, argsAlloc]
 use_cases: [cli args, termination]
-prerequisites: ["zig.memory.allocators"]
+prerequisites: ["zig.memory.management.allocators"]
 related: ["zig.std.env"]
 next_topics: ["zig.std.env"]
 ---

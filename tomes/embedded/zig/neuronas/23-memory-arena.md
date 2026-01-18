@@ -1,14 +1,14 @@
 ---
-id: "zig.memory.arena"
+id: "zig.memory.management.arena"
 title: "ArenaAllocator"
 category: memory
 difficulty: intermediate
 tags: [zig, memory, arena, performance]
 keywords: [ArenaAllocator, reset, deinit]
 use_cases: [batch allocation, short-lived tasks]
-prerequisites: ["zig.memory.allocators"]
-related: ["zig.memory.fixed-buffer"]
-next_topics: ["zig.memory.fixed-buffer"]
+prerequisites: ["zig.memory.management.allocators"]
+related: ["zig.memory.management.fixed-buffer"]
+next_topics: ["zig.memory.management.fixed-buffer"]
 ---
 
 # ArenaAllocator

@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [cpp, templates, traits, introspection]
 keywords: [type_traits, is_same, enable_if]
 use_cases: [conditional compilation, static assertions]
-prerequisites: ["cpp.modern.templates"]
+prerequisites: ["cpp.basic.templates"]
 related: ["cpp.meta.sfinae"]
 next_topics: ["cpp.meta.sfinae"]
 ---

@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [cpp, std, random, rng]
 keywords: [random_device, mt19937, uniform_int_distribution]
 use_cases: [simulations, games, crypto]
-prerequisites: ["cpp.basics.variables"]
+prerequisites: ["cpp.basic.variables"]
 related: ["cpp.util.chrono"]
 next_topics: []
 ---

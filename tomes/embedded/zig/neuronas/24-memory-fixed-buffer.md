@@ -1,13 +1,13 @@
 ---
-id: "zig.memory.fixed-buffer"
+id: "zig.memory.management.fixed-buffer"
 title: "FixedBufferAllocator"
 category: memory
 difficulty: intermediate
 tags: [zig, memory, stack, buffer]
 keywords: [FixedBufferAllocator, stack allocation]
 use_cases: [embedded, no-heap, deterministic]
-prerequisites: ["zig.memory.allocators"]
-related: ["zig.memory.page"]
+prerequisites: ["zig.memory.management.allocators"]
+related: ["zig.memory.management.page"]
 next_topics: []
 ---
 

@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [cpp, keywords, volatile, hardware]
 keywords: [volatile, optimization, side-effects]
 use_cases: [memory-mapped io, signal handling]
-prerequisites: ["cpp.basics.variables"]
+prerequisites: ["cpp.basic.variables"]
 related: ["cpp.threads.atomic"]
 next_topics: []
 ---

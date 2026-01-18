@@ -1,10 +1,10 @@
 ---
-id: 81-shared-libraries
+id: "c.build.shared"
 title: Shared Libraries
 category: system
 difficulty: advanced
 tags:
-  - shared-libraries
+  - 
   - so
   - dll
   - dynamic-linking
@@ -21,14 +21,14 @@ use_cases:
   - Code sharing
   - Memory efficiency
 prerequisites:
-  - compilation
-  - memory-management
-  - pointers
+  - 
+  - c.dynamic.alloc
+  - 
 related:
-  - build-systems
-  - file-operations
+  - 
+  - 
 next_topics:
-  - static-libraries
+  - 
 ---
 
 # Shared Libraries
@@ -160,7 +160,7 @@ int main(void) {
         return 1;
     }
 
-    // Get function pointers
+    // Get function 
     add_func add = (add_func)dlsym(handle, "add");
     multiply_func multiply = (multiply_func)dlsym(handle, "multiply");
 
@@ -170,7 +170,7 @@ int main(void) {
         return 1;
     }
 
-    // Use functions
+    // Use 
     printf("5 + 3 = %d\n", add(5, 3));
     printf("4 * 7 = %d\n", multiply(4, 7));
 
@@ -501,7 +501,7 @@ void load_library(const char *path) {
 ```bash
 # Maintain ABI compatibility
 # Never change exported function signatures
-# Add new functions instead
+# Add new  instead
 # Use symbol versioning for changes
 ```
 
@@ -575,4 +575,4 @@ Counter *counter_new(void) {
 // v2: struct { int a; int b; int c; };
 ```
 
-> **Note: Shared libraries require careful ABI management. Use versioning to maintain compatibility. Test with different library versions. Be aware of memory allocation issues across module boundaries. Document clearly which functions are part of the stable API.
+> **Note: Shared libraries require careful ABI management. Use versioning to maintain compatibility. Test with different library versions. Be aware of memory allocation issues across module boundaries. Document clearly which  are part of the stable API.

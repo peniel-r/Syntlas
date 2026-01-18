@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [cpp, std, math, templates]
 keywords: [ratio, compile-time fractions]
 use_cases: [units, chrono]
-prerequisites: ["cpp.modern.templates"]
+prerequisites: ["cpp.basic.templates"]
 related: ["cpp.util.chrono"]
 next_topics: []
 ---

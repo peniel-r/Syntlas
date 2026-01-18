@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [c, stdlib, system, popen, subprocess, shell]
 keywords: [system, popen, pclose, subprocess, shell command]
 use_cases: [automation, system integration, external tools]
-prerequisites: ["c.io", "c.strings"]
+prerequisites: ["c.stdlib.stdio", "c.stdlib.string"]
 related: ["c.stdlib.getenv"]
 next_topics: ["c.stdlib.process"]
 ---
@@ -33,7 +33,7 @@ int main() {
 }
 ```
 
-## system - String Construction
+## system - String Construc.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -389,9 +389,9 @@ bool check_internet(void) {
 
 int main() {
     if (check_internet()) {
-        printf("Internet connection available\n");
+        printf("Internet connec.stdlib.stdion available\n");
     } else {
-        printf("No internet connection\n");
+        printf("No internet connec.stdlib.stdion\n");
     }
 
     return 0;

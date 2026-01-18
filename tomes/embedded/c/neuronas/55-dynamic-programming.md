@@ -1,9 +1,9 @@
 ---
 id: "c.algorithms.dynamic"
 title: "Dynamic Programming"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: advanced
-tags: [c, algorithms, dynamic, dp, memoization]
+tags: [c, c.algorithms.sorting, dynamic, dp, memoization]
 keywords: [dynamic programming, dp, memoization, optimal substructure]
 use_cases: [optimization, combinatorial problems, pathfinding]
 prerequisites: ["c.algorithms.search"]

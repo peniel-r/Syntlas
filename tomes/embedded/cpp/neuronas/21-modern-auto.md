@@ -13,7 +13,7 @@ keywords: [auto, decltype, type-deduction, template]
 prerequisites: ["cpp.basic.variables"]
 next: ["cpp.modern.lambdas", "cpp.modern.ranges"]
 related:
-  - id: "cpp.modern.decltype"
+  - id: "cpp.meta.decltype"
     type: complement
     weight: 85
 version:

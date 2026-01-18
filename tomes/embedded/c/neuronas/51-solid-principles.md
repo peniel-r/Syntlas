@@ -8,7 +8,7 @@ keywords: [solid, single responsibility, open-closed, liskov]
 use_cases: [software design, architecture, maintainability]
 prerequisites: ["c.patterns.structs"]
 related: ["c.patterns.callbacks"]
-next_topics: ["c.patterns.mvc"]
+next_topics: ["c.patterns.solid"]
 ---
 
 # SOLID Principles

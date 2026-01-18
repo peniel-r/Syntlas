@@ -114,7 +114,7 @@ int main() {
 }
 ```
 
-## Integer Overflow Detection
+## Integer Overflow Detec.stdlib.stdion
 
 ```c
 #include <stdint.h>
@@ -160,7 +160,7 @@ typedef ptrdiff_t ptrdiff;  // Pointer difference
 typedef intptr_t intptr;  // Signed pointer size
 ```
 
-## Type Conversion Macros
+## Type Conversion c.preprocessor.macros
 
 ```c
 #include <stdint.h>

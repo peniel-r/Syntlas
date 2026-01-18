@@ -16,7 +16,7 @@ related:
   - id: "cpp.basic.references"
     type: similar
     weight: 90
-  - id: "cpp.memory.dynamic-allocation"
+  - id: "cpp.memory.new-delete"
     type: complement
     weight: 85
 version:

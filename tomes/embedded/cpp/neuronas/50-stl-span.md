@@ -7,7 +7,7 @@ tags: [cpp, stl, span, view]
 keywords: [span, view, contiguous memory]
 use_cases: [array views, avoiding copies, buffer manipulation]
 prerequisites: ["cpp.stl.vector", "cpp.stl.array"]
-related: ["cpp.stl.string_view"]
+related: ["cpp.stl.string-view"]
 next_topics: []
 ---
 

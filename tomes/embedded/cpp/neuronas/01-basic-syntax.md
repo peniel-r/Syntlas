@@ -13,7 +13,7 @@ keywords: [main, include, namespace, std, cout]
 prerequisites: []
 next: ["cpp.basic.variables", "cpp.basic.functions"]
 related:
-  - id: "cpp.stl.iostream"
+  - id: "cpp.io.streams"
     type: complement
     weight: 90
 version:

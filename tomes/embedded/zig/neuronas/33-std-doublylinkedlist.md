@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [zig, stdlib, list, linked]
 keywords: [DoublyLinkedList, Node, append, pop]
 use_cases: [insertion/deletion in middle]
-prerequisites: ["zig.memory.allocators"]
+prerequisites: ["zig.memory.management.allocators"]
 related: ["zig.std.arraylist"]
 next_topics: []
 ---

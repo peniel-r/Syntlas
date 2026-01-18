@@ -1,6 +1,6 @@
 ---
 id: "c.preprocessor.conditionals"
-title: "Conditional Compilation (#ifdef, #ifndef, #if, #else, #elif)"
+title: "Conditional  (#ifdef, #ifndef, #if, #else, #elif)"
 category: preprocessor
 difficulty: intermediate
 tags: [c, preprocessor, ifdef, ifndef, conditional]
@@ -8,10 +8,10 @@ keywords: [ifdef, ifndef, if, else, elif, defined]
 use_cases: [platform code, debug builds, feature toggles]
 prerequisites: []
 related: ["c.preprocessor.macros"]
-next_topics: ["c.preprocessor.include"]
+next_topics: ["c.preprocessor"]
 ---
 
-# Conditional Compilation
+# Conditional 
 
 ## #ifdef / #ifndef
 
@@ -55,7 +55,7 @@ int main() {
 }
 ```
 
-## Platform Detection
+## Platform Detec.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -122,7 +122,7 @@ int main() {
 }
 ```
 
-## Compiler Detection
+## Compiler Detec.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -142,12 +142,12 @@ int main() {
 }
 ```
 
-## Configuration Selection
+## Configuration Selec.stdlib.stdion
 
 ```c
 #include <stdio.h>
 
-#define CONFIG_PRODUCTION
+#define CONFIG_PRODUc.stdlib.stdioN
 
 int main() {
     #if defined(CONFIG_DEVELOPMENT)
@@ -156,8 +156,8 @@ int main() {
     #elif defined(CONFIG_TESTING)
         printf("Testing mode\n");
         #define LOG_LEVEL 2
-    #elif defined(CONFIG_PRODUCTION)
-        printf("Production mode\n");
+    #elif defined(CONFIG_PRODUc.stdlib.stdioN)
+        printf("Produc.stdlib.stdion mode\n");
         #define LOG_LEVEL 1
     #else
         printf("Unknown mode\n");
@@ -170,7 +170,7 @@ int main() {
 }
 ```
 
-## Architecture Detection
+## Architecture Detec.stdlib.stdion
 
 ```c
 #include <stdio.h>

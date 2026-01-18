@@ -317,7 +317,7 @@ int main() {
 #include <sys/wait.h>
 
 void print_hierarchy(int depth) {
-    printf("%*sPID %d, PPID %d\n", depth * 2, "", getpid(), getppid());
+    printf("%*sPID %d, PPID %d\n", depth * 2, ", getpid(), getppid());
 }
 
 int main() {
@@ -444,7 +444,7 @@ int main() {
 }
 ```
 
-## exec with I/O Redirection
+## exec with I/O Redirectionn
 
 ```c
 #include <stdio.h>

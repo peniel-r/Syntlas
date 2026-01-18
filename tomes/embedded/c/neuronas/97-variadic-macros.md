@@ -1,37 +1,37 @@
 ---
-id: 97-variadic-macros
-title: Variadic Macros
+id: "c.preprocessor.variadic"
+title: Variadic c.preprocessor.macros
 category: preprocessor
 difficulty: intermediate
 tags:
-  - macros
+  - c.preprocessor.macros
   - variadic
-  - preprocessor
+  - c.preprocessor
 keywords:
-  - variadic macros
-  - preprocessor
+  - variadic c.preprocessor.macros
+  - c.preprocessor
   - __VA_ARGS__
-  - macros
+  - c.preprocessor.macros
 use_cases:
-  - Logging
+  - 
   - Debugging
-  - Generic macros
+  - Generic c.preprocessor.macros
   - Code generation
 prerequisites:
-  - preprocessor
-  - macros
+  - c.preprocessor
+  - c.preprocessor.macros
 related:
-  - logging
-  - macros
+  - 
+  - c.preprocessor.macros
 next_topics:
-  - x-macros
+  - "c.preprocessor.macros"
 ---
 
-# Variadic Macros
+# Variadic c.preprocessor.macros
 
-Variadic macros accept variable number of arguments using the preprocessor.
+Variadic c.preprocessor.macros accept variable number of arguments using the preprocessor.
 
-## Basic Variadic Macros
+## Basic Variadic c.preprocessor.macros
 
 ```c
 #include <stdio.h>
@@ -49,7 +49,7 @@ int main(void) {
 
     LOG_INFO("Application started\n");
     LOG_INFO("Processing %d items\n", 100);
-    LOG_ERROR("Connection failed: %s\n", "timeout");
+    LOG_ERROR("Connec.stdlib.stdion failed: %s\n", "timeout");
 
     return 0;
 }
@@ -77,13 +77,13 @@ int main(void) {
 }
 ```
 
-## Assert Macro
+## c.stdlib.assert Macro
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
 
-// Custom assert macro
+// Custom c.stdlib.assert macro
 #define ASSERT(condition, ...) \
     do { \
         if (!(condition)) { \
@@ -188,7 +188,7 @@ int main(void) {
 ```c
 #include <stdio.h>
 
-// Choose between two macros
+// Choose between two c.preprocessor.macros
 #define CHOOSE_CHOOSER(a4, a3, a2, a1, chooser, ...) chooser
 #define CHOOSE_HELPER(chosen) CHOOSE_##chosen
 #define CHOOSE_ARG4(f, ...) CHOOSE_HELPER(CHOOSE_CHOOSER(__VA_ARGS__, f, f, f, f, a3, a2, a1))
@@ -266,7 +266,7 @@ int main(void) {
 
 ## Best Practices
 
-### Use do-while(0) for Multi-line Macros
+### Use do-while(0) for Multi-line c.preprocessor.macros
 
 ```c
 // GOOD - Safe for if statements
@@ -341,4 +341,4 @@ int result = MULTIPLY(x + y, z);  // x + y * z
 #define MULTIPLY(a, b) ((a) * (b))
 ```
 
-> **Note: Variadic macros are powerful but can be error-prone. Always use parentheses around macro arguments. Use do-while(0) for multi-line macros. Be aware of multiple evaluation issues.
+> **Note: Variadic c.preprocessor.macros are powerful but can be error-prone. Always use parentheses around macro arguments. Use do-while(0) for multi-line macros. Be aware of multiple evaluation issues.

@@ -7,7 +7,7 @@ tags: [zig, patterns, interface, vtable]
 keywords: [vtable, tagged union]
 use_cases: [polymorphism]
 prerequisites: ["zig.basics.pointers"]
-related: ["zig.basics.structs"]
+related: ["zig.types.structs"]
 next_topics: []
 ---
 

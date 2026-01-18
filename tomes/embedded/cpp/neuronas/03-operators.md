@@ -13,7 +13,7 @@ keywords: [arithmetic, logical, comparison, bitwise]
 prerequisites: ["cpp.basic.variables"]
 next: ["cpp.basic.controlflow", "cpp.modern.lambdas"]
 related:
-  - id: "cpp.basic.overloading"
+  - id: "cpp.oo.classes"
     type: complement
     weight: 75
 version:
@@ -124,4 +124,4 @@ int result = 2 + 3 * 4;    // 14
 ## See Also
 
 - [Control Flow](cpp.basic.controlflow) - Using operators in conditionals
-- [Operator Overloading](cpp.basic.overloading) - Custom operators for types
+- [Operator Overloading](cpp.oo.classes) - Custom operators for types

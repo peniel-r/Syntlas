@@ -1,17 +1,17 @@
 ---
 id: "c.stdlib.string.advanced"
-title: "Advanced String Functions (strtok, strspn, strcspn)"
+title: "Advanced String  (strtok, strspn, strcspn)"
 category: stdlib
 difficulty: intermediate
 tags: [c, string, parsing, tokenization, pattern matching]
 keywords: [strtok, strtok_r, strspn, strcspn, strpbrk, strstr]
 use_cases: [parsing, tokenization, pattern matching]
-prerequisites: ["c.strings"]
+prerequisites: ["c.stdlib.string"]
 related: ["c.stdlib.string"]
-next_topics: ["c.io"]
+next_topics: ["c.stdlib.stdio"]
 ---
 
-# Advanced String Functions
+# Advanced String 
 
 ## strtok - String Tokenization
 

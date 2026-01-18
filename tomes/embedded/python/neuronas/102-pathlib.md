@@ -7,7 +7,7 @@ tags: [python, pathlib, file-system, paths]
 keywords: [Path, file operations, directory traversal]
 use_cases: [file handling, path manipulation, cross-platform code]
 prerequisites: ["python.basics.strings"]
-related: ["python.stdlib.io"]
+related: ["py.io.files"]
 next_topics: []
 ---
 

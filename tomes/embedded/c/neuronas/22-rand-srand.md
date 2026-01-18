@@ -7,7 +7,7 @@ tags: [c, stdlib, rand, srand, random, seeding]
 keywords: [rand, srand, random, seed, pseudo-random]
 use_cases: [simulations, games, testing, cryptography]
 prerequisites: ["c.stdlib.atoi"]
-related: ["c.time"]
+related: ["c.stdlib.time"]
 next_topics: ["c.stdlib.qsort"]
 ---
 
@@ -137,7 +137,7 @@ int main() {
 }
 ```
 
-## Random Selection
+## Random Selec.stdlib.stdion
 
 ```c
 #include <stdio.h>

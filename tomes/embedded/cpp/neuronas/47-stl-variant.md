@@ -8,7 +8,7 @@ keywords: [variant, visit, get_if, monostate]
 use_cases: [type-safe union, error handling, state machines]
 prerequisites: ["cpp.stl.optional"]
 related: ["cpp.stl.any", "cpp.stl.optional"]
-next_topics: ["cpp.stl.visit"]
+next_topics: ["cpp.stl.variant"]
 ---
 
 # std::variant

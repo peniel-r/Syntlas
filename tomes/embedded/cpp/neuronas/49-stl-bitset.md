@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [cpp, stl, bitset, optimization]
 keywords: [bitset, bit manipulation, flags]
 use_cases: [flags, bit masks, compact storage]
-prerequisites: ["cpp.basics.operators"]
+prerequisites: ["cpp.basic.operators"]
 related: ["cpp.stl.vector"]
 next_topics: []
 ---

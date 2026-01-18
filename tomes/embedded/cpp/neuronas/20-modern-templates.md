@@ -16,7 +16,7 @@ related:
   - id: "cpp.modern.concepts"
     type: complement
     weight: 90
-  - id: "cpp.basic.type-inference"
+  - id: "cpp.modern.type-inference"
     type: complement
     weight: 80
 version:

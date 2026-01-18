@@ -6,8 +6,8 @@ difficulty: expert
 tags: [cpp, optimization, string, memory]
 keywords: [SSO, small string optimization, allocation]
 use_cases: [performance tuning]
-prerequisites: ["cpp.stl.string"]
-related: ["cpp.stl.string"]
+prerequisites: ["cpp.basic.strings"]
+related: ["cpp.basic.strings"]
 next_topics: []
 ---
 

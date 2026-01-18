@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, async, asyncio, tasks]
 keywords: [create_task, Task, await]
 use_cases: [concurrent execution, background jobs]
-prerequisites: ["py.async.basics"]
+prerequisites: ["python.async.basics"]
 related: ["py.async.gather"]
 next_topics: ["py.async.gather"]
 ---

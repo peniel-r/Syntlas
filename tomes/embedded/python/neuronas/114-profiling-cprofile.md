@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, profiling, performance]
 keywords: [cProfile, profile, run]
 use_cases: [optimization, bottleneck detection]
-prerequisites: ["py.basics.functions"]
+prerequisites: ["python.functions.def"]
 related: ["py.lib.time"]
 next_topics: []
 ---

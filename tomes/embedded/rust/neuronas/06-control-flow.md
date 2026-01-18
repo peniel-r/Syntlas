@@ -7,7 +7,7 @@ tags: [rust, control flow, if, loops]
 keywords: [if, else, loop, while, for]
 use_cases: [logic, iteration, branching]
 prerequisites: ["rust.functions"]
-related: ["rust.match", "rust.iterators"]
+related: ["rust.patterns.match", "rust.iterators"]
 next_topics: ["rust.ownership"]
 ---
 

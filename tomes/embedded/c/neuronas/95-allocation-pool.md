@@ -1,7 +1,7 @@
 ---
-id: 95-allocation-pool
+id: "c.dynamic.pool"
 title: Memory Allocation Pool
-category: memory-management
+category: c.dynamic.alloc
 difficulty: advanced
 tags:
   - memory-pool
@@ -18,14 +18,14 @@ use_cases:
   - Embedded systems
   - Game development
 prerequisites:
-  - memory-management
-  - pointers
-  - dynamic-alloc
+  - c.dynamic.alloc
+  - 
+  - c.dynamic.alloc
 related:
-  - memory-bestpractices
-  - dynamic-alloc
+  - 
+  - c.dynamic.alloc
 next_topics:
-  - garbage-collection
+  - c.dynamic.alloc
 ---
 
 # Memory Allocation Pool

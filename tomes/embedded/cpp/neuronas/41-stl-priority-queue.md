@@ -11,12 +11,12 @@ category: stdlib
 difficulty: intermediate
 keywords: [priority-queue, heap, adapter, container]
 prerequisites: ["cpp.stl.vector"]
-next: ["cpp.stl.heap", "cpp.stl.queue"]
+next: ["cpp.stl.priority-queue", "cpp.stl.queue"]
 related:
   - id: "cpp.stl.queue"
     type: similar
     weight: 70
-  - id: "cpp.stl.heap"
+  - id: "cpp.stl.priority-queue"
     type: complement
     weight: 80
 version:
@@ -102,4 +102,4 @@ std::priority_queue<Person, std::vector<Person>, PersonCompare> pq;
 ## See Also
 
 - [std::queue](cpp.stl.queue) - FIFO adapter
-- [std::make_heap](cpp.stl.heap) - Heap algorithms
+- [std::make_heap](cpp.stl.priority-queue) - Heap algorithms

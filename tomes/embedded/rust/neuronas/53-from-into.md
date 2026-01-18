@@ -7,8 +7,8 @@ tags: [rust, traits, conversion]
 keywords: [From, Into, type conversion]
 use_cases: [type conversion, constructors]
 prerequisites: ["rust.traits"]
-related: ["rust.traits.try-from"]
-next_topics: ["rust.traits.try-from"]
+related: ["rust.traits.from-into"]
+next_topics: ["rust.traits.from-into"]
 ---
 
 # From and Into

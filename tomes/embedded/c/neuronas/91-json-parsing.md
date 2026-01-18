@@ -1,7 +1,7 @@
 ---
-id: 91-json-parsing
+id: "c.cli.json"
 title: JSON Parsing
-category: algorithms
+category: c.algorithms.sorting
 difficulty: advanced
 tags:
   - json
@@ -18,14 +18,14 @@ use_cases:
   - API communication
   - Data serialization
 prerequisites:
-  - strings
-  - datastructures
-  - memory-management
+  - c.stdlib.string
+  - c.patterns.datastructures
+  - c.dynamic.alloc
 related:
-  - string-algorithms
-  - file-operations
+  - c.algorithms.string
+  - 
 next_topics:
-  - xml-parsing
+  - c.cli.json
 ---
 
 # JSON Parsing
@@ -293,7 +293,7 @@ void json_print(JSONValue *value, int indent) {
             printf("%g", value->number_val);
             break;
         case JSON_STRING:
-            printf("\"%s\"", value->string_val);
+            printf("\"%s\", value->string_val);
             break;
         case JSON_ARRAY:
             printf("[");
@@ -308,14 +308,14 @@ void json_print(JSONValue *value, int indent) {
         case JSON_OBJECT:
             printf("{");
             for (int i = 0; i < value->object_val.count; i++) {
-                printf("\n%*s", indent + 2, "");
+                printf("\n%*s", indent + 2, ");
                 printf("\"%s\": ", value->object_val.keys[i]);
                 json_print(&value->object_val.values[i], indent + 2);
                 if (i < value->object_val.count - 1) {
                     printf(",");
                 }
             }
-            printf("\n%*s}", indent, "");
+            printf("\n%*s}", indent, ");
             break;
     }
 }

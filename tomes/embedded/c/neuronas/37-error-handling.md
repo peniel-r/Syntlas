@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [c, error, errno, perror, strerror, exceptions]
 keywords: [errno, perror, strerror, error handling]
 use_cases: [file operations, system calls, error reporting]
-prerequisites: ["c.io"]
+prerequisites: ["c.stdlib.stdio"]
 related: ["c.stdlib.exit"]
 next_topics: ["c.stdlib.signal"]
 ---

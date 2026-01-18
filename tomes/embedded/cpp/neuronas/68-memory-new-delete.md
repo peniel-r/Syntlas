@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [cpp, memory, heap, allocation]
 keywords: [new, delete, new[], delete[]]
 use_cases: [manual memory management (legacy)]
-prerequisites: ["cpp.basics.pointers"]
+prerequisites: ["cpp.basic.pointers"]
 related: ["cpp.memory.smart-pointers"]
 next_topics: ["cpp.memory.smart-pointers"]
 ---

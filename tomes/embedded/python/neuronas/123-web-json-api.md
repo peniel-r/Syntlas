@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, web, json, api]
 keywords: [json, urllib, requests]
 use_cases: [integrations, data fetching]
-prerequisites: ["py.lib.json", "py.net.urllib"]
+prerequisites: ["python.stdlib.json", "py.net.urllib"]
 related: ["py.net.urllib"]
 next_topics: []
 ---

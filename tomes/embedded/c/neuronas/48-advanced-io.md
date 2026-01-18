@@ -1,12 +1,12 @@
 ---
-id: "c.io.advanced"
+id: "c.stdlib.stdio.advanced"
 title: "Advanced File I/O"
 category: io
 difficulty: intermediate
 tags: [c, io, file, advanced, seeking]
 keywords: [fseek, ftell, rewind, fflush]
 use_cases: [file processing, random access, binary files]
-prerequisites: ["c.io"]
+prerequisites: ["c.stdlib.stdio"]
 related: ["c.stdlib.system"]
 next_topics: ["c.stdlib.process"]
 ---

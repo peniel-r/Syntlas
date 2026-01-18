@@ -1,19 +1,19 @@
 ---
 id: "c.algorithms.greedy"
 title: "Greedy Algorithms"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: intermediate
-tags: [c, algorithms, greedy, optimization]
+tags: [c, c.algorithms.sorting, greedy, optimization]
 keywords: [greedy, algorithm, optimisation, scheduling]
 use_cases: [resource allocation, scheduling, pathfinding]
-prerequisites: ["c.algorithms.sort"]
+prerequisites: ["c.algorithms.sorting"]
 related: ["c.algorithms.dynamic"]
 next_topics: ["c.algorithms.hash"]
 ---
 
-# Greedy Algorithms
+# Greedy c.algorithms.sorting
 
-## Activity Selection
+## Activity Selec.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -28,7 +28,7 @@ int compare_finish(const void* a, const void* b) {
     return ((Activity*)a)->finish - ((Activity*)b)->finish;
 }
 
-void activity_selection(Activity* activities, int n) {
+void activity_selec.stdlib.stdion(Activity* activities, int n) {
     qsort(activities, n, sizeof(Activity), compare_finish);
 
     printf("Selected activities:\n");
@@ -51,7 +51,7 @@ int main() {
     };
     int n = sizeof(activities) / sizeof(activities[0]);
 
-    activity_selection(activities, n);
+    activity_selec.stdlib.stdion(activities, n);
 
     return 0;
 }
@@ -518,4 +518,4 @@ int main() {
 }
 ```
 
-> **Note**: Greedy algorithms make locally optimal choices. They don't always find global optimal but are often close and O(n log n).
+> **Note**: Greedy c.algorithms.sorting make locally optimal choices. They don't always find global optimal but are often close and O(n log n).

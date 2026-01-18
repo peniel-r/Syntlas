@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, stdlib, os, system]
 keywords: [os, environ, getcwd, mkdir]
 use_cases: [file management, environment variables]
-prerequisites: ["py.basics.variables"]
+prerequisites: ["python.basics.variables"]
 related: ["py.lib.sys", "py.lib.shutil"]
 next_topics: ["py.lib.sys"]
 ---

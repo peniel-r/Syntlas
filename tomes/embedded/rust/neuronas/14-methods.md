@@ -8,7 +8,7 @@ keywords: [impl, self, associated functions]
 use_cases: [encapsulation, behavior, object-oriented patterns]
 prerequisites: ["rust.structs"]
 related: ["rust.traits"]
-next_topics: ["rust.enums"]
+next_topics: ["rust.patterns.enums"]
 ---
 
 # Methods

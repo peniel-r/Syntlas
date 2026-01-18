@@ -11,7 +11,7 @@ category: stdlib
 difficulty: intermediate
 keywords: [iterator, begin, end, const-iterator]
 prerequisites: ["cpp.stl.vector"]
-next: ["cpp.stl.algorithm", "cpp.stl.lambda"]
+next: ["cpp.stl.algorithm", "cpp.modern.lambdas"]
 related:
   - id: "cpp.stl.algorithm"
     type: complement

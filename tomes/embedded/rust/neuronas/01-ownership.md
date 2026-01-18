@@ -7,7 +7,7 @@ tags: [rust, ownership, borrowing, lifetime]
 keywords: [ownership, borrow, mutable borrow, lifetime, move]
 use_cases: [memory safety, reference management, preventing data races]
 prerequisites: []
-related: ["rust.lifetime", "rust.borrowing"]
+related: ["rust.lifetime", "rust.intro"]
 next_topics: ["rust.types"]
 ---
 

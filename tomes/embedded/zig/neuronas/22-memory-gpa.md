@@ -1,14 +1,14 @@
 ---
-id: "zig.memory.gpa"
+id: "zig.memory.management.gpa"
 title: "GeneralPurposeAllocator"
 category: memory
 difficulty: intermediate
 tags: [zig, memory, gpa, debug]
 keywords: [GeneralPurposeAllocator, leak check]
 use_cases: [general usage, debug builds]
-prerequisites: ["zig.memory.allocators"]
-related: ["zig.memory.arena"]
-next_topics: ["zig.memory.arena"]
+prerequisites: ["zig.memory.management.allocators"]
+related: ["zig.memory.management.arena"]
+next_topics: ["zig.memory.management.arena"]
 ---
 
 # GeneralPurposeAllocator (GPA)

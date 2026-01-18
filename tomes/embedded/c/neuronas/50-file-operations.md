@@ -1,5 +1,5 @@
 ---
-id: "c.io.file-operations"
+id: "c.stdlib.stdio.file-operations"
 title: "File Operations Basics"
 category: io
 difficulty: beginner
@@ -7,7 +7,7 @@ tags: [c, io, file, fopen, fclose]
 keywords: [fopen, fclose, fread, fwrite, fprintf]
 use_cases: [file processing, data storage, configuration]
 prerequisites: []
-related: ["c.io.advanced"]
+related: ["c.stdlib.stdio.advanced"]
 next_topics: ["c.stdlib.string"]
 ---
 

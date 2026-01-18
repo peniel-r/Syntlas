@@ -1,6 +1,6 @@
 ---
-id: 69-exit-termination
-title: Exit and Termination Functions
+id: "c.stdlib.exit_advanced"
+title: Exit and Termination 
 category: stdlib
 difficulty: intermediate
 tags:
@@ -12,7 +12,7 @@ tags:
 keywords:
   - program termination
   - exit handlers
-  - cleanup functions
+  - cleanup 
   - abort
   - atexit
 use_cases:
@@ -21,20 +21,20 @@ use_cases:
   - Emergency program termination
   - Running cleanup code on exit
 prerequisites:
-  - basic C knowledge
-  - functions
+  - c.functions
+  - 
 related:
-  - signal-handling
-  - memory-bestpractices
+  - 
+  - 
 next_topics:
-  - command-line-parsing
+  - c.cli.parsing
 ---
 
-# Exit and Termination Functions
+# Exit and Termination 
 
-C provides multiple functions for terminating a program with different behaviors and cleanup options.
+C provides multiple  for terminating a program with different behaviors and cleanup options.
 
-## Standard Exit Functions
+## Standard Exit 
 
 ### exit() - Normal Program Termination
 
@@ -52,7 +52,7 @@ int main(void) {
 
     printf("Program running...\n");
 
-    // Normal exit (calls atexit functions, flushes buffers)
+    // Normal exit (calls atexit , flushes buffers)
     // EXIT_SUCCESS (0) or EXIT_FAILURE (1)
     exit(EXIT_SUCCESS);
 }
@@ -104,7 +104,7 @@ int main(void) {
 
 ## Exit Handlers
 
-### atexit() - Register Cleanup Functions
+### atexit() - Register Cleanup 
 
 ```c
 #include <stdlib.h>
@@ -238,7 +238,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-## Comparison of Exit Functions
+## Comparison of Exit 
 
 | Function | Cleanup | Buffer Flush | Handlers | Use Case |
 |----------|---------|--------------|----------|----------|
@@ -265,7 +265,7 @@ if (error_occurred) {
 }
 ```
 
-### Register Cleanup Functions Early
+### Register Cleanup  Early
 
 ```c
 // GOOD - Register atexit early

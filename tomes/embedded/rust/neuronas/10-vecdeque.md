@@ -1,13 +1,13 @@
 ---
-id: "rust.collections.vecdeque"
+id: "rust.stdlib.collectionsdeque"
 title: "VecDeque"
 category: collections
 difficulty: intermediate
 tags: [rust, collections, queue, stack, deque]
 keywords: [VecDeque, push_front, pop_front, ring buffer]
 use_cases: [queues, double-ended queues, ring buffers]
-prerequisites: ["rust.collections"]
-related: ["rust.collections.vec"]
+prerequisites: ["rust.stdlib.collections"]
+related: ["rust.stdlib.collections"]
 next_topics: []
 ---
 

@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, oop, enum, constants]
 keywords: [Enum, auto, IntEnum]
 use_cases: [constants, state machines, options]
-prerequisites: ["py.oop.classes"]
-related: ["py.oop.classes"]
+prerequisites: ["python.classes"]
+related: ["python.classes"]
 next_topics: []
 ---
 

@@ -3,17 +3,17 @@ id: "c.functions"
 title: "Functions and Control Flow"
 category: language
 difficulty: intermediate
-tags: [c, functions, return, parameters, pointers, control-flow]
-keywords: [function, return, void, pointers, structs, typedef]
+tags: [c, , return, parameters, , control-flow]
+keywords: [function, return, void, , , typedef]
 use_cases: [code organization, parameter passing, recursion, callbacks]
 prerequisites: []
 related: ["c.pointers"]
 next_topics: ["c.stdlib.io"]
 ---
 
-# Functions and Control Flow
+#  and Control Flow
 
-C provides functions for code organization and control flow.
+C provides  for code organization and control flow.
 
 ## Function Declaration
 
@@ -65,7 +65,7 @@ void process_array(int arr[], size_t size) {
 }
 ```
 
-## Structs
+## 
 
 ```c
 #include <stdio.h>
@@ -135,7 +135,7 @@ int main() {
 }
 ```
 
-## Static Functions
+## Static 
 
 ```c
 #include <stdio.h>
@@ -149,7 +149,7 @@ void increment_counter(void) {
 }
 ```
 
-## Function Pointers
+## Function 
 
 ```c
 #include <stdio.h>
@@ -162,14 +162,14 @@ int apply(BinaryOp op, int a, int b) {
 }
 
 int main() {
-    // Array of function pointers
+    // Array of function 
     BinaryOp ops[] = {
         // Define add function
         // Define multiply function
     };
     
-    // In C99+, compound literals for functions
-    // Note: In older C, need separate functions
+    // In C99+, compound literals for 
+    // Note: In older C, need separate 
     
     int result = apply(ops[0], 5, 3);  // Assuming ops[0] is add
     
@@ -218,7 +218,7 @@ int main() {
 }
 ```
 
-## Loops
+## c.controlflow
 
 ```c
 #include <stdio.h>
@@ -250,7 +250,7 @@ int main() {
     } while (k < 10);
     printf("Do-while loop sum: %d\n", sum);
     
-    // Nested loops
+    // Nested c.controlflow
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             printf("i=%d, j=%d\n", i, j);
@@ -365,7 +365,7 @@ int main() {
 }
 ```
 
-### Variadic Functions
+### Variadic 
 
 ```c
 #include <stdarg.h>

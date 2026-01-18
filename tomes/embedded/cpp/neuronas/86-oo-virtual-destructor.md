@@ -1,5 +1,5 @@
 ---
-id: "cpp.oo.virtual-destructor"
+id: "cpp.oo.polymorphism-destructor"
 title: "Virtual Destructor"
 category: oop
 difficulty: intermediate

@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [python, stdlib, statistics, mean]
 keywords: [mean, median, mode, stdev]
 use_cases: [data analysis]
-prerequisites: ["py.basics.lists"]
+prerequisites: ["python.datastructures.lists"]
 related: ["py.lib.math"]
 next_topics: []
 ---

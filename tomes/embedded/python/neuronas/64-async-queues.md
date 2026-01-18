@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, async, asyncio, queue]
 keywords: [Queue, put, get, producer-consumer]
 use_cases: [pipelines, producer-consumer]
-prerequisites: ["py.async.basics"]
+prerequisites: ["python.async.basics"]
 related: ["py.concurrency.queue"]
 next_topics: []
 ---

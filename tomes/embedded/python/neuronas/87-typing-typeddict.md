@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, typing, dict, struct]
 keywords: [TypedDict, JSON]
 use_cases: [json structures, dict validation]
-prerequisites: ["py.basics.dicts"]
-related: ["py.lib.dataclasses"]
+prerequisites: ["python.datastructures.dicts"]
+related: ["python.dataclasses"]
 next_topics: []
 ---
 

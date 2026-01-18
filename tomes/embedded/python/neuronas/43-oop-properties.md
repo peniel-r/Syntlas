@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, oop, property, getter]
 keywords: [@property, setter, deleter, encapsulation]
 use_cases: [computed attributes, validation, encapsulation]
-prerequisites: ["py.oop.classes", "py.patterns.decorators"]
-related: ["py.patterns.decorators"]
+prerequisites: ["python.classes", "python.patterns.decorators"]
+related: ["python.patterns.decorators"]
 next_topics: []
 ---
 

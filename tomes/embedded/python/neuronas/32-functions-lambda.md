@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, functions, lambda, anonymous]
 keywords: [lambda, anonymous function]
 use_cases: [short callbacks, functional programming]
-prerequisites: ["py.functions.basics"]
+prerequisites: ["python.functions.def"]
 related: ["py.functional.map-filter"]
 next_topics: []
 ---

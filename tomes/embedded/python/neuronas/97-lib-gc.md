@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, stdlib, memory, gc]
 keywords: [gc, collect, cycles]
 use_cases: [memory leak debugging, manual collection]
-prerequisites: ["py.basics.variables"]
+prerequisites: ["python.basics.variables"]
 related: ["py.lib.weakref"]
 next_topics: []
 ---

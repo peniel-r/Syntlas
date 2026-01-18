@@ -7,7 +7,7 @@ tags: [zig, patterns, memory]
 keywords: [init, deinit, allocator]
 use_cases: [api design]
 prerequisites: ["zig.memory.management"]
-related: ["zig.memory.allocators"]
+related: ["zig.memory.management.allocators"]
 next_topics: []
 ---
 

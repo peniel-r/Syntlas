@@ -7,7 +7,7 @@ tags: [zig, allocator, std.mem.Allocator, heap, arena]
 keywords: [std.heap.ArenaAllocator, std.heap.GeneralPurposeAllocator, std.heap.page_allocator, std.heap.c_allocator]
 use_cases: [memory management, performance, safety]
 prerequisites: []
-related: ["zig.comptime", "zig.memory"]
+related: ["zig.comptime", "zig.memory.management"]
 next_topics: ["zig.stdlib.collections"]
 ---
 

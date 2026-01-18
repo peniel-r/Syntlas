@@ -1,5 +1,5 @@
 ---
-id: 79-makefiles
+id: "c.build.make"
 title: Advanced Makefile Techniques
 category: tools
 difficulty: advanced
@@ -13,20 +13,20 @@ keywords:
   - makefile
   - pattern rules
   - automatic variables
-  - functions
+  - 
 use_cases:
   - Complex build systems
-  - Conditional compilation
+  - Conditional 
   - Multi-platform builds
   - Project automation
 prerequisites:
-  - build-systems
-  - preprocessor
+  - 
+  - c.preprocessor
 related:
-  - build-systems
-  - compilation
+  - 
+  - 
 next_topics:
-  - compiler-flags
+  - 
 ---
 
 # Advanced Makefile Techniques
@@ -62,7 +62,7 @@ main.o: main.c utils.h
 ## Conditional Directives
 
 ```makefile
-# Conditional compilation
+# Conditional 
 ifeq ($(CC),gcc)
     CFLAGS += -fno-omit-frame-pointer
 else ifeq ($(CC),clang)
@@ -164,10 +164,10 @@ $(DATA_FILES): %.txt: %.raw
 	./process_data.sh $< > $@
 ```
 
-## Advanced Functions
+## Advanced 
 
 ```makefile
-# String substitution functions
+# String substitution 
 SRCS = main.c utils.c parser.c
 OBJS = $(SRCS:.c=.o)
 # Result: main.o utils.o parser.o
@@ -180,12 +180,12 @@ OBJS = $(patsubst %.c,build/%.o,$(SRCS))
 OBJS = $(SRCS:%.c=%.o)
 # Same as patsubst
 
-# Filter functions
+# Filter 
 C_FILES = $(filter %.c,$(SOURCES))
 H_FILES = $(filter %.h,$(SOURCES))
 NOT_C = $(filter-out %.c,$(SOURCES))
 
-# Path functions
+# Path 
 DIR = $(dir src/utils/main.c)
 # Result: src/utils/
 BASE = $(notdir src/utils/main.c)
@@ -206,7 +206,7 @@ HEADERS = $(wildcard include/*.h)
 # Sort
 SORTED = $(sort $(SRCS))
 
-# Word functions
+# Word 
 WORD_COUNT = $(words $(SRCS))
 FIRST_WORD = $(firstword $(SRCS))
 LAST_WORD = $(lastword $(SRCS))
@@ -234,7 +234,7 @@ ifeq ($(HAS_LIB),yes)
 endif
 ```
 
-## Recursive Makefiles
+## Recursive 
 
 ```makefile
 # Top-level Makefile
@@ -352,7 +352,7 @@ release: $(TARGET)
 test check: $(TEST_TARGET)
 	./$(TEST_TARGET)
 
-# === Documentation ===
+# ===  ===
 .PHONY: docs doc
 
 docs doc:
@@ -587,7 +587,7 @@ main.o: main.c
 ### Enable Parallel Builds
 
 ```makefile
-# Design makefiles for parallel execution
+# Design  for parallel execution
 # Avoid serial dependencies when possible
 ```
 
@@ -633,4 +633,4 @@ ifeq ($(VERBOSE),1)
 endif
 ```
 
-> **Note**: Keep makefiles maintainable and readable. Use comments to explain complex rules. Test makefiles with -d flag for debugging. Consider using CMake for very complex cross-platform projects.
+> **Note**: Keep  maintainable and readable. Use comments to explain complex rules. Test  with -d flag for debugging. Consider using CMake for very complex cross-platform projects.

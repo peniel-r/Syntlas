@@ -1,6 +1,6 @@
 ---
 id: "c.stdlib.math"
-title: "Math Functions (sin, cos, pow, sqrt)"
+title: "Math  (sin, cos, pow, sqrt)"
 category: stdlib
 difficulty: beginner
 tags: [c, math, trigonometry, power, root, geometry]
@@ -11,9 +11,9 @@ related: ["c.stdlib.rand"]
 next_topics: ["c.error.errno"]
 ---
 
-# Math Functions
+# Math 
 
-## Basic Math Functions
+## Basic Math 
 
 ```c
 #include <stdio.h>
@@ -39,7 +39,7 @@ int main() {
 }
 ```
 
-## Trigonometric Functions
+## Trigonometric 
 
 ```c
 #include <stdio.h>
@@ -57,7 +57,7 @@ int main() {
     printf("cos(45°) = %f\n", cos(rad));  // 0.707107
     printf("tan(45°) = %f\n", tan(rad));  // 1.000000
 
-    // Inverse functions
+    // Inverse 
     double asin_val = asin(0.5);
     double acos_val = acos(0.5);
     double atan_val = atan(1.0);
@@ -70,7 +70,7 @@ int main() {
 }
 ```
 
-## Rounding Functions
+## Rounding 
 
 ```c
 #include <stdio.h>

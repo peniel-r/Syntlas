@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, stdlib, copy, deepcopy]
 keywords: [copy, deepcopy, shallow copy]
 use_cases: [duplicating objects]
-prerequisites: ["py.basics.lists"]
-related: ["py.basics.lists"]
+prerequisites: ["python.datastructures.lists"]
+related: ["python.datastructures.lists"]
 next_topics: []
 ---
 

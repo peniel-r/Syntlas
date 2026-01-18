@@ -1,5 +1,5 @@
 ---
-id: 89-terminal-control
+id: "c.stdlib.terminal"
 title: Terminal Control
 category: system
 difficulty: advanced
@@ -20,13 +20,13 @@ use_cases:
   - Interactive CLI tools
   - Terminal output formatting
 prerequisites:
-  - file-operations
-  - strings
+  - 
+  - c.stdlib.string
 related:
-  - stdio
-  - file-descriptors
+  - c.stdlib.stdio
+  - c.stdlib.fd
 next_topics:
-  - configuration-parsing
+  - c.cli.config
 ---
 
 # Terminal Control
@@ -209,7 +209,7 @@ int main(void) {
 }
 ```
 
-## Raw Mode (Keypress Detection)
+## Raw Mode (Keypress Detec.stdlib.stdion)
 
 ```c
 #include <stdio.h>
@@ -261,7 +261,7 @@ int main(void) {
 }
 ```
 
-## Terminal Size Detection
+## Terminal Size Detec.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -339,7 +339,7 @@ void menu_run(Menu *menu) {
 
         if (c == '\033') {  // Escape sequence
             read(STDIN_FILENO, &c, 1);  // '['
-            read(STDIN_FILENO, &c, 1);  // Direction
+            read(STDIN_FILENO, &c, 1);  // Direc.stdlib.stdion
 
             if (c == 'A') {  // Up
                 if (menu->selected > 0) {
@@ -351,7 +351,7 @@ void menu_run(Menu *menu) {
                 }
             }
         } else if (c == '\n' || c == '\r') {
-            // Enter - return selection
+            // Enter - return selec.stdlib.stdion
             tcsetattr(STDIN_FILENO, TCSANOW, &old);
             return;
         } else if (c == 'q' || c == 'Q') {

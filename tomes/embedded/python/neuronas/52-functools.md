@@ -8,7 +8,7 @@ keywords: [partial, lru_cache, reduce, cmp_to_key]
 use_cases: [function transformation, memoization, comparison]
 prerequisites: ["python.functions.def"]
 related: ["python.patterns.decorators"]
-next_topics: ["python.stdlib.operator"]
+next_topics: ["py.lib.math"]
 ---
 
 # Functools

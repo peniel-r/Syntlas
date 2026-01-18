@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, concurrency, threading, lock]
 keywords: [Lock, RLock, acquire, release]
 use_cases: [thread safety, critical sections]
-prerequisites: ["py.lib.threading"]
+prerequisites: ["python.threading"]
 related: ["py.async.locks"]
 next_topics: []
 ---

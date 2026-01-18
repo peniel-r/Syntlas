@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, packaging, structure, layout]
 keywords: [src layout, package, __init__.py]
 use_cases: [organizing code, distribution]
-prerequisites: ["py.lib.modules"]
+prerequisites: ["python.basics.types"]
 related: ["py.packaging.pyproject"]
 next_topics: []
 ---

@@ -7,7 +7,7 @@ tags: [rust, stdlib, vec, hashmap, btreemap]
 keywords: [Vec, HashMap, BTreeMap, HashSet, BTreeSet]
 use_cases: [dynamic arrays, key-value storage, ordered collections]
 prerequisites: ["rust.ownership"]
-related: ["rust.stdlib.iterators"]
+related: ["rust.iterators"]
 next_topics: ["rust.stdlib.string"]
 ---
 

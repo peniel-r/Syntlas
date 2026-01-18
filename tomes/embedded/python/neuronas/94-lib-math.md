@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [python, stdlib, math, numbers]
 keywords: [math, sqrt, pi, ceil, floor]
 use_cases: [calculations, trigonometry]
-prerequisites: ["py.basics.operators"]
+prerequisites: ["python.basics.operators"]
 related: ["py.lib.statistics", "py.lib.random"]
 next_topics: []
 ---

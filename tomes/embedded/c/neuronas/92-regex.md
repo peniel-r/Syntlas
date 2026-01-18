@@ -1,7 +1,7 @@
 ---
-id: 92-regex
+id: "c.stdlib.regex"
 title: Regular Expressions
-category: algorithms
+category: c.algorithms.sorting
 difficulty: advanced
 tags:
   - regex
@@ -18,14 +18,14 @@ use_cases:
   - Data validation
   - String manipulation
 prerequisites:
-  - strings
-  - ctype
-  - string-functions
+  - c.stdlib.string
+  - c.stdlib.ctype
+  - 
 related:
-  - string-algorithms
-  - string-functions
+  - c.algorithms.string
+  - 
 next_topics:
-  - date-time
+  - c.stdlib.time
 ---
 
 # Regular Expressions
@@ -49,7 +49,7 @@ int match_pattern(const char *pattern, const char *text) {
     if (ret) {
         char errbuf[100];
         regerror(ret, &regex, errbuf, sizeof(errbuf));
-        fprintf(stderr, "Regex compilation failed: %s\n", errbuf);
+        fprintf(stderr, "Regex  failed: %s\n", errbuf);
         return 0;
     }
 
@@ -428,7 +428,7 @@ int main(void) {
 // GOOD - Escape special chars
 char pattern[] = "\\$\\d+\\.\\d{2}";  // Match "$10.50"
 
-// WRONG - Interpreted as regex operators
+// WRONG - Interpreted as regex c.controlflow
 char pattern[] = "$\\d+.\\d{2}";
 ```
 
@@ -482,12 +482,12 @@ regfree(&regex);
 ### 2. Ignoring Return Values
 
 ```c
-// WRONG - Not checking compilation
+// WRONG - Not checking 
 regex_t regex;
 regcomp(&regex, pattern, REG_EXTENDED);
 // Might have failed!
 
-// CORRECT - Check compilation
+// CORRECT - Check 
 regex_t regex;
 if (regcomp(&regex, pattern, REG_EXTENDED) != 0) {
     // Handle error

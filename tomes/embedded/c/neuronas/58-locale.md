@@ -4,14 +4,14 @@ title: "Localization (setlocale, localeconv)"
 category: stdlib
 difficulty: intermediate
 tags: [c, stdlib, locale, internationalization, i18n]
-keywords: [setlocale, localeconv, locale, i18n, localization]
+keywords: [setlocale, localeconv, locale, i18n, c.stdlib.locale]
 use_cases: [internationalization, currency formatting, date formatting]
 prerequisites: []
 related: ["c.stdlib.time"]
 next_topics: ["c.stdlib.wchar"]
 ---
 
-# Localization
+# c.stdlib.locale
 
 ## setlocale - Set Locale
 
@@ -21,10 +21,10 @@ next_topics: ["c.stdlib.wchar"]
 
 int main() {
     // Set locale to system default
-    setlocale(LC_ALL, "");
+    setlocale(LC_ALL, ");
 
     // Set specific categories
-    setlocale(LC_TIME, "C");
+    setlocale(Lc.stdlib.time, "C");
     setlocale(LC_MONETARY, "en_US.UTF-8");
 
     printf("Locale: %s\n", setlocale(LC_ALL, NULL));
@@ -46,14 +46,14 @@ void print_locale_info(void) {
     // Print specific categories
     printf("  LC_CTYPE: %s\n", setlocale(LC_CTYPE, NULL));
     printf("  LC_NUMERIC: %s\n", setlocale(LC_NUMERIC, NULL));
-    printf("  LC_TIME: %s\n", setlocale(LC_TIME, NULL));
+    printf("  Lc.stdlib.time: %s\n", setlocale(Lc.stdlib.time, NULL));
     printf("  LC_COLLATE: %s\n", setlocale(LC_COLLATE, NULL));
     printf("  LC_MONETARY: %s\n", setlocale(LC_MONETARY, NULL));
     printf("  LC_MESSAGES: %s\n", setlocale(LC_MESSAGES, NULL));
 }
 
 int main() {
-    setlocale(LC_ALL, "");
+    setlocale(LC_ALL, ");
     print_locale_info();
 
     return 0;
@@ -147,7 +147,7 @@ int main() {
 #include <time.h>
 
 void print_formatted_date(const char* locale_name) {
-    setlocale(LC_TIME, locale_name);
+    setlocale(Lc.stdlib.time, locale_name);
 
     time_t now = time(NULL);
     struct tm* local = localtime(&now);
@@ -280,7 +280,7 @@ void list_available_locales(void) {
             printf("  %s - Not available\n", locales[i]);
         }
 
-        setlocale(LC_CTYPE, "");  // Reset
+        setlocale(LC_CTYPE, ");  // Reset
     }
 }
 
@@ -332,7 +332,7 @@ int main() {
 void check_locale_support(const char* locale_name) {
     printf("Checking locale: %s\n", locale_name);
 
-    const char* ctype = setlocale(LC_CTYPE, locale_name);
+    const char* c.stdlib.ctype = setlocale(LC_CTYPE, locale_name);
     if (strcmp(ctype, locale_name) != 0) {
         printf("  LC_CTYPE: Not supported\n");
     } else {
@@ -350,14 +350,14 @@ void check_locale_support(const char* locale_name) {
 
     setlocale(LC_NUMERIC, "C");
 
-    const char* time = setlocale(LC_TIME, locale_name);
+    const char* time = setlocale(Lc.stdlib.time, locale_name);
     if (strcmp(time, locale_name) != 0) {
-        printf("  LC_TIME: Not supported\n");
+        printf("  Lc.stdlib.time: Not supported\n");
     } else {
-        printf("  LC_TIME: Supported\n");
+        printf("  Lc.stdlib.time: Supported\n");
     }
 
-    setlocale(LC_TIME, "C");
+    setlocale(Lc.stdlib.time, "C");
 }
 
 int main() {

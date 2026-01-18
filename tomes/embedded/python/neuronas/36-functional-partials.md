@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, functional, partial]
 keywords: [functools, partial, currying]
 use_cases: [freezing arguments, callbacks]
-prerequisites: ["py.functions.basics"]
-related: ["py.lib.functools"]
+prerequisites: ["python.functions.def"]
+related: ["python.stdlib.functools"]
 next_topics: []
 ---
 

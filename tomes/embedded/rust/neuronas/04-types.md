@@ -7,7 +7,7 @@ tags: [rust, types, primitives, scalars]
 keywords: [integer, float, boolean, char, tuple, array]
 use_cases: [data definition, type safety]
 prerequisites: ["rust.variables"]
-related: ["rust.structs", "rust.enums"]
+related: ["rust.structs", "rust.patterns.enums"]
 next_topics: ["rust.functions"]
 ---
 

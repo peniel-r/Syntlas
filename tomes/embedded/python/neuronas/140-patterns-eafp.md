@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, patterns, idioms, error-handling]
 keywords: [EAFP, LBYL, try-except]
 use_cases: [pythonic error handling, race conditions]
-prerequisites: ["py.exceptions.basics"]
-related: ["py.exceptions.basics"]
+prerequisites: ["python.exceptions"]
+related: ["python.exceptions"]
 next_topics: []
 ---
 

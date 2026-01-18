@@ -3,11 +3,11 @@ id: "c.stdlib.ctype"
 title: "Character Classification (isalpha, isdigit, toupper)"
 category: stdlib
 difficulty: beginner
-tags: [c, ctype, isalpha, isdigit, toupper, tolower]
+tags: [c, c.stdlib.ctype, isalpha, isdigit, toupper, tolower]
 keywords: [isalpha, isdigit, isalnum, isspace, toupper, tolower]
 use_cases: [input validation, string processing, parsing]
 prerequisites: []
-related: ["c.strings"]
+related: ["c.stdlib.string"]
 next_topics: ["c.stdlib.stdio"]
 ---
 
@@ -94,7 +94,7 @@ bool is_valid_number(const char* str) {
 }
 
 int main() {
-    const char* tests[] = {"123", "-456", "+789", "12a3", ""};
+    const char* tests[] = {"123", "-456", "+789", "12a3", "};
 
     for (int i = 0; i < 5; i++) {
         printf("'%s': %s\n", tests[i],
@@ -105,7 +105,7 @@ int main() {
 }
 ```
 
-## Whitespace Detection
+## Whitespace Detec.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -495,4 +495,4 @@ int main() {
 }
 ```
 
-> **Note**: Always cast to `unsigned char` when passing to ctype functions to avoid undefined behavior with negative values.
+> **Note**: Always cast to `unsigned char` when passing to c.stdlib.ctype  to avoid undefined behavior with negative values.

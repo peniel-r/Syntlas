@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, stdlib, time]
 keywords: [time, sleep, perf_counter, time]
 use_cases: [benchmarking, delays]
-prerequisites: ["py.basics.variables"]
-related: ["py.lib.datetime"]
+prerequisites: ["python.basics.variables"]
+related: ["python.stdlib.datetime"]
 next_topics: []
 ---
 

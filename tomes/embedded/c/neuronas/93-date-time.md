@@ -1,5 +1,5 @@
 ---
-id: 93-date-time
+id: "c.stdlib.time_advanced"
 title: Date and Time
 category: stdlib
 difficulty: intermediate
@@ -19,13 +19,13 @@ use_cases:
   - Time formatting
   - Scheduling
 prerequisites:
-  - stdio
-  - strings
+  - c.stdlib.stdio
+  - c.stdlib.string
 related:
-  - time-functions
-  - stdio
+  - c.stdlib.time
+  - c.stdlib.stdio
 next_topics:
-  - localization
+  - c.stdlib.locale
 ---
 
 # Date and Time
@@ -227,9 +227,9 @@ int main(void) {
     // UTC
     setenv("TZ", "UTC", 1);
     tzset();
-    struct tm *utc_time = gmtime(&now);
+    struct tm *utc.stdlib.time = gmtime(&now);
     char buffer[80];
-    strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S UTC", utc_time);
+    strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S UTC", utc.stdlib.time);
     printf("UTC: %s\n", buffer);
 
     printf("\nDifferent time zones:\n");
@@ -494,4 +494,4 @@ tzset();
 struct tm *utc = gmtime(&now);
 ```
 
-> **Note: Date and time handling can be complex due to time zones, leap years, and daylight savings. Always use library functions for calculations. Validate user input properly. Consider timezone settings when working with dates.
+> **Note: Date and time handling can be complex due to time zones, leap years, and daylight savings. Always use library  for calculations. Validate user input properly. Consider timezone settings when working with dates.

@@ -1,17 +1,17 @@
 ---
 id: "c.algorithms.search"
 title: "Search Algorithms"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: intermediate
-tags: [c, algorithms, search, binary, linear]
+tags: [c, c.algorithms.sorting, search, binary, linear]
 keywords: [search, binary, linear, interpolation]
-use_cases: [data lookup, optimization, algorithms]
+use_cases: [data lookup, optimization, c.algorithms.sorting]
 prerequisites: ["c.arrays"]
 related: ["c.stdlib.qsort"]
-next_topics: ["c.algorithms.sort"]
+next_topics: ["c.algorithms.sorting"]
 ---
 
-# Search Algorithms
+# Search c.algorithms.sorting
 
 ## Linear Search
 

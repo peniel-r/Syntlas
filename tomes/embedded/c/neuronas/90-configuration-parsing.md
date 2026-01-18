@@ -1,5 +1,5 @@
 ---
-id: 90-configuration-parsing
+id: "c.cli.config"
 title: Configuration File Parsing
 category: system
 difficulty: intermediate
@@ -19,14 +19,14 @@ use_cases:
   - Configurable behavior
   - User preferences
 prerequisites:
-  - file-operations
-  - strings
-  - string-functions
+  - 
+  - c.stdlib.string
+  - 
 related:
-  - command-line-parsing
-  - file-operations
+  - c.cli.parsing
+  - 
 next_topics:
-  - json-parsing
+  - c.cli.json
 ---
 
 # Configuration File Parsing
@@ -154,12 +154,12 @@ timeout = 30
 #include <ctype.h>
 
 #define MAX_LINE 256
-#define MAX_SECTION 64
+#define MAX_SEc.stdlib.stdioN 64
 #define MAX_KEY 64
 #define MAX_VALUE 128
 
 typedef struct {
-    char section[MAX_SECTION];
+    char sec.stdlib.stdion[MAX_SEc.stdlib.stdioN];
     char key[MAX_KEY];
     char value[MAX_VALUE];
 } INIEntry;
@@ -187,7 +187,7 @@ int parse_ini(const char *filename, INIConfig *config) {
     }
 
     config->count = 0;
-    char current_section[MAX_SECTION] = "";
+    char current_sec.stdlib.stdion[MAX_SEc.stdlib.stdioN] = ";
     char line[MAX_LINE];
 
     while (fgets(line, sizeof(line), file) && config->count < 200) {
@@ -198,10 +198,10 @@ int parse_ini(const char *filename, INIConfig *config) {
             continue;
         }
 
-        // Parse section [section]
+        // Parse sec.stdlib.stdion [sec.stdlib.stdion]
         if (line[0] == '[' && line[strlen(line) - 1] == ']') {
             line[strlen(line) - 1] = '\0';
-            strncpy(current_section, line + 1, MAX_SECTION - 1);
+            strncpy(current_sec.stdlib.stdion, line + 1, MAX_SEc.stdlib.stdioN - 1);
             continue;
         }
 
@@ -210,11 +210,11 @@ int parse_ini(const char *filename, INIConfig *config) {
         if (equals != NULL) {
             *equals = '\0';
 
-            strncpy(config->entries[config->count].section, current_section, MAX_SECTION - 1);
+            strncpy(config->entries[config->count].sec.stdlib.stdion, current_sec.stdlib.stdion, MAX_SEc.stdlib.stdioN - 1);
             strncpy(config->entries[config->count].key, line, MAX_KEY - 1);
             strncpy(config->entries[config->count].value, equals + 1, MAX_VALUE - 1);
 
-            trim_whitespace(config->entries[config->count].section);
+            trim_whitespace(config->entries[config->count].sec.stdlib.stdion);
             trim_whitespace(config->entries[config->count].key);
             trim_whitespace(config->entries[config->count].value);
 
@@ -226,9 +226,9 @@ int parse_ini(const char *filename, INIConfig *config) {
     return 1;
 }
 
-const char *get_ini_value(INIConfig *config, const char *section, const char *key) {
+const char *get_ini_value(INIConfig *config, const char *sec.stdlib.stdion, const char *key) {
     for (int i = 0; i < config->count; i++) {
-        if (strcmp(config->entries[i].section, section) == 0 &&
+        if (strcmp(config->entries[i].sec.stdlib.stdion, sec.stdlib.stdion) == 0 &&
             strcmp(config->entries[i].key, key) == 0) {
             return config->entries[i].value;
         }
@@ -337,7 +337,7 @@ void print_config_value(ConfigValue *cv) {
             printf("%s", cv->bool_val ? "true" : "false");
             break;
         case STRING:
-            printf("\"%s\"", cv->str_val);
+            printf("\"%s\", cv->str_val);
             break;
     }
     printf("\n");
@@ -351,7 +351,7 @@ int main(void) {
     configs[count++] = create_int_config("version", 2);
     configs[count++] = create_float_config("ratio", 0.75);
     configs[count++] = create_bool_config("enabled", true);
-    configs[count++] = create_int_config("max_connections", 100);
+    configs[count++] = create_int_config("max_connec.stdlib.stdions", 100);
 
     printf("Configuration:\n");
     for (int i = 0; i < count; i++) {
@@ -448,7 +448,7 @@ int main(void) {
         {"port", "8080"},
         {"timeout", "30"},
         {"debug", "true"},
-        {"max_connections", "100"}
+        {"max_connec.stdlib.stdions", "100"}
     };
 
     if (write_config("config.txt", entries, 5)) {

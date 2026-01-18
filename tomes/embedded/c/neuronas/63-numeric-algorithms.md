@@ -1,17 +1,17 @@
 ---
 id: "c.algorithms.numeric"
 title: "Numeric Algorithms"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: intermediate
-tags: [c, algorithms, numeric, math, gcd, lcm]
+tags: [c, c.algorithms.sorting, numeric, math, gcd, lcm]
 keywords: [gcd, lcm, prime, modular, arithmetic]
-use_cases: [number theory, cryptography, algorithms]
+use_cases: [number theory, cryptography, c.algorithms.sorting]
 prerequisites: [c.stdlib.math]
 related: [c.algorithms.greedy]
 next_topics: [c.algorithms.combinatorics]
 ---
 
-# Numeric Algorithms
+# Numeric c.algorithms.sorting
 
 ## GCD (Greatest Common Divisor)
 
@@ -376,7 +376,7 @@ int main() {
 }
 ```
 
-## Rounding Functions
+## Rounding 
 
 ```c
 #include <stdio.h>
@@ -536,4 +536,4 @@ int main() {
 }
 ```
 
-> **Note**: Numeric algorithms require careful handling of edge cases (negative numbers, overflow, division by zero).
+> **Note**: Numeric c.algorithms.sorting require careful handling of edge cases (negative numbers, overflow, division by zero).

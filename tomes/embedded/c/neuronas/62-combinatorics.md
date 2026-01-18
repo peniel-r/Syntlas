@@ -1,12 +1,12 @@
 ---
 id: "c.algorithms.combinatorics"
 title: "Combinatorics"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: intermediate
-tags: [c, algorithms, combinatorics, permutation, combination]
+tags: [c, c.algorithms.sorting, combinatorics, permutation, combination]
 keywords: [permutation, combination, factorial, binomial]
 use_cases: [enumeration, probability, statistics]
-prerequisites: [c.algorithms.sort"]
+prerequisites: [c.algorithms.sorting]
 related: [c.algorithms.dynamic]
 next_topics: [c.algorithms.numeric]
 ---

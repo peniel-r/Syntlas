@@ -3,17 +3,17 @@ id: "c.stdlib.assert"
 title: "Assertions (assert.h)"
 category: stdlib
 difficulty: beginner
-tags: [c, stdlib, assert, debugging, validation]
-keywords: [assert, static_assert, NDEBUG, debugging]
+tags: [c, stdlib, c.stdlib.assert, debugging, validation]
+keywords: [c.stdlib.assert, static_assert, NDEBUG, debugging]
 use_cases: [debugging, validation, contracts]
-prerequisites: [c.stdio]
+prerequisites: [c.stdlib.stdio]
 related: [c.bestpractices.safety]
-next_topics: [c.stdlib.stdlib]
+next_topics: [c.stdlib.misc]
 ---
 
 # Assertions
 
-## Basic assert
+## Basic c.stdlib.assert
 
 ```c
 #include <stdio.h>
@@ -31,7 +31,7 @@ int main() {
 }
 ```
 
-## Assert with Message
+## c.stdlib.assert with Message
 
 ```c
 #include <stdio.h>
@@ -199,7 +199,7 @@ int main() {
 }
 ```
 
-## Static Assert (C11)
+## Static c.stdlib.assert (C11)
 
 ```c
 #include <stdio.h>

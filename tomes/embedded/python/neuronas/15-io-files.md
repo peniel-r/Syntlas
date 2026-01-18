@@ -6,8 +6,8 @@ difficulty: beginner
 tags: [python, io, files, open]
 keywords: [open, read, write, with statement]
 use_cases: [reading data, writing logs, persistence]
-prerequisites: ["py.basics.strings", "py.patterns.context-managers"]
-related: ["py.io.bytes", "py.lib.pathlib"]
+prerequisites: ["python.basics.strings", "python.patterns.context-managers"]
+related: ["py.io.bytes", "python.pathlib"]
 next_topics: ["py.io.bytes"]
 ---
 

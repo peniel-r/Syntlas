@@ -6,8 +6,8 @@ difficulty: advanced
 tags: [python, oop, slots, memory]
 keywords: [__slots__, memory optimization]
 use_cases: [memory optimization, restricting attributes]
-prerequisites: ["py.oop.classes"]
-related: ["py.oop.classes"]
+prerequisites: ["python.classes"]
+related: ["python.classes"]
 next_topics: []
 ---
 

@@ -1,5 +1,5 @@
 ---
-id: 83-dynamic-loading
+id: "c.build.dynamic"
 title: Dynamic Loading
 category: system
 difficulty: advanced
@@ -21,14 +21,14 @@ use_cases:
   - Extensible applications
   - Hot swapping
 prerequisites:
-  - pointers
-  - functions
-  - shared-libraries
+  - 
+  - 
+  - 
 related:
-  - shared-libraries
+  - 
   - callbacks
 next_topics:
-  - inter-process-communication
+  - c.ipc.main
 ---
 
 # Dynamic Loading
@@ -364,7 +364,7 @@ int main(void) {
         return 1;
     }
 
-    // Use loaded functions
+    // Use loaded 
     func1(42);
     func2(5, 3);
     func3();
@@ -548,7 +548,7 @@ if (func == NULL) {
 }
 ```
 
-### Use Type-Safe Function Pointers
+### Use Type-Safe Function 
 
 ```c
 // GOOD - Use proper function types

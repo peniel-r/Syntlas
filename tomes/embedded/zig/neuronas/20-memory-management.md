@@ -7,8 +7,8 @@ tags: [zig, memory, allocation]
 keywords: [allocator, free, create, destroy]
 use_cases: [heap allocation]
 prerequisites: ["zig.basics.pointers"]
-related: ["zig.memory.allocators"]
-next_topics: ["zig.memory.allocators"]
+related: ["zig.memory.management.allocators"]
+next_topics: ["zig.memory.management.allocators"]
 ---
 
 # Manual Memory

@@ -31,24 +31,24 @@ pub const TomeMetadata = struct {
 
 /// Parse tome.json file
 pub fn parseMetadata(allocator: std.mem.Allocator, json_content: []const u8) !TomeMetadata {
-    const parsed = try std.json.parseFromSlice(std.json.Value, allocator, json_content, .{});
+    const parsed = try std.json.parseFromSlice(std.json.Value, allocator, json_content, .{ .ignore_unknown_fields = true });
     defer parsed.deinit();
 
     const root = parsed.value.object;
 
-    const name = try allocator.dupe(u8, root.get("name").?.string);
+    const name = if (root.get("name")) |v| try allocator.dupe(u8, v.string) else try allocator.dupe(u8, "unknown");
     errdefer allocator.free(name);
 
-    const version = try allocator.dupe(u8, root.get("version").?.string);
+    const version = if (root.get("version")) |v| try allocator.dupe(u8, v.string) else try allocator.dupe(u8, "0.0.0");
     errdefer allocator.free(version);
 
-    const author = try allocator.dupe(u8, root.get("author").?.string);
+    const author = if (root.get("author")) |v| try allocator.dupe(u8, v.string) else try allocator.dupe(u8, "Unknown");
     errdefer allocator.free(author);
 
-    const license = try allocator.dupe(u8, root.get("license").?.string);
+    const license = if (root.get("license")) |v| try allocator.dupe(u8, v.string) else try allocator.dupe(u8, "Unset");
     errdefer allocator.free(license);
 
-    const description = try allocator.dupe(u8, root.get("description").?.string);
+    const description = if (root.get("description")) |v| try allocator.dupe(u8, v.string) else try allocator.dupe(u8, "");
     errdefer allocator.free(description);
 
     // Parse languages array
@@ -63,6 +63,8 @@ pub fn parseMetadata(allocator: std.mem.Allocator, json_content: []const u8) !To
         for (array.items) |lang| {
             try languages_list.append(allocator, try allocator.dupe(u8, lang.string));
         }
+    } else if (root.get("language")) |lang_value| {
+        try languages_list.append(allocator, try allocator.dupe(u8, lang_value.string));
     }
 
     // Parse dependencies array
@@ -79,7 +81,7 @@ pub fn parseMetadata(allocator: std.mem.Allocator, json_content: []const u8) !To
         }
     }
 
-    const min_syntlas_version = try allocator.dupe(u8, root.get("min_syntlas_version").?.string);
+    const min_syntlas_version = if (root.get("min_syntlas_version")) |v| try allocator.dupe(u8, v.string) else try allocator.dupe(u8, "0.1.0");
     errdefer allocator.free(min_syntlas_version);
 
     return TomeMetadata{

@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, concurrency, queue, threads]
 keywords: [Queue, put, get, task_done, join]
 use_cases: [producer-consumer, thread communication]
-prerequisites: ["py.lib.threading"]
+prerequisites: ["python.threading"]
 related: ["py.async.queues"]
 next_topics: []
 ---

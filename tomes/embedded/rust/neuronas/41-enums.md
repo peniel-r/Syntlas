@@ -7,7 +7,7 @@ tags: [rust, enum, variants, methods]
 keywords: [enum, Option, Result, match]
 use_cases: [state representation, type safety, exhaustive matching]
 prerequisites: ["rust.patterns.match"]
-related: ["rust.patterns.structs"]
+related: ["rust.structs"]
 next_topics: ["rust.traits"]
 ---
 

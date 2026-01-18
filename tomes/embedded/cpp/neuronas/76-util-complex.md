@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [cpp, std, math, complex]
 keywords: [complex, real, imag]
 use_cases: [scientific computing]
-prerequisites: ["cpp.basics.types"]
-related: ["cpp.basics.types"]
+prerequisites: ["cpp.basic.variables"]
+related: ["cpp.basic.variables"]
 next_topics: []
 ---
 

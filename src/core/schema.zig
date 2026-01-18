@@ -70,6 +70,23 @@ pub const Neurona = struct {
     // Content location
     file_path: []const u8,
     content_offset: usize,
+
+    pub fn deinit(self: *Neurona, allocator: std.mem.Allocator) void {
+        allocator.free(self.id);
+        allocator.free(self.title);
+        for (self.tags) |tag| allocator.free(tag);
+        allocator.free(self.tags);
+        for (self.keywords) |kw| allocator.free(kw);
+        allocator.free(self.keywords);
+        for (self.use_cases) |uc| allocator.free(uc);
+        allocator.free(self.use_cases);
+        for (self.prerequisites) |p| allocator.free(p.id);
+        allocator.free(self.prerequisites);
+        for (self.related) |r| allocator.free(r.id);
+        allocator.free(self.related);
+        for (self.next_topics) |n| allocator.free(n.id);
+        allocator.free(self.next_topics);
+    }
 };
 
 pub const Activation = struct {

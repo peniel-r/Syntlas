@@ -5,9 +5,9 @@ category: stdlib
 difficulty: intermediate
 tags: [c, stdarg, variadic, va_list, printf]
 keywords: [va_list, va_start, va_arg, va_end, variadic]
-use_cases: [custom printf, logging, flexible functions]
+use_cases: [custom printf, , flexible ]
 prerequisites: ["c.functions"]
-related: ["c.io"]
+related: ["c.stdlib.stdio"]
 next_topics: ["c.stdlib.stdbool"]
 ---
 
@@ -62,7 +62,7 @@ int main() {
 }
 ```
 
-## Logging Function
+##  Function
 
 ```c
 #include <stdio.h>

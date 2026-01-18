@@ -174,6 +174,24 @@ pub fn build(b: *std.Build) void {
     const run_perf = b.addRunArtifact(perf_exe);
     perf_step.dependOn(&run_perf.step);
 
+    // Phase 6 verification script
+    const verify6_exe = b.addExecutable(.{
+        .name = "verify6",
+        .root_module = b.createModule(.{
+            .root_source_file = b.path("tests/verify_phase_6.zig"),
+            .target = target,
+            .optimize = optimize,
+            .imports = &.{
+                .{ .name = "Syntlas", .module = mod },
+            },
+        }),
+    });
+
+    const verify6_step = b.step("verify6", "Run Phase 6 verification");
+    const run_verify6 = b.addRunArtifact(verify6_exe);
+    verify6_step.dependOn(&run_verify6.step);
+    b.installArtifact(verify6_exe);
+
     // Just like flags, top level steps are also listed in the `--help` menu.
     //
     // The Zig build system is entirely implemented in userland, which means

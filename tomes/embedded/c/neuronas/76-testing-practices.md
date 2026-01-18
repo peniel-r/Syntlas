@@ -1,5 +1,5 @@
 ---
-id: 76-testing-practices
+id: "c.bestpractices.testing"
 title: Testing Practices
 category: bestpractices
 difficulty: intermediate
@@ -20,15 +20,15 @@ use_cases:
   - Bug prevention
   - Quality assurance
 prerequisites:
-  - functions
-  - preprocessor
-  - error-handling
+  - 
+  - c.preprocessor
+  - 
 related:
-  - assert
-  - error-handling
-  - logging
+  - c.stdlib.assert
+  - 
+  - 
 next_topics:
-  - debugging-practices
+  - 
 ---
 
 # Testing Practices
@@ -51,7 +51,7 @@ typedef struct {
 
 TestStats stats = {0, 0, 0};
 
-// Assertion macros
+// Assertion c.preprocessor.macros
 #define ASSERT(condition) \
     do { \
         stats.total++; \
@@ -104,7 +104,7 @@ void print_summary_on_exit(void) {
 ## Using the Test Framework
 
 ```c
-// Test functions
+// Test 
 
 int add(int a, int b) {
     return a + b;
@@ -144,7 +144,7 @@ int main(void) {
 }
 ```
 
-## Unit Testing for Functions
+## Unit Testing for 
 
 ```c
 #include <stdio.h>
@@ -207,11 +207,11 @@ void test_reverse_string(void) {
            test2,
            strcmp(test2, "a") == 0 ? "PASS" : "FAIL");
 
-    char test3[] = "";
+    char test3[] = ";
     reverse_string(test3);
     printf("  reverse('') = '%s' (expected: '') %s\n",
            test3,
-           strcmp(test3, "") == 0 ? "PASS" : "FAIL");
+           strcmp(test3, ") == 0 ? "PASS" : "FAIL");
 }
 
 int main(void) {
@@ -230,7 +230,7 @@ int main(void) {
 #include <stdlib.h>
 #include <string.h>
 
-// Memory leak detection helper
+// Memory leak detec.stdlib.stdion helper
 typedef struct {
     void *ptr;
     size_t size;
@@ -299,7 +299,7 @@ void process_data(void) {
     if (data != NULL) {
         strcpy(data, "test data");
         // Intentional leak for testing
-        // FREE(data);  // Comment out to test leak detection
+        // FREE(data);  // Comment out to test leak detec.stdlib.stdion
     }
 }
 

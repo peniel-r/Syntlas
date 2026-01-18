@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [rust, std, process, command]
 keywords: [Command, spawn, exit, output]
 use_cases: [running external programs, subprocesses]
-prerequisites: ["rust.std.io"]
+prerequisites: ["rust.stdlib.io"]
 related: ["rust.std.env"]
 next_topics: []
 ---

@@ -1,13 +1,13 @@
 ---
-id: "zig.memory.page"
+id: "zig.memory.management.page"
 title: "PageAllocator"
 category: memory
 difficulty: advanced
 tags: [zig, memory, pages, os]
 keywords: [page_allocator, mmap]
 use_cases: [large allocations, backing allocator]
-prerequisites: ["zig.memory.allocators"]
-related: ["zig.memory.c-allocator"]
+prerequisites: ["zig.memory.management.allocators"]
+related: ["zig.memory.management.c-allocator"]
 next_topics: []
 ---
 

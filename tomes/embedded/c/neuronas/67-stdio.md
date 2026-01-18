@@ -5,10 +5,10 @@ category: stdlib
 difficulty: beginner
 tags: [c, stdio, printf, scanf, fprintf, fscanf]
 keywords: [printf, scanf, fprintf, fscanf, puts, gets]
-use_cases: [input output, user interaction, logging]
+use_cases: [input output, user interaction, ]
 prerequisites: []
-related: [c.io]
-next_topics: [c.stdlib.string]
+related: [c.stdlib.stdio]
+next_topics: ["c.stdlib.string"]
 ---
 
 # Standard I/O
@@ -75,7 +75,7 @@ int main() {
     puts("Hello, World!");
 
     // Empty string with newline
-    puts("");
+    puts(");
 
     return 0;
 }

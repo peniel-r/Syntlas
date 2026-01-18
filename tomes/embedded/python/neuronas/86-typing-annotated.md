@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, typing, metadata]
 keywords: [Annotated, metadata]
 use_cases: [validation, serialization frameworks]
-prerequisites: ["py.basics.types"]
+prerequisites: ["python.basics.types"]
 related: ["py.typing.generics"]
 next_topics: []
 ---

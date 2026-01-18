@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [cpp, modern, spaceship, operator]
 keywords: [<=>, spaceship, strong_ordering]
 use_cases: [simplifying comparison operators]
-prerequisites: ["cpp.basics.operators"]
-related: ["cpp.basics.operators"]
+prerequisites: ["cpp.basic.operators"]
+related: ["cpp.basic.operators"]
 next_topics: []
 ---
 

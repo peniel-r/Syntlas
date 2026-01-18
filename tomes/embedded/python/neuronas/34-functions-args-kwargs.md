@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, functions, arguments, unpacking]
 keywords: [*args, **kwargs, unpacking]
 use_cases: [flexible arguments, wrappers, inheritance]
-prerequisites: ["py.functions.basics"]
+prerequisites: ["python.functions.def"]
 related: ["py.patterns.unpacking"]
 next_topics: []
 ---

@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [cpp, casting, types]
 keywords: [static_cast, dynamic_cast, reinterpret_cast, const_cast]
 use_cases: [type conversion, polymorphism]
-prerequisites: ["cpp.basics.types", "cpp.oo.inheritance"]
+prerequisites: ["cpp.basic.variables", "cpp.oo.inheritance"]
 related: ["cpp.oo.rtti"]
 next_topics: []
 ---

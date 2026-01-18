@@ -7,7 +7,7 @@ tags: [python, functional, map, filter, reduce]
 keywords: [map, filter, reduce, functools]
 use_cases: [data transformation, filtering]
 prerequisites: ["py.functions.lambda", "py.functions.generators"]
-related: ["py.control.comprehensions"]
+related: ["python.patterns.comprehensions"]
 next_topics: []
 ---
 

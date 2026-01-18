@@ -7,7 +7,7 @@ tags: [rust, error, Result, Option, error-propagation]
 keywords: [Result, Option, ?, unwrap, expect]
 use_cases: [error recovery, validating inputs, graceful degradation]
 prerequisites: ["rust.ownership"]
-related: ["rust.patterns.unwrap"]
+related: ["rust.error"]
 next_topics: []
 ---
 

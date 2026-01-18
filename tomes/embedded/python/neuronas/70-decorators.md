@@ -7,7 +7,7 @@ tags: [python, decorators, meta-programming, functions]
 keywords: [@, wrapper, functools, closure]
 use_cases: [logging, timing, validation, caching]
 prerequisites: ["python.functions.def"]
-related: ["python.functions.lambda", "python.context-managers"]
+related: ["py.functions.lambda", "python.patterns.context-managers"]
 next_topics: ["python.patterns.context-managers"]
 ---
 

@@ -6,9 +6,9 @@ difficulty: advanced
 tags: [python, functions, closure, scope]
 keywords: [closure, nonlocal, nested function]
 use_cases: [data hiding, decorators, callbacks]
-prerequisites: ["py.functions.basics"]
-related: ["py.patterns.decorators"]
-next_topics: ["py.patterns.decorators"]
+prerequisites: ["python.functions.def"]
+related: ["python.patterns.decorators"]
+next_topics: ["python.patterns.decorators"]
 ---
 
 # Closures

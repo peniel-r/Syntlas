@@ -7,7 +7,7 @@ tags: [zig, test, memory, leak]
 keywords: [testing.allocator, leak detection]
 use_cases: [checking memory safety]
 prerequisites: ["zig.test.basics"]
-related: ["zig.memory.gpa"]
+related: ["zig.memory.management.gpa"]
 next_topics: []
 ---
 

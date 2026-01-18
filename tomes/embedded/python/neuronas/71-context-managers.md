@@ -7,8 +7,8 @@ tags: [python, context-managers, with, resources]
 keywords: [__enter__, __exit__, contextlib]
 use_cases: [resource cleanup, file handling, locks]
 prerequisites: ["python.classes"]
-related: ["python.stdlib.io"]
-next_topics: ["python.stdlib.io"]
+related: ["py.io.files"]
+next_topics: ["py.io.files"]
 ---
 
 # Context Managers

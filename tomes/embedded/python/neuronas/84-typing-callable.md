@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, typing, callable, functions]
 keywords: [Callable, callback]
 use_cases: [callbacks, higher-order functions]
-prerequisites: ["py.functions.basics"]
+prerequisites: ["python.functions.def"]
 related: ["py.typing.protocol"]
 next_topics: []
 ---

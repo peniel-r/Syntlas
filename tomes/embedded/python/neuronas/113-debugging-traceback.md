@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, debugging, traceback, stack]
 keywords: [traceback, print_exc, format_exc]
 use_cases: [error logging, stack analysis]
-prerequisites: ["py.exceptions.basics"]
-related: ["py.lib.logging"]
+prerequisites: ["python.exceptions"]
+related: ["python.stdlib.logging"]
 next_topics: []
 ---
 

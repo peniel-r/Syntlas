@@ -13,10 +13,10 @@ keywords: [function, return, parameter, argument, overload]
 prerequisites: ["cpp.basic.variables"]
 next: ["cpp.basic.pointers", "cpp.stl.vector"]
 related:
-  - id: "cpp.basic.lambdas"
+  - id: "cpp.modern.lambdas"
     type: complement
     weight: 85
-  - id: "cpp.modern.return-type-deduction"
+  - id: "cpp.modern.type-inference"
     type: complement
     weight: 80
 version:

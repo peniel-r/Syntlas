@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [cpp, std, regex, text]
 keywords: [regex, regex_match, regex_search]
 use_cases: [text validation, parsing]
-prerequisites: ["cpp.stl.string"]
-related: ["cpp.stl.string"]
+prerequisites: ["cpp.basic.strings"]
+related: ["cpp.basic.strings"]
 next_topics: []
 ---
 

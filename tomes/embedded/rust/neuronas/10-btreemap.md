@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [rust, collections, map, sorted]
 keywords: [BTreeMap, sorted map, key-value]
 use_cases: [sorted data, range queries]
-prerequisites: ["rust.collections"]
-related: ["rust.collections.hashmap"]
+prerequisites: ["rust.stdlib.collections"]
+related: ["rust.stdlib.collections"]
 next_topics: ["rust.collections.btreeset"]
 ---
 

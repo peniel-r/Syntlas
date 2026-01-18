@@ -7,7 +7,7 @@ tags: [python, stdlib, csv, data]
 keywords: [csv, reader, writer, DictReader]
 use_cases: [data import/export, spreadsheets]
 prerequisites: ["py.io.files"]
-related: ["py.lib.json"]
+related: ["python.stdlib.json"]
 next_topics: []
 ---
 

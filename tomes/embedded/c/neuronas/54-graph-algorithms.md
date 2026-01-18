@@ -1,9 +1,9 @@
 ---
 id: "c.algorithms.graph"
 title: "Graph Algorithms"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: advanced
-tags: [c, algorithms, graph, bfs, dfs, shortest]
+tags: [c, c.algorithms.sorting, graph, bfs, dfs, shortest]
 keywords: [graph, bfs, dfs, shortest path, adjacency]
 use_cases: [network analysis, routing, optimization]
 prerequisites: ["c.algorithms.datastructures"]
@@ -11,7 +11,7 @@ related: ["c.algorithms.search"]
 next_topics: ["c.algorithms.dynamic"]
 ---
 
-# Graph Algorithms
+# Graph c.algorithms.sorting
 
 ## BFS - Breadth-First Search
 
@@ -542,4 +542,4 @@ int main() {
 }
 ```
 
-> **Note**: Graph algorithms have O(V+E) complexity typically. Choose algorithm based on graph properties (directed, weighted, etc.).
+> **Note**: Graph c.algorithms.sorting have O(V+E) complexity typically. Choose algorithm based on graph properties (directed, weighted, etc.).

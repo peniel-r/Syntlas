@@ -3,15 +3,15 @@ id: "c.arrays"
 title: "Arrays and Array Operations"
 category: stdlib
 difficulty: novice
-tags: [c, arrays, iteration, multi-dimensional, initialization]
+tags: [c, , iteration, multi-dimensional, initialization]
 keywords: [array, index, bounds, multidimensional, iteration]
-use_cases: [fixed-size arrays, data structures, loops, matrix operations]
+use_cases: [fixed-size , data structures, c.controlflow, matrix operations]
 prerequisites: []
 related: ["c.stdlib.string"]
 next_topics: ["c.functions"]
 ---
 
-# Arrays and Array Operations
+#  and Array Operations
 
 C provides both single and multi-dimensional arrays.
 
@@ -87,7 +87,7 @@ int main() {
 }
 ```
 
-## Multi-dimensional Arrays
+## Multi-dimensional 
 
 ```c
 #include <stdio.h>
@@ -215,14 +215,14 @@ int main() {
 }
 ```
 
-## Dynamic Arrays (Simulated)
+## Dynamic  (Simulated)
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
 
-// C doesn't have built-in dynamic arrays
-// Simulate with pointers and malloc
+// C doesn't have built-in dynamic 
+// Simulate with  and malloc
 int* create_array(size_t size) {
     return (int*)malloc(sizeof(int) * size);
 }
@@ -250,7 +250,7 @@ int main() {
 }
 ```
 
-## String Arrays
+## String 
 
 ```c
 #include <stdio.h>

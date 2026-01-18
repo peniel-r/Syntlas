@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [python, patterns, zip, iteration]
 keywords: [zip, unzip]
 use_cases: [parallel iteration, dict creation]
-prerequisites: ["py.control.for"]
+prerequisites: ["python.controlflow.for"]
 related: ["py.patterns.enumerate"]
 next_topics: []
 ---

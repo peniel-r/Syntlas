@@ -1,7 +1,7 @@
 ---
-id: 70-string-algorithms
-title: String Algorithms
-category: algorithms
+id: "c.algorithms.string"
+title: String c.algorithms.sorting
+category: c.algorithms.sorting
 difficulty: intermediate
 tags:
   - string
@@ -20,19 +20,19 @@ use_cases:
   - String manipulation
   - Text analysis
 prerequisites:
-  - arrays
-  - pointers
-  - loops
+  - 
+  - 
+  - c.controlflow
 related:
-  - string-functions
-  - search-algorithms
+  - 
+  - search-c.algorithms.sorting
 next_topics:
-  - data-structures
+  - 
 ---
 
-# String Algorithms
+# String c.algorithms.sorting
 
-String algorithms are essential for text processing, pattern matching, and string manipulation tasks.
+String c.algorithms.sorting are essential for text processing, pattern matching, and string manipulation tasks.
 
 ## Naive String Search
 
@@ -242,7 +242,7 @@ int main(void) {
         "racecar",
         "A man, a plan, a canal: Panama",
         "hello",
-        ""
+        "
     };
 
     for (int i = 0; i < 4; i++) {
@@ -503,7 +503,7 @@ int main(void) {
 #include <string.h>
 #include <time.h>
 
-// ... include all search functions from above ...
+// ... include all search  from above ...
 
 #define TEXT_LEN 1000000
 #define PATTERN_LEN 10
@@ -579,4 +579,4 @@ int search_string(const char *text, const char *pattern) {
 }
 ```
 
-> **Note**: String algorithms can have significant performance differences based on input size and characteristics. KMP is good for repeated searches with the same pattern (precompute LPS once). Boyer-Moore performs best when the alphabet is large and pattern has good character skipping potential.
+> **Note**: String c.algorithms.sorting can have significant performance differences based on input size and characteristics. KMP is good for repeated searches with the same pattern (precompute LPS once). Boyer-Moore performs best when the alphabet is large and pattern has good character skipping potential.

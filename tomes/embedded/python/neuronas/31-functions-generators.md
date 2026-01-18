@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, functions, generator, yield]
 keywords: [yield, next, iter, lazy evaluation]
 use_cases: [memory efficient iteration, pipelines, streams]
-prerequisites: ["py.functions.basics", "py.control.for"]
+prerequisites: ["python.functions.def", "python.controlflow.for"]
 related: ["py.functional.map-filter"]
 next_topics: []
 ---

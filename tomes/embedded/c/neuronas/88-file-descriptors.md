@@ -1,32 +1,32 @@
 ---
-id: 88-file-descriptors
+id: "c.stdlib.fd"
 title: File Descriptors
 category: system
 difficulty: intermediate
 tags:
-  - file-descriptors
+  - c.stdlib.fd
   - dup
   - pipe
-  - redirection
+  - redirectionn
 keywords:
   - file descriptor
   - dup
   - dup2
   - pipe
-  - redirection
+  - redirectionn
 use_cases:
   - File I/O
   - Process communication
-  - Output redirection
+  - Output redirectionn
   - Input/output control
 prerequisites:
-  - file-operations
-  - process-management
+  - 
+  - 
 related:
-  - file-operations
-  - inter-process-communication
+  - 
+  - c.ipc.main
 next_topics:
-  - terminal-control
+  - c.stdlib.terminal
 ---
 
 # File Descriptors
@@ -127,7 +127,7 @@ int main(void) {
 }
 ```
 
-## dup2 - Redirection
+## dup2 - Redirectionn
 
 ```c
 #include <stdio.h>
@@ -327,7 +327,7 @@ int main(void) {
     // Send file descriptor
     struct msghdr msg = {0};
     char iov_data[1];
-    struct iovec iov = {.iov_base = iov_data, .iov_len = 1};
+    struct iovec.stdlib.stdiov = {.iov_base = iov_data, .iov_len = 1};
 
     char control_data[CMSG_SPACE(sizeof(int))];
     struct cmsghdr *cmsg = (struct cmsghdr *)control_data;
@@ -389,7 +389,7 @@ int main(void) {
     // Receive file descriptor
     struct msghdr msg = {0};
     char iov_data[1];
-    struct iovec iov = {.iov_base = iov_data, .iov_len = 1};
+    struct iovec.stdlib.stdiov = {.iov_base = iov_data, .iov_len = 1};
 
     char control_data[256];
     msg.msg_iov = &iov;
@@ -459,7 +459,7 @@ if (bytes == -1) {
 }
 ```
 
-### Use dup2 for Redirection
+### Use dup2 for Redirectionn
 
 ```c
 // GOOD - dup2 closes target if needed
@@ -521,4 +521,4 @@ if (dup2(fd, STDOUT_FILENO) == -1) {
 }
 ```
 
-> **Note: File descriptors are a limited resource. Always close them when done. Be careful with descriptor redirection and duplication. Use appropriate flags for your I/O requirements.
+> **Note: File descriptors are a limited resource. Always close them when done. Be careful with descriptor redirectionn and duplication. Use appropriate flags for your I/O requirements.

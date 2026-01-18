@@ -11,7 +11,7 @@ category: syntax
 difficulty: beginner
 keywords: [array, c-array, initializer-list, bounds]
 prerequisites: ["cpp.basic.variables"]
-next: ["cpp.stl.vector", "cpp.oo.structs"]
+next: ["cpp.stl.vector", "cpp.oo.classes"]
 related:
   - id: "cpp.stl.vector"
     type: alternative

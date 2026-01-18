@@ -6,8 +6,8 @@ difficulty: advanced
 tags: [python, async, asyncio, run]
 keywords: [run, Runner, event loop]
 use_cases: [entry point, testing]
-prerequisites: ["py.async.basics"]
-related: ["py.async.basics"]
+prerequisites: ["python.async.basics"]
+related: ["python.async.basics"]
 next_topics: []
 ---
 

@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [python, patterns, enumerate, iteration]
 keywords: [enumerate, index]
 use_cases: [looping with index]
-prerequisites: ["py.control.for"]
+prerequisites: ["python.controlflow.for"]
 related: ["py.patterns.zipping"]
 next_topics: []
 ---

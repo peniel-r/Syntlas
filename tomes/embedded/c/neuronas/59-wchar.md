@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [c, stdlib, wchar, wide, unicode]
 keywords: [wchar, wprintf, wscanf, wcslen]
 use_cases: [unicode support, international text, wide strings]
-prerequisites: [c.strings"]
+prerequisites: ["c.stdlib.string"]
 related: ["c.stdlib.locale"]
 next_topics: ["c.stdlib.stdio"]
 ---
@@ -29,7 +29,7 @@ int main() {
 }
 ```
 
-## Wide Character Functions
+## Wide Character 
 
 ```c
 #include <stdio.h>
@@ -403,4 +403,4 @@ int main() {
 }
 ```
 
-> **Note**: Wide characters support Unicode. Use wchar_t functions for internationalization. Set locale for proper behavior.
+> **Note**: Wide characters support Unicode. Use wchar_t  for internationalization. Set locale for proper behavior.

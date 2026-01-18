@@ -5,13 +5,13 @@ category: patterns
 difficulty: intermediate
 tags: [c, callback, function pointer, strategy]
 keywords: [callback, function pointer, strategy, observer]
-use_cases: [event handling, sorting, algorithms]
+use_cases: [event handling, sorting, c.algorithms.sorting]
 prerequisites: ["c.pointers", "c.functions"]
 related: ["c.stdlib.qsort"]
 next_topics: ["c.stdlib.signal"]
 ---
 
-# Callbacks and Function Pointers
+# Callbacks and Function 
 
 ## Function Pointer Basics
 
@@ -337,7 +337,7 @@ int main() {
 }
 ```
 
-## Higher-Order Functions
+## Higher-Order 
 
 ```c
 #include <stdio.h>
@@ -595,4 +595,4 @@ int main() {
 }
 ```
 
-> **Note**: Function pointers provide flexibility but can be harder to debug. Use typedefs for readability.
+> **Note**: Function  provide flexibility but can be harder to debug. Use typedefs for readability.

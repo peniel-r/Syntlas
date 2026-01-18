@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [zig, stdlib, collection, arraylist]
 keywords: [ArrayList, append, items]
 use_cases: [dynamic array]
-prerequisites: ["zig.memory.allocators"]
+prerequisites: ["zig.memory.management.allocators"]
 related: ["zig.std.hashmap"]
 next_topics: ["zig.std.hashmap"]
 ---

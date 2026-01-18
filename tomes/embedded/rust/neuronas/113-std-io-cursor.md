@@ -1,13 +1,13 @@
 ---
-id: "rust.std.io.cursor"
+id: "rust.stdlib.io.cursor"
 title: "Cursor (std::io::Cursor)"
 category: stdlib
 difficulty: intermediate
 tags: [rust, std, io, testing]
 keywords: [Cursor, Read, Write, Seek]
 use_cases: [in-memory io, testing io code]
-prerequisites: ["rust.io"]
-related: ["rust.io"]
+prerequisites: ["rust.stdlib.io"]
+related: ["rust.stdlib.io"]
 next_topics: []
 ---
 

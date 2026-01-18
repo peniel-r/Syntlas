@@ -11,12 +11,12 @@ category: stdlib
 difficulty: intermediate
 keywords: [tuple, heterogeneous, container, sequence]
 prerequisites: ["cpp.basic.templates"]
-next: ["cpp.stl.pair", "cpp.modern.structured-bindings"]
+next: ["cpp.stl.pair", "cpp.modern.type-inference"]
 related:
   - id: "cpp.stl.pair"
     type: similar
     weight: 80
-  - id: "cpp.modern.structured-bindings"
+  - id: "cpp.modern.type-inference"
     type: complement
     weight: 85
 version:
@@ -93,4 +93,4 @@ auto combined = std::tuple_cat(t1, t2);
 ## See Also
 
 - [std::pair](cpp.stl.pair) - Two-element tuple
-- [Structured Bindings](cpp.modern.structured-bindings) - Tuple unpacking
+- [Structured Bindings](cpp.modern.type-inference) - Tuple unpacking

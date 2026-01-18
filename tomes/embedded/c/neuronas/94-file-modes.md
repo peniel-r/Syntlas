@@ -1,5 +1,5 @@
 ---
-id: 94-file-modes
+id: "c.stdlib.filemodes"
 title: File Modes and Permissions
 category: system
 difficulty: intermediate
@@ -20,13 +20,13 @@ use_cases:
   - File access control
   - Security settings
 prerequisites:
-  - file-operations
-  - process-management
+  - 
+  - 
 related:
-  - file-operations
+  - 
   - system-popen
 next_topics:
-  - file-ownership
+  - c.stdlib.fd
 ---
 
 # File Modes and Permissions
@@ -300,7 +300,7 @@ int main(void) {
 }
 ```
 
-## Permission Helper Functions
+## Permission Helper 
 
 ```c
 #include <stdio.h>

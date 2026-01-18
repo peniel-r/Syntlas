@@ -13,7 +13,7 @@ keywords: [move, rvalue, lvalue, noexcept]
 prerequisites: ["cpp.basic.references", "cpp.oo.constructors"]
 next: ["cpp.modern.rule-of-five", "cpp.memory.smart-pointers"]
 related:
-  - id: "cpp.oo.copy"
+  - id: "cpp.oo.constructors"
     type: complement
     weight: 90
 version:

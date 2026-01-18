@@ -1,6 +1,6 @@
 ---
-id: 72-stdio-scanf
-title: Stdio Scanf Functions
+id: "c.stdlib.scanf"
+title: Stdio Scanf 
 category: stdlib
 difficulty: intermediate
 tags:
@@ -20,19 +20,19 @@ use_cases:
   - String parsing
   - Data extraction
 prerequisites:
-  - stdio
-  - strings
-  - variables
+  - c.stdlib.stdio
+  - c.stdlib.string
+  - c.functions
 related:
-  - string-functions
-  - file-operations
+  - 
+  - 
 next_topics:
-  - logging
+  - 
 ---
 
-# Stdio Scanf Functions
+# Stdio Scanf 
 
-The scanf family of functions provides formatted input from various sources.
+The scanf family of  provides formatted input from various sources.
 
 ## scanf() - Standard Input
 
@@ -106,14 +106,14 @@ int main(void) {
 int main(void) {
     int a, b, c;
 
-    printf("Enter three integers (separated by spaces): ");
+    printf("Enter three c.stdlib.stdint (separated by spaces): ");
     int result = scanf("%d %d %d", &a, &b, &c);
 
     if (result == 3) {
         printf("Sum: %d\n", a + b + c);
         printf("Product: %d\n", a * b * c);
     } else {
-        printf("Error: Expected 3 integers, got %d\n", result);
+        printf("Error: Expected 3 c.stdlib.stdint, got %d\n", result);
     }
 
     return 0;
@@ -440,7 +440,7 @@ int main(void) {
 typedef struct {
     char name[50];
     int port;
-    int max_connections;
+    int max_connec.stdlib.stdions;
     bool debug;
 } Config;
 
@@ -461,8 +461,8 @@ void load_config(const char *filename, Config *config) {
                 strncpy(config->name, value, sizeof(config->name) - 1);
             } else if (strcmp(key, "port") == 0) {
                 config->port = atoi(value);
-            } else if (strcmp(key, "max_connections") == 0) {
-                config->max_connections = atoi(value);
+            } else if (strcmp(key, "max_connec.stdlib.stdions") == 0) {
+                config->max_connec.stdlib.stdions = atoi(value);
             } else if (strcmp(key, "debug") == 0) {
                 config->debug = (strcmp(value, "true") == 0);
             }
@@ -479,7 +479,7 @@ int main(void) {
     printf("Configuration:\n");
     printf("  Name: %s\n", config.name);
     printf("  Port: %d\n", config.port);
-    printf("  Max connections: %d\n", config.max_connections);
+    printf("  Max connec.stdlib.stdions: %d\n", config.max_connec.stdlib.stdions);
     printf("  Debug: %s\n", config.debug ? "true" : "false");
 
     return 0;
@@ -489,7 +489,7 @@ int main(void) {
 config.txt:
 name = MyServer
 port = 8080
-max_connections = 100
+max_connec.stdlib.stdions = 100
 debug = true
 */
 ```
@@ -550,7 +550,7 @@ scanf("%49s", name);  // Can't read spaces
 ### 1. Forgetting & for Non-Array Types
 
 ```c
-// WRONG - Missing & for integers
+// WRONG - Missing & for c.stdlib.stdint
 int value;
 scanf("%d", value);  // Segmentation fault!
 

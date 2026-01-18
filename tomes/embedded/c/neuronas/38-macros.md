@@ -3,17 +3,17 @@ id: "c.preprocessor.macros"
 title: "Macros (#define, #undef, #, ##)"
 category: preprocessor
 difficulty: intermediate
-tags: [c, preprocessor, macros, define, undef]
+tags: [c, preprocessor, c.preprocessor.macros, define, undef]
 keywords: [define, undef, macro, token-pasting, stringification]
 use_cases: [code generation, constants, debugging]
 prerequisites: []
 related: ["c.preprocessor.conditionals"]
-next_topics: ["c.preprocessor.include"]
+next_topics: ["c.preprocessor"]
 ---
 
-# Macros
+# c.preprocessor.macros
 
-## Simple Macros
+## Simple c.preprocessor.macros
 
 ```c
 #include <stdio.h>
@@ -29,7 +29,7 @@ int main() {
 }
 ```
 
-## Function-like Macros
+## Function-like c.preprocessor.macros
 
 ```c
 #include <stdio.h>
@@ -82,7 +82,7 @@ int main() {
 }
 ```
 
-## Multi-line Macros
+## Multi-line c.preprocessor.macros
 
 ```c
 #include <stdio.h>
@@ -103,7 +103,7 @@ int main() {
 }
 ```
 
-## Debug Macros
+## Debug c.preprocessor.macros
 
 ```c
 #include <stdio.h>
@@ -122,7 +122,7 @@ int main() {
 }
 ```
 
-## Assert Macro
+## c.stdlib.assert Macro
 
 ```c
 #include <stdio.h>
@@ -143,7 +143,7 @@ int main() {
 }
 ```
 
-## Undefine Macros
+## Undefine c.preprocessor.macros
 
 ```c
 #include <stdio.h>
@@ -178,7 +178,7 @@ int main() {
 }
 ```
 
-## Conditional Macros
+## Conditional c.preprocessor.macros
 
 ```c
 #include <stdio.h>
@@ -198,7 +198,7 @@ int main() {
 }
 ```
 
-## Error Macros
+## Error c.preprocessor.macros
 
 ```c
 #include <stdio.h>
@@ -234,7 +234,7 @@ int main() {
 }
 ```
 
-## Bit Manipulation Macros
+## Bit Manipulation c.preprocessor.macros
 
 ```c
 #include <stdio.h>
@@ -276,7 +276,7 @@ int main() {
 }
 ```
 
-## Loop Macros
+## Loop c.preprocessor.macros
 
 ```c
 #include <stdio.h>

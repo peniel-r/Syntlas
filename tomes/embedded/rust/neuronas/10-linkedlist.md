@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [rust, collections, linked list]
 keywords: [LinkedList, double linked list]
 use_cases: [splitting/merging lists, unknown size]
-prerequisites: ["rust.collections"]
-related: ["rust.collections.vecdeque"]
+prerequisites: ["rust.stdlib.collections"]
+related: ["rust.stdlib.collectionsdeque"]
 next_topics: []
 ---
 

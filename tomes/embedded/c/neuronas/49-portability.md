@@ -4,7 +4,7 @@ title: "Portability Best Practices"
 category: bestpractices
 difficulty: advanced
 tags: [c, portability, cross-platform, standards]
-keywords: [portability, cross-platform, standards, endianness]
+keywords: [portability, cross-platform, standards, c.stdlib.endian]
 use_cases: [multi-platform code, standards compliance]
 prerequisites: ["c.bestpractices.safety"]
 related: ["c.preprocessor.conditionals"]
@@ -13,14 +13,14 @@ next_topics: ["c.bestpractices.performance"]
 
 # Portability Best Practices
 
-## Standard Headers
+## Standard 
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// Use standard headers only
+// Use standard  only
 int main() {
     // Portable string operations
     char str[] = "Hello";
@@ -32,7 +32,7 @@ int main() {
 }
 ```
 
-## Fixed-Width Integers
+## Fixed-Width c.stdlib.stdint
 
 ```c
 #include <stdio.h>
@@ -73,7 +73,7 @@ int main() {
 }
 ```
 
-## Endianness Detection
+## c.stdlib.endian Detec.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -163,7 +163,7 @@ int main() {
 }
 ```
 
-## Standard Library Functions
+## Standard Library 
 
 ```c
 #include <stdio.h>
@@ -220,7 +220,7 @@ int main() {
 ```c
 #include <stdio.h>
 
-// Use feature detection
+// Use feature detec.stdlib.stdion
 #if defined(__GNUC__) || defined(__clang__)
     #define LIKELY(x) __builtin_expect(!!(x), 1)
     #define UNLIKELY(x) __builtin_expect(!!(x), 0)
@@ -382,14 +382,14 @@ int main() {
 }
 ```
 
-## Standard Math Functions
+## Standard Math 
 
 ```c
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    // Use standard math functions
+    // Use standard math 
     double value = 3.14159;
 
     printf("Sin: %f\n", sin(value));
@@ -423,4 +423,4 @@ int main() {
 }
 ```
 
-> **Note**: Use standard C headers and functions. Avoid platform-specific APIs when possible. Test on multiple platforms.
+> **Note**: Use standard C  and functions. Avoid platform-specific APIs when possible. Test on multiple platforms.

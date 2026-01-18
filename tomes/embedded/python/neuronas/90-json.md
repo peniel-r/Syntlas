@@ -7,8 +7,8 @@ tags: [python, json, serialization, data-format]
 keywords: [json.load, json.dump, json.dumps, json.loads]
 use_cases: [API responses, config files, data interchange]
 prerequisites: ["python.datastructures.dicts"]
-related: ["python.stdlib.io"]
-next_topics: ["python.stdlib.pprint"]
+related: ["py.io.files"]
+next_topics: ["python.stdlib.json"]
 ---
 
 # JSON Processing

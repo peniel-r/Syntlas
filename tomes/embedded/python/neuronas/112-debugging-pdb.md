@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, debugging, pdb, breakpoint]
 keywords: [pdb, breakpoint, step, continue]
 use_cases: [troubleshooting, inspection]
-prerequisites: ["py.basics.functions"]
+prerequisites: ["python.functions.def"]
 related: ["py.debugging.traceback"]
 next_topics: []
 ---

@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, oop, dunder, overloading]
 keywords: [__init__, __str__, __repr__, __len__, __add__]
 use_cases: [operator overloading, string representation, custom collections]
-prerequisites: ["py.oop.classes"]
-related: ["py.oop.classes"]
+prerequisites: ["python.classes"]
+related: ["python.classes"]
 next_topics: []
 ---
 

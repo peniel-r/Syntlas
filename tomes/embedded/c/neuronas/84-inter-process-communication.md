@@ -1,5 +1,5 @@
 ---
-id: 84-inter-process-communication
+id: "c.ipc.main"
 title: Inter-Process Communication
 category: system
 difficulty: advanced
@@ -17,17 +17,17 @@ keywords:
 use_cases:
   - Process coordination
   - Data sharing
-  - Synchronization
+  - c.ipc.sync
   - Communication
 prerequisites:
-  - process-management
-  - file-operations
-  - pointers
+  - 
+  - 
+  - 
 related:
-  - threads
-  - synchronization
+  - 
+  - c.ipc.sync
 next_topics:
-  - signals
+  - c.stdlib.signal
 ---
 
 # Inter-Process Communication (IPC)
@@ -307,7 +307,7 @@ int main(void) {
 }
 ```
 
-## Semaphores for Synchronization
+## Semaphores for c.ipc.sync
 
 ```c
 #include <stdio.h>
@@ -349,9 +349,9 @@ int main(void) {
         // Child process
         for (int i = 0; i < 5; i++) {
             P(semid);
-            printf("Child in critical section %d\n", i);
+            printf("Child in critical sec.stdlib.stdion %d\n", i);
             sleep(1);
-            printf("Child leaving critical section %d\n", i);
+            printf("Child leaving critical sec.stdlib.stdion %d\n", i);
             V(semid);
             sleep(1);
         }
@@ -359,9 +359,9 @@ int main(void) {
         // Parent process
         for (int i = 0; i < 5; i++) {
             P(semid);
-            printf("Parent in critical section %d\n", i);
+            printf("Parent in critical sec.stdlib.stdion %d\n", i);
             sleep(1);
-            printf("Parent leaving critical section %d\n", i);
+            printf("Parent leaving critical sec.stdlib.stdion %d\n", i);
             V(semid);
             sleep(1);
         }
@@ -504,7 +504,7 @@ int main(void) {
 
     printf("Server listening...\n");
 
-    // Accept connection
+    // Accept connec.stdlib.stdion
     client_fd = accept(server_fd,
                       (struct sockaddr *)&client_addr,
                       &addr_len);
@@ -597,7 +597,7 @@ int main(void) {
 
 // Message Queues - Multiple senders/receivers
 
-// Unix Sockets - Complex communication, bidirectional
+// Unix Sockets - Complex communication, bidirectionnal
 ```
 
 ### Handle Errors Properly
@@ -616,12 +616,12 @@ shmctl(shmid, IPC_RMID, NULL);
 semctl(semid, 0, IPC_RMID, 0);
 ```
 
-### Use Synchronization
+### Use c.ipc.sync
 
 ```c
 // Always synchronize access to shared memory
 P(semaphore);
-// Critical section
+// Critical sec.stdlib.stdion
 // Access shared memory
 V(semaphore);
 ```
@@ -634,14 +634,14 @@ V(semaphore);
 // WRONG - Potential deadlock
 P(sem1);
 P(sem2);
-// Critical section
+// Critical sec.stdlib.stdion
 V(sem1);
 V(sem2);
 
 // CORRECT - Consistent ordering
 P(sem1);
 P(sem2);
-// Critical section
+// Critical sec.stdlib.stdion
 V(sem2);
 V(sem1);
 ```
@@ -661,7 +661,7 @@ shmctl(shmid, IPC_RMID, NULL);
 ### 3. Race Conditions
 
 ```c
-// WRONG - No synchronization
+// WRONG - No c.ipc.sync
 shared_data->counter++;  // Race condition!
 
 // CORRECT - Use semaphore
@@ -670,4 +670,4 @@ shared_data->counter++;
 V(semaphore);
 ```
 
-> **Note: IPC mechanisms require careful error handling and resource management. Always clean up shared resources. Use synchronization primitives to avoid race conditions. Choose the right IPC mechanism based on your requirements.
+> **Note: IPC mechanisms require careful error handling and resource management. Always clean up shared resources. Use c.ipc.sync primitives to avoid race conditions. Choose the right IPC mechanism based on your requirements.

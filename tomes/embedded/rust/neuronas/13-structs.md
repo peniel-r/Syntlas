@@ -7,7 +7,7 @@ tags: [rust, structs, types, data structures]
 keywords: [struct, field, instance, tuple struct]
 use_cases: [custom types, data grouping, object modeling]
 prerequisites: ["rust.types"]
-related: ["rust.methods", "rust.enums"]
+related: ["rust.methods", "rust.patterns.enums"]
 next_topics: ["rust.methods"]
 ---
 

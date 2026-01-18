@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, stdlib, sys, interpreter]
 keywords: [sys, argv, exit, path, stdin]
 use_cases: [cli args, interpreter config]
-prerequisites: ["py.basics.variables"]
+prerequisites: ["python.basics.variables"]
 related: ["py.lib.os"]
 next_topics: []
 ---

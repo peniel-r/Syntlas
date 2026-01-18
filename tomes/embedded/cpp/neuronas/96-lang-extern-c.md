@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [cpp, c, interoperability]
 keywords: [extern C, name mangling]
 use_cases: [linking with C libraries]
-prerequisites: ["cpp.basics.functions"]
-related: ["cpp.basics.functions"]
+prerequisites: ["cpp.basic.functions"]
+related: ["cpp.basic.functions"]
 next_topics: []
 ---
 

@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [rust, collections, heap, priority queue]
 keywords: [BinaryHeap, priority queue, max heap]
 use_cases: [priority queues, scheduling, dijkstra]
-prerequisites: ["rust.collections"]
-related: ["rust.collections.vec"]
+prerequisites: ["rust.stdlib.collections"]
+related: ["rust.stdlib.collections"]
 next_topics: []
 ---
 

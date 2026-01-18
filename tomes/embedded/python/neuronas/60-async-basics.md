@@ -7,8 +7,8 @@ tags: [python, async, await, asyncio, concurrency]
 keywords: [coroutine, event loop, async def]
 use_cases: [concurrent I/O, network requests, responsive UI]
 prerequisites: ["python.functions.def", "python.controlflow.for"]
-related: ["python.async.context-managers", "python.async.patterns"]
-next_topics: ["python.async.tasks"]
+related: ["python.async.basics", "python.async.patterns"]
+next_topics: ["python.async.basics"]
 ---
 
 # Async/Await Basics

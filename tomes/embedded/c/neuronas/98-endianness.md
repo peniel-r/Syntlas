@@ -1,14 +1,14 @@
 ---
-id: 98-endianness
-title: Endianness
+id: "c.stdlib.endian"
+title: c.stdlib.endian
 category: system
 difficulty: intermediate
 tags:
-  - endianness
+  - c.stdlib.endian
   - byte-order
   - network-byte-order
 keywords:
-  - endianness
+  - c.stdlib.endian
   - byte order
   - big endian
   - little endian
@@ -19,21 +19,21 @@ use_cases:
   - Binary data
   - Cross-platform
 prerequisites:
-  - pointers
-  - structs
-  - file-operations
+  - 
+  - 
+  - 
 related:
-  - network-programming
-  - file-operations
+  - 
+  - 
 next_topics:
-  - data-serialization
+  - c.stdlib.io
 ---
 
-# Endianness
+# c.stdlib.endian
 
 Endianness determines the byte order in which multi-byte data types are stored.
 
-## Detecting Endianness
+## Detecting c.stdlib.endian
 
 ```c
 #include <stdio.h>
@@ -102,7 +102,7 @@ uint64_t swap64(uint64_t value) {
     return value;
 }
 
-// Using built-in functions (GCC/Clang)
+// Using built-in  (GCC/Clang)
 uint16_t swap16_builtin(uint16_t value) {
     return __builtin_bswap16(value);
 }
@@ -141,7 +141,7 @@ int main(void) {
 ```c
 #include <stdio.h>
 #include <stdint.h>
-#include <arpa/inet.h>  // For POSIX network functions
+#include <arpa/inet.h>  // For POSIX network 
 
 // Host to network byte order (16-bit)
 uint16_t htons_custom(uint16_t hostshort) {
@@ -185,7 +185,7 @@ int main(void) {
 #include <stdio.h>
 #include <stdint.h>
 
-// Platform-independent endianness conversion
+// Platform-independent c.stdlib.endian conversion
 #if defined(__BYTE_ORDER__)
     #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
         #define IS_LITTLE_ENDIAN 1
@@ -198,7 +198,7 @@ int main(void) {
     #define IS_LITTLE_ENDIAN is_little_endian()
 #endif
 
-// Conversion functions
+// Conversion 
 static inline uint16_t to_big_endian16(uint16_t value) {
     return IS_LITTLE_ENDIAN ? swap16(value) : value;
 }
@@ -234,7 +234,7 @@ int main(void) {
 }
 ```
 
-## Writing Binary Files with Endianness
+## Writing Binary Files with c.stdlib.endian
 
 ```c
 #include <stdio.h>
@@ -319,7 +319,7 @@ send_data(port);  // Might be wrong on some systems
 // Use cross-platform testing or emulators
 ```
 
-### Use Built-in Functions
+### Use Built-in 
 
 ```c
 // GOOD - Use built-in when available
@@ -332,13 +332,13 @@ send_data(port);  // Might be wrong on some systems
 
 ## Common Pitfalls
 
-### 1. Assuming Endianness
+### 1. Assuming c.stdlib.endian
 
 ```c
 // WRONG - Assumes little endian
 uint32_t value = *(uint32_t*)buffer;
 
-// CORRECT - Handle endianness
+// CORRECT - Handle c.stdlib.endian
 uint32_t value = from_big_endian32(*(uint32_t*)buffer);
 ```
 
@@ -362,13 +362,13 @@ packet.address = htonl(address);
 send(&packet, sizeof(packet));
 ```
 
-### 3. Mixed Endianness in Files
+### 3. Mixed c.stdlib.endian in Files
 
 ```c
 // WRONG - Not documenting file format
 // File format unclear
 
-// CORRECT - Document endianness
+// CORRECT - Document c.stdlib.endian
 /*
  * File format:
  * Header (big endian):

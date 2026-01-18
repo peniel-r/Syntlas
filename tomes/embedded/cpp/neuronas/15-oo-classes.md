@@ -13,7 +13,7 @@ keywords: [class, object, member, access-specifier]
 prerequisites: ["cpp.basic.functions", "cpp.basic.pointers"]
 next: ["cpp.oo.inheritance", "cpp.oo.polymorphism"]
 related:
-  - id: "cpp.oo.structs"
+  - id: "cpp.oo.classes"
     type: similar
     weight: 85
   - id: "cpp.oo.constructors"

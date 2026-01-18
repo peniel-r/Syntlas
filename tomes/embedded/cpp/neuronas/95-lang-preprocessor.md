@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [cpp, preprocessor, macros]
 keywords: [#define, #include, #ifdef, #pragma]
 use_cases: [conditional compilation, macros]
-prerequisites: ["cpp.basic-syntax"]
+prerequisites: ["cpp.basic.syntax"]
 related: ["cpp.modern.constexpr"]
 next_topics: []
 ---

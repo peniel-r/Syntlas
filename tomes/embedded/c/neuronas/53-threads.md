@@ -3,15 +3,15 @@ id: "c.stdlib.threads"
 title: "Threads (pthread)"
 category: stdlib
 difficulty: advanced
-tags: [c, threads, pthread, concurrency, mutex]
+tags: [c, , pthread, concurrency, mutex]
 keywords: [pthread, mutex, condition, thread, lock]
-use_cases: [parallel processing, concurrency, synchronization]
+use_cases: [parallel processing, concurrency, c.ipc.sync]
 prerequisites: ["c.stdlib.process"]
 related: ["c.stdlib.signal"]
 next_topics: ["c.algorithms.parallel"]
 ---
 
-# Threads (pthread)
+#  (pthread)
 
 ## Basic Thread Creation
 
@@ -72,7 +72,7 @@ int main() {
 }
 ```
 
-## Multiple Threads
+## Multiple 
 
 ```c
 #include <stdio.h>
@@ -369,9 +369,9 @@ sem_t semaphore;
 
 void* thread_func(void* arg) {
     sem_wait(&semaphore);
-    printf("Thread entered critical section\n");
+    printf("Thread entered critical sec.stdlib.stdion\n");
     sleep(1);
-    printf("Thread leaving critical section\n");
+    printf("Thread leaving critical sec.stdlib.stdion\n");
     sem_post(&semaphore);
     return NULL;
 }

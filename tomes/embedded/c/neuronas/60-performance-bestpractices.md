@@ -6,8 +6,8 @@ difficulty: advanced
 tags: [c, performance, optimization, profiling]
 keywords: [performance, optimization, profiling, cache, branch]
 use_cases: [performance tuning, optimization, speed]
-prerequisites: [c.bestpractices.portability]
-related: [c.algorithms.sort"]
+prerequisites: [c.portability]
+related: [c.algorithms.sorting]
 next_topics: [c.algorithms.parallel]
 ---
 
@@ -48,7 +48,7 @@ int main() {
 }
 ```
 
-## Branch Prediction
+## Branch Predic.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -76,7 +76,7 @@ int main() {
 }
 ```
 
-## Inline Functions
+## Inline 
 
 ```c
 #include <stdio.h>

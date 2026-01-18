@@ -47,7 +47,7 @@ void portable_function(int param) {
     int result = param * 2;
 }
 
-// Platform detection (abstracted)
+// Platform detec.stdlib.stdion (abstracted)
 #if defined(_WIN32)
     void windows_specific() {}
 #elif defined(_WIN64)
@@ -67,7 +67,7 @@ void portable_function(int param) {
 #include <stdlib.h>
 #include <string.h>
 
-// Initialize pointers to NULL
+// Initialize  to NULL
 int* ptr = NULL;
 char* str = NULL;
 
@@ -118,7 +118,7 @@ int parse_int(const char* str, int* result) {
 ## Function Design
 
 ```c
-// Keep functions small and focused
+// Keep  small and focused
 int calculate_area(int width, int height) {
     return width * height;
 }
@@ -171,14 +171,14 @@ int calculate_total(int a, int b) {
 #define MAX_FILE_SIZE 1000
 #define DEFAULT_TIMEOUT 30
 
-// Structs use PascalCase
+//  use PascalCase
 typedef struct UserInfo {
     char username[50];
     int user_id;
 };
 ```
 
-## Documentation Comments
+##  Comments
 
 ```c
 /**
@@ -234,7 +234,7 @@ void safe_array_access(int arr[], size_t size, size_t index) {
 ### String Handling
 
 ```c
-// Use safe string functions
+// Use safe string 
 size_t safe_copy(char* dest, const char* src, size_t max_len) {
     size_t len = 0;
     

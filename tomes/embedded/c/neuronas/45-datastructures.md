@@ -1,12 +1,12 @@
 ---
 id: "c.algorithms.datastructures"
 title: "Data Structures"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: intermediate
 tags: [c, data structures, stack, queue, list, tree]
 keywords: [stack, queue, linked list, tree, hash]
-use_cases: [data organization, algorithms, memory management]
-prerequisites: ["c.pointers", "c.structs"]
+use_cases: [data organization, c.algorithms.sorting, memory management]
+prerequisites: ["c.pointers", "c.patterns.structs"]
 related: ["c.algorithms.search"]
 next_topics: ["c.algorithms.graph"]
 ---

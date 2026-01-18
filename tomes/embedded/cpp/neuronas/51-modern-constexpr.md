@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [cpp, modern, constexpr, compile-time]
 keywords: [constexpr, compile-time, optimization]
 use_cases: [compile-time calculation, array sizes, templates]
-prerequisites: ["cpp.basics.functions"]
+prerequisites: ["cpp.basic.functions"]
 related: ["cpp.modern.consteval"]
 next_topics: ["cpp.modern.consteval"]
 ---

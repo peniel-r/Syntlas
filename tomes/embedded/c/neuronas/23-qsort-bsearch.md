@@ -5,9 +5,9 @@ category: stdlib
 difficulty: intermediate
 tags: [c, stdlib, qsort, bsearch, sorting, searching]
 keywords: [qsort, bsearch, sort, search, compare, binary]
-use_cases: [data processing, algorithms, database operations]
+use_cases: [data processing, c.algorithms.sorting, database operations]
 prerequisites: ["c.pointers", "c.functions"]
-related: ["c.strings"]
+related: ["c.stdlib.string"]
 next_topics: ["c.stdlib.math"]
 ---
 

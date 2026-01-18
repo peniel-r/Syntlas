@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, async, asyncio, timeout]
 keywords: [wait_for, timeout, TimeoutError]
 use_cases: [cancelling slow tasks, slas]
-prerequisites: ["py.async.basics"]
+prerequisites: ["python.async.basics"]
 related: ["py.async.tasks"]
 next_topics: []
 ---

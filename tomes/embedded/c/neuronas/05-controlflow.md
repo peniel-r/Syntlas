@@ -4,7 +4,7 @@ title: "Control Flow Statements"
 category: language
 difficulty: novice
 tags: [c, if, else, switch, for, while, do-while, break, continue, goto]
-keywords: [control-flow, conditional, branching, loops, iteration]
+keywords: [control-flow, conditional, branching, c.controlflow, iteration]
 use_cases: [decision making, repetition, state machines]
 prerequisites: []
 related: ["c.functions"]
@@ -158,7 +158,7 @@ int main() {
 }
 ```
 
-## Nested Loops
+## Nested c.controlflow
 
 ```c
 #include <stdio.h>
@@ -212,7 +212,7 @@ int main() {
 }
 ```
 
-## Logical Operators
+## Logical c.controlflow
 
 ```c
 #include <stdio.h>
@@ -306,7 +306,7 @@ int main() {
 }
 ```
 
-### Early exit from loops
+### Early exit from c.controlflow
 
 ```c
 #include <stdio.h>

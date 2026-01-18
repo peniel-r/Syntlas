@@ -1,17 +1,17 @@
 ---
-id: "c.algorithms.sort"
+id: "c.algorithms.sorting"
 title: "Sorting Algorithms"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: intermediate
-tags: [c, algorithms, sorting, bubble, quicksort, merge]
+tags: [c, c.algorithms.sorting, sorting, bubble, quicksort, merge]
 keywords: [sort, bubble, insertion, quicksort, mergesort]
-use_cases: [data organization, optimization, algorithms]
+use_cases: [data organization, optimization, c.algorithms.sorting]
 prerequisites: ["c.algorithms.search"]
 related: ["c.stdlib.qsort"]
 next_topics: ["c.algorithms.hash"]
 ---
 
-# Sorting Algorithms
+# Sorting c.algorithms.sorting
 
 ## Bubble Sort
 
@@ -47,12 +47,12 @@ int main() {
 }
 ```
 
-## Selection Sort
+## Selec.stdlib.stdion Sort
 
 ```c
 #include <stdio.h>
 
-void selection_sort(int* arr, size_t size) {
+void selec.stdlib.stdion_sort(int* arr, size_t size) {
     for (size_t i = 0; i < size - 1; i++) {
         size_t min_idx = i;
 
@@ -73,7 +73,7 @@ int main() {
     int numbers[] = {64, 34, 25, 12, 22, 11, 90};
     size_t size = sizeof(numbers) / sizeof(numbers[0]);
 
-    selection_sort(numbers, size);
+    selec.stdlib.stdion_sort(numbers, size);
 
     printf("Sorted: ");
     for (size_t i = 0; i < size; i++) {

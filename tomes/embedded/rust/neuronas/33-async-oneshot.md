@@ -7,7 +7,7 @@ tags: [rust, async, channel, oneshot]
 keywords: [tokio::sync::oneshot, send, recv]
 use_cases: [returning a single value, signals]
 prerequisites: ["rust.async"]
-related: ["rust.async.channels"]
+related: ["rust.async"]
 next_topics: []
 ---
 

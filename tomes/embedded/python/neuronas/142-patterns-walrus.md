@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, patterns, walrus, assignment]
 keywords: [:=, assignment expression]
 use_cases: [assignment in expression, while loops]
-prerequisites: ["py.basics.variables"]
-related: ["py.control.while"]
+prerequisites: ["python.basics.variables"]
+related: ["python.controlflow.while"]
 next_topics: []
 ---
 

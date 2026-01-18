@@ -1,5 +1,5 @@
 ---
-id: "zig.memory.allocators"
+id: "zig.memory.management.allocators"
 title: "Allocators Interface"
 category: memory
 difficulty: intermediate
@@ -7,8 +7,8 @@ tags: [zig, memory, interface]
 keywords: [Allocator, alloc, free]
 use_cases: [using memory]
 prerequisites: ["zig.memory.management"]
-related: ["zig.memory.gpa"]
-next_topics: ["zig.memory.gpa"]
+related: ["zig.memory.management.gpa"]
+next_topics: ["zig.memory.management.gpa"]
 ---
 
 # Allocator Interface

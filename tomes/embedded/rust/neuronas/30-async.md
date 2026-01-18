@@ -7,7 +7,7 @@ tags: [rust, async, tokio, futures]
 keywords: [async, await, tokio::main, tokio::spawn]
 use_cases: [concurrent I/O, web servers, network requests]
 prerequisites: ["rust.ownership"]
-related: ["rust.patterns.future"]
+related: []
 next_topics: []
 ---
 

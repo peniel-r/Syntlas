@@ -6,8 +6,8 @@ difficulty: beginner
 tags: [python, patterns, slicing, indexing]
 keywords: [slice, start:stop:step]
 use_cases: [substrings, reversing, skipping]
-prerequisites: ["py.basics.lists"]
-related: ["py.basics.strings"]
+prerequisites: ["python.datastructures.lists"]
+related: ["python.basics.strings"]
 next_topics: []
 ---
 

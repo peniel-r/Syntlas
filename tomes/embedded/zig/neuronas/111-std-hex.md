@@ -7,7 +7,7 @@ tags: [zig, stdlib, encoding, hex]
 keywords: [hex, encode, decode]
 use_cases: [binary representation]
 prerequisites: ["zig.basics.slices"]
-related: ["zig.std.fmt"]
+related: ["zig.std.formatting"]
 next_topics: []
 ---
 

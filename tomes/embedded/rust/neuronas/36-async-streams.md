@@ -7,7 +7,7 @@ tags: [rust, async, streams, iterators]
 keywords: [Stream, StreamExt, next]
 use_cases: [async iteration, websockets, data feeds]
 prerequisites: ["rust.async", "rust.iterators"]
-related: ["rust.async.channels"]
+related: ["rust.async"]
 next_topics: []
 ---
 

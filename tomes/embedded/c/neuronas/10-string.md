@@ -11,7 +11,7 @@ related: ["c.arrays", "c.pointers"]
 next_topics: ["c.stdlib.io"]
 ---
 
-# String Library Functions
+# String Library 
 
 C provides <string.h> for null-terminated string operations.
 
@@ -180,7 +180,7 @@ int main() {
 }
 ```
 
-## Safe String Functions
+## Safe String 
 
 ```c
 #include <string.h>

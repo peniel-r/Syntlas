@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, oop, class, inheritance]
 keywords: [extends, super, override, subclass]
 use_cases: [code reuse, polymorphism]
-prerequisites: ["py.oop.classes"]
+prerequisites: ["python.classes"]
 related: ["py.oop.super", "py.oop.abc"]
 next_topics: ["py.oop.super"]
 ---

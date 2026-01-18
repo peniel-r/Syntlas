@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [rust, error, result, handling]
 keywords: [Result, Ok, Err, ? operator]
 use_cases: [file io, parsing, fallible operations]
-prerequisites: ["rust.enums", "rust.generics"]
+prerequisites: ["rust.patterns.enums", "rust.generics"]
 related: ["rust.panic", "rust.option"]
 next_topics: ["rust.option"]
 ---

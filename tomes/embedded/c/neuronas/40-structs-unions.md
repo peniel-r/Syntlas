@@ -32,7 +32,7 @@ int main() {
 }
 ```
 
-## Struct with Pointers
+## Struct with 
 
 ```c
 #include <stdio.h>
@@ -80,7 +80,7 @@ int main() {
 }
 ```
 
-## Nested Structs
+## Nested 
 
 ```c
 #include <stdio.h>
@@ -112,7 +112,7 @@ int main() {
 }
 ```
 
-## Struct Arrays
+## Struct 
 
 ```c
 #include <stdio.h>

@@ -3,7 +3,7 @@ id: "c.pointers"
 title: "Pointers and Memory Management"
 category: language
 difficulty: intermediate
-tags: [c, pointers, malloc, free, memory, stack, heap]
+tags: [c, , malloc, free, memory, stack, heap]
 keywords: [pointer, address, dereference, malloc, free, sizeof]
 use_cases: [dynamic memory, pointer arithmetic, manual memory management]
 prerequisites: []
@@ -11,7 +11,7 @@ related: ["c.arrays", "c.functions"]
 next_topics: ["c.stdlib.string"]
 ---
 
-# Pointers and Memory Management
+#  and Memory Management
 
 C provides direct memory manipulation through pointers.
 
@@ -79,13 +79,13 @@ int* ptr = arr;  // Points to first element
 int* third = ptr + 2;  // &arr[2]
 int value = *third;  // 3
 
-// Array indexing via pointers
+// Array indexing via 
 for (int i = 0; i < 5; i++) {
     printf("%d\n", *(ptr + i));  // arr[i]
 }
 ```
 
-## Arrays vs Pointers
+##  vs 
 
 ```c
 // Array decay to pointer
@@ -100,7 +100,7 @@ void func_better(int arr[], size_t size) {
 }
 ```
 
-## Function Pointers
+## Function 
 
 ```c
 #include <stdio.h>
@@ -153,7 +153,7 @@ char* char_ptr = (char*)generic_ptr;
 free(generic_ptr);
 ```
 
-## const vs volatile Pointers
+## const vs volatile 
 
 ```c
 // const - value cannot be modified through pointer

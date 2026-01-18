@@ -1,5 +1,5 @@
 ---
-id: 80-compiler-flags
+id: "c.build.flags"
 title: Compiler Flags and Optimization
 category: tools
 difficulty: intermediate
@@ -7,7 +7,7 @@ tags:
   - gcc
   - clang
   - optimization
-  - compiler-flags
+  - 
 keywords:
   - gcc
   - clang
@@ -20,18 +20,18 @@ use_cases:
   - Release builds
   - Static analysis
 prerequisites:
-  - compilation
-  - build-systems
+  - 
+  - 
 related:
-  - build-systems
-  - debugging-practices
+  - 
+  - 
 next_topics:
-  - shared-libraries
+  - 
 ---
 
 # Compiler Flags and Optimization
 
-Compiler flags control code generation, warnings, optimizations, and other compilation aspects.
+Compiler flags control code generation, warnings, optimizations, and other  aspects.
 
 ## Basic Warning Flags
 
@@ -102,7 +102,7 @@ strip --strip-debug --strip-unneeded program
 objcopy --add-gnu-debuglink=program.debug program
 ```
 
-## Standard Selection
+## Standard Selec.stdlib.stdion
 
 ```bash
 # C standard
@@ -124,12 +124,12 @@ gcc -std=c11 -pedantic program.c
 ## Preprocessor Flags
 
 ```bash
-# Define macros
+# Define c.preprocessor.macros
 gcc -DDEBUG program.c -o program
 gcc -DVERSION=1.0 program.c -o program
 gcc -DARRAY_SIZE=100 program.c -o program
 
-# Undefine macros
+# Undefine c.preprocessor.macros
 gcc -UDEBUG program.c -o program
 
 # Include directories
@@ -190,7 +190,7 @@ gcc -fprofile-use -O3 program.c -o program
 gcc -O3 -fipa-pta program.c -o program
 
 # Loop unrolling
-gcc -O3 -funroll-loops program.c -o program
+gcc -O3 -funroll-c.controlflow program.c -o program
 ```
 
 ## Static Analysis Flags
@@ -221,7 +221,7 @@ gcc -fsanitize=leak -g program.c -o program
 ## Security Flags
 
 ```bash
-# Stack canaries (buffer overflow protection)
+# Stack canaries (buffer overflow protec.stdlib.stdion)
 gcc -fstack-protector program.c -o program
 gcc -fstack-protector-all program.c -o program
 
@@ -284,7 +284,7 @@ gcc -fdump-tree-original program.c -o program
 gcc -fdump-tree-optimized program.c -o program
 
 # Function inlining
-gcc -finline-functions program.c -o program
+gcc -finline- program.c -o program
 gcc -finline-limit=1000 program.c -o program
 ```
 
@@ -342,10 +342,10 @@ sanitize: $(SANITIZE_TARGET)
 .PHONY: debug release sanitize
 ```
 
-## Cross-Compilation Flags
+## Cross- Flags
 
 ```bash
-# ARM cross-compilation
+# ARM cross-
 arm-linux-gnueabihf-gcc program.c -o program_arm
 
 # Set sysroot
@@ -360,18 +360,18 @@ gcc -march=x86-64 program.c -o program
 gcc -march=armv7-a program.c -o program_arm
 ```
 
-## Complete Example: Production Build Script
+## Complete Example: Produc.stdlib.stdion Build Script
 
 ```bash
 #!/bin/bash
-# build.sh - Production build script
+# build.sh - Produc.stdlib.stdion build script
 
 set -e  # Exit on error
 
 # Configuration
 CC=gcc
 CFLAGS="-Wall -Wextra -std=c11 -Werror"
-LDFLAGS=""
+LDFLAGS="
 
 # Security flags
 SECURITY_FLAGS="-fPIE -pie -fstack-protector-strong -Wl,-z,relro,-z,now -z noexecstack"

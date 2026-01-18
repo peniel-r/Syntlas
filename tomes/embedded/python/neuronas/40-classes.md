@@ -7,8 +7,8 @@ tags: [python, classes, oop, objects]
 keywords: [class, __init__, self, inheritance, methods]
 use_cases: [modeling entities, code organization, encapsulation]
 prerequisites: ["python.functions.def"]
-related: ["python.patterns.decorators", "python.functions.scope"]
-next_topics: ["python.classes.methods"]
+related: ["python.patterns.decorators", "py.functions.closures"]
+next_topics: ["py.oop.methods"]
 ---
 
 # Classes and OOP

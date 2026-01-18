@@ -11,9 +11,9 @@ category: syntax
 difficulty: intermediate
 keywords: [inheritance, base-class, derived-class, override]
 prerequisites: ["cpp.oo.classes"]
-next: ["cpp.oo.polymorphism", "cpp.oo.virtual"]
+next: ["cpp.oo.polymorphism", "cpp.oo.polymorphism"]
 related:
-  - id: "cpp.oo.composition"
+  - id: "cpp.oo.inheritance"
     type: alternative
     weight: 75
   - id: "cpp.oo.polymorphism"
@@ -122,4 +122,4 @@ class Bat : public virtual Mammal, public virtual Bird { /* ... */ };
 ## See Also
 
 - [Polymorphism](cpp.oo.polymorphism) - Virtual functions and runtime behavior
-- [Composition](cpp.oo.composition) - Has-a relationship
+- [Composition](cpp.oo.inheritance) - Has-a relationship

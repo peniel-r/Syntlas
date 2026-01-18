@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [rust, generics, polymorphism, types]
 keywords: [generic, type parameter, <T>]
 use_cases: [code reuse, type safety, collections]
-prerequisites: ["rust.structs", "rust.enums"]
-related: ["rust.traits", "rust.lifetimes"]
+prerequisites: ["rust.structs", "rust.patterns.enums"]
+related: ["rust.traits", "rust.lifetime"]
 next_topics: ["rust.traits"]
 ---
 

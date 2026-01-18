@@ -3,7 +3,7 @@ id: "c.algorithms"
 title: "Common Algorithms"
 category: algorithm
 difficulty: intermediate
-tags: [c, algorithms, sorting, searching, data structures]
+tags: [c, c.algorithms.sorting, sorting, searching, data structures]
 keywords: [sort, search, binary search, linked list, tree, graph, stack, queue]
 use_cases: [sorting data, finding elements, pathfinding, graph traversal]
 prerequisites: ["c.stdlib.math"]
@@ -11,7 +11,7 @@ related: ["c.arrays"]
 next_topics: []
 ---
 
-# Common Algorithms
+# Common c.algorithms.sorting
 
 ## Bubble Sort
 
@@ -32,12 +32,12 @@ void bubble_sort(int arr[], size_t size) {
 }
 ```
 
-## Selection Sort
+## Selec.stdlib.stdion Sort
 
 ```c
 #include <stdio.h>
 
-void selection_sort(int arr[], size_t size) {
+void selec.stdlib.stdion_sort(int arr[], size_t size) {
     for (size_t i = 0; i < size - 1; i++) {
         size_t min_idx = i;
         

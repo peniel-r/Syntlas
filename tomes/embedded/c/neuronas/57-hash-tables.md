@@ -1,14 +1,14 @@
 ---
 id: "c.algorithms.hash"
 title: "Hash Tables"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: intermediate
-tags: [c, algorithms, hash, hash table, collision]
+tags: [c, c.algorithms.sorting, hash, hash table, collision]
 keywords: [hash, hash table, chaining, probing, collision]
 use_cases: [fast lookup, deduplication, caching]
 prerequisites: ["c.algorithms.datastructures"]
 related: ["c.algorithms.greedy"]
-next_topics: ["c.algorithms.sort"]
+next_topics: ["c.algorithms.sorting"]
 ---
 
 # Hash Tables

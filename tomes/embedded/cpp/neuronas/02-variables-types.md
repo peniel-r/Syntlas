@@ -16,7 +16,7 @@ related:
   - id: "cpp.modern.type-inference"
     type: complement
     weight: 85
-  - id: "cpp.basic.constants"
+  - id: "cpp.basic.variables"
     type: complement
     weight: 80
 version:

@@ -1,6 +1,6 @@
 ---
 id: "c.stdlib.string.h"
-title: "String Functions (strlen, strcpy, strcmp, strcat)"
+title: "String  (strlen, strcpy, strcmp, strcat)"
 category: stdlib
 difficulty: beginner
 tags: [c, string, strlen, strcpy, strcmp, strcat]
@@ -11,7 +11,7 @@ related: ["c.stdlib.string.advanced"]
 next_topics: ["c.stdlib.stdio"]
 ---
 
-# String Functions
+# String 
 
 ## strlen - String Length
 

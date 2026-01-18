@@ -6,8 +6,8 @@ difficulty: beginner
 tags: [python, stdlib, calendar, dates]
 keywords: [calendar, month, weekday]
 use_cases: [date calculations, printing calendars]
-prerequisites: ["py.lib.datetime"]
-related: ["py.lib.datetime"]
+prerequisites: ["python.stdlib.datetime"]
+related: ["python.stdlib.datetime"]
 next_topics: []
 ---
 

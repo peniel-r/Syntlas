@@ -1,10 +1,10 @@
 ---
-id: 99-data-structures
+id: "c.patterns.datastructures"
 title: Advanced Data Structures
-category: algorithms
+category: c.algorithms.sorting
 difficulty: advanced
 tags:
-  - data-structures
+  - 
   - linked-list
   - tree
   - hash-table
@@ -20,14 +20,14 @@ use_cases:
   - Data organization
   - Performance optimization
 prerequisites:
-  - pointers
-  - structs
-  - memory-management
+  - 
+  - 
+  - c.dynamic.alloc
 related:
-  - algorithms
-  - dynamic-alloc
+  - c.algorithms.sorting
+  - c.dynamic.alloc
 next_topics:
-  - algorithms-advanced
+  - c.algorithms.sorting
 ---
 
 # Advanced Data Structures
@@ -261,7 +261,7 @@ void graph_add_edge(Graph *graph, int src, int dest) {
     new_node->next = graph->adj_lists[src];
     graph->adj_lists[src] = new_node;
 
-    // For undirected graph, add edge in reverse direction
+    // For undirected graph, add edge in reverse directionn
     /*
     new_node = malloc(sizeof(Node));
     new_node->vertex = src;

@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [rust, collections, set, hash]
 keywords: [HashSet, unique, fast lookup]
 use_cases: [deduplication, membership check]
-prerequisites: ["rust.collections"]
-related: ["rust.collections.hashmap"]
+prerequisites: ["rust.stdlib.collections"]
+related: ["rust.stdlib.collections"]
 next_topics: []
 ---
 

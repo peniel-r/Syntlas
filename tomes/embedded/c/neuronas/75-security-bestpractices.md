@@ -1,5 +1,5 @@
 ---
-id: 75-security-bestpractices
+id: "c.bestpractices.security"
 title: Security Best Practices
 category: bestpractices
 difficulty: advanced
@@ -20,15 +20,15 @@ use_cases:
   - Preventing vulnerabilities
   - Secure programming
 prerequisites:
-  - memory-management
-  - string-functions
-  - pointers
+  - c.dynamic.alloc
+  - 
+  - 
 related:
-  - memory-bestpractices
-  - safety-bestpractices
-  - error-handling
+  - 
+  - 
+  - 
 next_topics:
-  - testing-practices
+  - 
 ---
 
 # Security Best Practices
@@ -62,13 +62,13 @@ int main(void) {
 }
 ```
 
-## Safe String Functions
+## Safe String 
 
 ```c
 #include <stdio.h>
 #include <string.h>
 
-// Safer alternatives to standard string functions
+// Safer alternatives to standard string 
 
 // Safe string concatenation
 void safe_strcat(char *dest, const char *src, size_t dest_size) {
@@ -236,7 +236,7 @@ void *safe_realloc(void *ptr, size_t new_size) {
     return new_ptr;
 }
 
-// Double-free protection
+// Double-free protec.stdlib.stdion
 typedef struct {
     void *ptr;
     bool freed;
@@ -262,7 +262,7 @@ int main(void) {
         printf("Allocated and zeroed buffer\n");
     }
 
-    // Safe free with protection
+    // Safe free with protec.stdlib.stdion
     ProtectedPtr protected = protect_ptr(buffer);
     safe_free(&protected);
     safe_free(&protected);  // Won't double-free
@@ -521,7 +521,7 @@ int main(void) {
 
 // BAD - system() is dangerous
 void unsafe_execute(const char *user_input) {
-    // If user_input contains "; rm -rf /", it will execute!
+    // If user_input contains "; rm -rf root", it will execute!
     system(user_input);
 }
 
@@ -555,7 +555,7 @@ int main(void) {
 ### Use Secure Alternatives
 
 ```c
-// BAD - Unsafe functions
+// BAD - Unsafe 
 strcpy(dest, src);
 strcat(dest, src);
 sprintf(buffer, "%s", input);

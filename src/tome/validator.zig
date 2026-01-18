@@ -29,10 +29,10 @@ pub const ValidationResult = struct {
 
 /// Validate a tome directory structure and content
 pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !ValidationResult {
-    var errors = std.ArrayList(ValidationError).init(allocator);
+    var errors = std.ArrayListUnmanaged(ValidationError){};
     errdefer {
         for (errors.items) |*err| err.deinit(allocator);
-        errors.deinit();
+        errors.deinit(allocator);
     }
 
     // Check for tome.json
@@ -40,14 +40,14 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
     defer allocator.free(tome_json_path);
 
     const tome_json_file = std.fs.cwd().openFile(tome_json_path, .{}) catch |err| {
-        try errors.append(.{
+        try errors.append(allocator, .{
             .file_path = try allocator.dupe(u8, tome_json_path),
             .line = null,
             .message = try std.fmt.allocPrint(allocator, "Failed to open tome.json: {}", .{err}),
         });
         return ValidationResult{
             .valid = false,
-            .errors = try errors.toOwnedSlice(),
+            .errors = try errors.toOwnedSlice(allocator),
         };
     };
     defer tome_json_file.close();
@@ -57,21 +57,21 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
     defer allocator.free(tome_json_content);
 
     var tome_metadata = metadata.parseMetadata(allocator, tome_json_content) catch |err| {
-        try errors.append(.{
+        try errors.append(allocator, .{
             .file_path = try allocator.dupe(u8, tome_json_path),
             .line = null,
             .message = try std.fmt.allocPrint(allocator, "Failed to parse tome.json: {}", .{err}),
         });
         return ValidationResult{
             .valid = false,
-            .errors = try errors.toOwnedSlice(),
+            .errors = try errors.toOwnedSlice(allocator),
         };
     };
     defer tome_metadata.deinit(allocator);
 
     // Validate required fields
     if (tome_metadata.name.len == 0) {
-        try errors.append(.{
+        try errors.append(allocator, .{
             .file_path = try allocator.dupe(u8, tome_json_path),
             .line = null,
             .message = try allocator.dupe(u8, "tome.json: 'name' field is required"),
@@ -79,7 +79,7 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
     }
 
     if (tome_metadata.version.len == 0) {
-        try errors.append(.{
+        try errors.append(allocator, .{
             .file_path = try allocator.dupe(u8, tome_json_path),
             .line = null,
             .message = try allocator.dupe(u8, "tome.json: 'version' field is required"),
@@ -91,14 +91,14 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
     defer allocator.free(neuronas_path);
 
     var neuronas_dir = std.fs.cwd().openDir(neuronas_path, .{ .iterate = true }) catch |err| {
-        try errors.append(.{
+        try errors.append(allocator, .{
             .file_path = try allocator.dupe(u8, neuronas_path),
             .line = null,
             .message = try std.fmt.allocPrint(allocator, "Failed to open neuronas directory: {}", .{err}),
         });
         return ValidationResult{
             .valid = false,
-            .errors = try errors.toOwnedSlice(),
+            .errors = try errors.toOwnedSlice(allocator),
         };
     };
     defer neuronas_dir.close();
@@ -116,7 +116,7 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
 
         // Security check: Validate path
         security.validator.validatePath(entry.path) catch |err| {
-            try errors.append(.{
+            try errors.append(allocator, .{
                 .file_path = try allocator.dupe(u8, entry.path),
                 .line = null,
                 .message = try std.fmt.allocPrint(allocator, "Security violation in path: {}", .{err}),
@@ -135,18 +135,17 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
         defer allocator.free(content);
 
         var neurona = parser.parse(allocator, content) catch |err| {
-            try errors.append(.{
+            try errors.append(allocator, .{
                 .file_path = try allocator.dupe(u8, full_path),
                 .line = null,
                 .message = try std.fmt.allocPrint(allocator, "Failed to parse neurona: {}", .{err}),
             });
             continue;
         };
-        defer neurona.deinit(allocator);
 
         // Security check: Validate code snippets in content
         security.validator.validateSnippet(content) catch |err| {
-            try errors.append(.{
+            try errors.append(allocator, .{
                 .file_path = try allocator.dupe(u8, full_path),
                 .line = null,
                 .message = try std.fmt.allocPrint(allocator, "Security violation in content: {}", .{err}),
@@ -155,7 +154,7 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
 
         // Check for duplicate IDs
         if (neurona_ids.contains(neurona.id)) {
-            try errors.append(.{
+            try errors.append(allocator, .{
                 .file_path = try allocator.dupe(u8, full_path),
                 .line = null,
                 .message = try std.fmt.allocPrint(allocator, "Duplicate neurona ID: {s}", .{neurona.id}),
@@ -166,7 +165,7 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
 
         // Validate required fields
         if (neurona.id.len == 0) {
-            try errors.append(.{
+            try errors.append(allocator, .{
                 .file_path = try allocator.dupe(u8, full_path),
                 .line = null,
                 .message = try allocator.dupe(u8, "Missing required field: id"),
@@ -174,12 +173,14 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
         }
 
         if (neurona.title.len == 0) {
-            try errors.append(.{
+            try errors.append(allocator, .{
                 .file_path = try allocator.dupe(u8, full_path),
                 .line = null,
                 .message = try allocator.dupe(u8, "Missing required field: title"),
             });
         }
+
+        neurona.deinit(allocator);
     }
 
     // Validate synapses (check for broken links)
@@ -200,12 +201,11 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
         defer allocator.free(content);
 
         var neurona = parser.parse(allocator, content) catch continue;
-        defer neurona.deinit(allocator);
 
         // Check prerequisites
         for (neurona.prerequisites) |synapse| {
             if (!neurona_ids.contains(synapse.id)) {
-                try errors.append(.{
+                try errors.append(allocator, .{
                     .file_path = try allocator.dupe(u8, full_path),
                     .line = null,
                     .message = try std.fmt.allocPrint(allocator, "Broken synapse (prerequisite): {s}", .{synapse.id}),
@@ -216,7 +216,7 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
         // Check related
         for (neurona.related) |synapse| {
             if (!neurona_ids.contains(synapse.id)) {
-                try errors.append(.{
+                try errors.append(allocator, .{
                     .file_path = try allocator.dupe(u8, full_path),
                     .line = null,
                     .message = try std.fmt.allocPrint(allocator, "Broken synapse (related): {s}", .{synapse.id}),
@@ -227,13 +227,15 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
         // Check next_topics
         for (neurona.next_topics) |synapse| {
             if (!neurona_ids.contains(synapse.id)) {
-                try errors.append(.{
+                try errors.append(allocator, .{
                     .file_path = try allocator.dupe(u8, full_path),
                     .line = null,
                     .message = try std.fmt.allocPrint(allocator, "Broken synapse (next_topics): {s}", .{synapse.id}),
                 });
             }
         }
+
+        neurona.deinit(allocator);
     }
 
     // Clean up neurona_ids
@@ -244,6 +246,6 @@ pub fn validateTome(allocator: std.mem.Allocator, tome_path: []const u8) !Valida
 
     return ValidationResult{
         .valid = errors.items.len == 0,
-        .errors = try errors.toOwnedSlice(),
+        .errors = try errors.toOwnedSlice(allocator),
     };
 }

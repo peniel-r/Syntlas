@@ -7,8 +7,8 @@ tags: [rust, iterators, functional]
 keywords: [iter, into_iter, map, filter, collect]
 use_cases: [processing collections, lazy evaluation]
 prerequisites: ["rust.closures"]
-related: ["rust.collections"]
-next_topics: ["rust.collections"]
+related: ["rust.stdlib.collections"]
+next_topics: ["rust.stdlib.collections"]
 ---
 
 # Iterators

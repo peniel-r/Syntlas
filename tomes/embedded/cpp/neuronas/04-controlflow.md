@@ -13,7 +13,7 @@ keywords: [if, switch, else, break, continue]
 prerequisites: ["cpp.basic.operators"]
 next: ["cpp.basic.loops", "cpp.stl.vector"]
 related:
-  - id: "cpp.basic.exceptions"
+  - id: "cpp.exceptions"
     type: complement
     weight: 70
 version:
@@ -107,4 +107,4 @@ if (auto it = m.find(2); it != m.end()) {
 ## See Also
 
 - [Loops](cpp.basic.loops) - Iteration constructs
-- [Exceptions](cpp.basic.exceptions) - Error handling
+- [Exceptions](cpp.exceptions) - Error handling

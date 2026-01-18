@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [python, stdlib, random, probability]
 keywords: [random, randint, choice, shuffle]
 use_cases: [games, simulations, sampling]
-prerequisites: ["py.basics.operators"]
+prerequisites: ["python.basics.operators"]
 related: ["py.lib.math"]
 next_topics: []
 ---

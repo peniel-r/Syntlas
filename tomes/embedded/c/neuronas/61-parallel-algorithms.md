@@ -1,17 +1,17 @@
 ---
 id: "c.algorithms.parallel"
 title: "Parallel Algorithms"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: advanced
-tags: [c, algorithms, parallel, concurrency, openmp]
+tags: [c, c.algorithms.sorting, parallel, concurrency, openmp]
 keywords: [parallel, openmp, concurrent, multithreaded, divide and conquer]
 use_cases: [parallel processing, performance optimization, speedup]
-prerequisites: [c.stdlib.threads"]
-related: [c.algorithms.sort"]
+prerequisites: [c.stdlib.threads]
+related: [c.algorithms.sorting]
 next_topics: [c.bestpractices.performance]
 ---
 
-# Parallel Algorithms
+# Parallel c.algorithms.sorting
 
 ## Parallel Sum
 
@@ -732,7 +732,7 @@ int main() {
 }
 ```
 
-## Barrier Synchronization
+## Barrier c.ipc.sync
 
 ```c
 #include <stdio.h>
@@ -774,4 +774,4 @@ int main() {
 }
 ```
 
-> **Note**: Parallel algorithms require careful synchronization. Use appropriate locks, barriers, or atomic operations.
+> **Note**: Parallel c.algorithms.sorting require careful synchronization. Use appropriate locks, barriers, or atomic operations.

@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [cpp, stl, any, type-erasure]
 keywords: [any, any_cast, type erasure]
 use_cases: [storing arbitrary types, heterogeneous containers]
-prerequisites: ["cpp.modern.auto"]
+prerequisites: ["cpp.modern.type-inference"]
 related: ["cpp.stl.variant"]
 next_topics: []
 ---

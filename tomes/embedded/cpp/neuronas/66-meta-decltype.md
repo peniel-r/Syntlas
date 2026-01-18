@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [cpp, templates, decltype, auto]
 keywords: [decltype, type deduction]
 use_cases: [deducing return types, template metaprogramming]
-prerequisites: ["cpp.modern.auto"]
-related: ["cpp.modern.auto"]
+prerequisites: ["cpp.modern.type-inference"]
+related: ["cpp.modern.type-inference"]
 next_topics: []
 ---
 

@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [cpp, attributes, modern]
 keywords: [[nodiscard], [deprecated], [maybe_unused]]
 use_cases: [compiler hints, warnings]
-prerequisites: ["cpp.basics.functions"]
-related: ["cpp.basics.functions"]
+prerequisites: ["cpp.basic.functions"]
+related: ["cpp.basic.functions"]
 next_topics: []
 ---
 

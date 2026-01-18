@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, async, asyncio, synchronization]
 keywords: [Lock, acquire, release, mutex]
 use_cases: [shared resources, critical sections]
-prerequisites: ["py.async.basics"]
+prerequisites: ["python.async.basics"]
 related: ["py.concurrency.threading.locks"]
 next_topics: []
 ---

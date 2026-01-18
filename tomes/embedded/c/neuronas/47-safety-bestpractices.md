@@ -8,7 +8,7 @@ keywords: [safety, validation, bounds, buffer, overflow]
 use_cases: [robust code, security, reliability]
 prerequisites: ["c.bestpractices.memory"]
 related: ["c.error.errno"]
-next_topics: ["c.bestpractices.portability"]
+next_topics: ["c.portability"]
 ---
 
 # Safety Best Practices
@@ -37,7 +37,7 @@ int main() {
 }
 ```
 
-## Integer Overflow Protection
+## Integer Overflow Protec.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -365,7 +365,7 @@ int main() {
 }
 ```
 
-## Assert Preconditions
+## c.stdlib.assert Preconditions
 
 ```c
 #include <stdio.h>
@@ -407,7 +407,7 @@ int main() {
 }
 ```
 
-## Buffer Size Macros
+## Buffer Size c.preprocessor.macros
 
 ```c
 #include <stdio.h>

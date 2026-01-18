@@ -3,7 +3,7 @@
 id: "cpp.oo.polymorphism"
 title: "Polymorphism"
 tags: [cpp, oop, polymorphism, intermediate]
-links: ["cpp.oo.inheritance", "cpp.oo.virtual"]
+links: ["cpp.oo.inheritance", "cpp.oo.polymorphism"]
 hash: "sha256:0000000000000000000000000000000000000000000000000000000000"
 
 # TIER 2: STANDARD
@@ -13,7 +13,7 @@ keywords: [polymorphism, virtual, override, runtime]
 prerequisites: ["cpp.oo.inheritance"]
 next: ["cpp.oo.interfaces", "cpp.oo.abstract"]
 related:
-  - id: "cpp.oo.virtual"
+  - id: "cpp.oo.polymorphism"
     type: complement
     weight: 95
 version:
@@ -119,5 +119,5 @@ if (dog != nullptr) {
 
 ## See Also
 
-- [Virtual Functions](cpp.oo.virtual) - Deep dive into virtual behavior
+- [Virtual Functions](cpp.oo.polymorphism) - Deep dive into virtual behavior
 - [Interfaces](cpp.oo.interfaces) - Pure virtual base classes

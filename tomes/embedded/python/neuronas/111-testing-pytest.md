@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, testing, pytest, ecosystem]
 keywords: [pytest, fixture, assert]
 use_cases: [modern testing, fixtures]
-prerequisites: ["py.basics.functions"]
+prerequisites: ["python.functions.def"]
 related: ["py.testing.unittest"]
 next_topics: []
 ---

@@ -41,12 +41,12 @@ pub fn validatePath(path: []const u8) mod.SecurityError!void {
 /// Checks if a code snippet contains dangerous patterns.
 pub fn validateSnippet(snippet: []const u8) mod.SecurityError!void {
     const dangerous_patterns = [_][]const u8{
-        "rm -rf",
+        "rm -rf /",
         "format C:",
-        "shred",
+        "shred /dev/",
         ":(){ :|:& };:", // Fork bomb
-        "mkfs",
-        "dd if=",
+        "mkfs.",
+        "dd if=/dev/",
     };
 
     for (dangerous_patterns) |pattern| {

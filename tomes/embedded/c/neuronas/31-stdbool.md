@@ -50,7 +50,7 @@ int main() {
 }
 ```
 
-## Boolean Functions
+## Boolean 
 
 ```c
 #include <stdio.h>

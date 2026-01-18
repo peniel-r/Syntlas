@@ -1,7 +1,7 @@
 ---
-id: 96-bit-manipulation
+id: "c.stdlib.bits"
 title: Bit Manipulation
-category: algorithms
+category: c.algorithms.sorting
 difficulty: intermediate
 tags:
   - bitwise
@@ -18,13 +18,13 @@ use_cases:
   - Cryptography
   - Embedded systems
 prerequisites:
-  - operators
-  - integers
+  - c.controlflow
+  - c.stdlib.stdint
 related:
-  - structs-unions
-  - macros
+  - c.patterns.structs
+  - c.preprocessor.macros
 next_topics:
-  - endianness
+  - c.stdlib.endian
 ---
 
 # Bit Manipulation
@@ -398,4 +398,4 @@ result = x & 1 << 2;  // Same as x & (1 << 2)
 result = (x & 1) << 2;
 ```
 
-> **Note: Bit manipulation is powerful but error-prone. Always use unsigned integers for bit operations. Be aware of undefined behavior (shifting beyond size, signed shifts). Use named constants for clarity.
+> **Note: Bit manipulation is powerful but error-prone. Always use unsigned c.stdlib.stdint for bit operations. Be aware of undefined behavior (shifting beyond size, signed shifts). Use named constants for clarity.

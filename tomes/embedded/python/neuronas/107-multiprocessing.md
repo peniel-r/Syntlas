@@ -6,7 +6,7 @@ difficulty: advanced
 tags: [python, concurrency, multiprocessing, parallelism]
 keywords: [Process, Pool, cpu-bound]
 use_cases: [cpu-bound tasks, parallelism]
-prerequisites: ["py.basics.functions"]
+prerequisites: ["python.functions.def"]
 related: ["py.concurrency.concurrent-futures"]
 next_topics: []
 ---

@@ -6,8 +6,8 @@ difficulty: advanced
 tags: [cpp, modern, modules, import]
 keywords: [import, export, module]
 use_cases: [faster build times, encapsulation, header replacement]
-prerequisites: ["cpp.basics.namespaces"]
-related: ["cpp.basics.functions"]
+prerequisites: ["cpp.basic.namespaces"]
+related: ["cpp.basic.functions"]
 next_topics: []
 ---
 

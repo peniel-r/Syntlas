@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [python, packaging, pip]
 keywords: [pip, install, requirements.txt]
 use_cases: [installing libraries, dependency management]
-prerequisites: ["py.basics.intro"]
+prerequisites: ["python.basics.types"]
 related: ["py.packaging.venv"]
 next_topics: ["py.packaging.venv"]
 ---

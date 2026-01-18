@@ -75,7 +75,7 @@ int main() {
 }
 ```
 
-## atexit - Cleanup Functions
+## atexit - Cleanup 
 
 ```c
 #include <stdio.h>
@@ -90,7 +90,7 @@ void cleanup2(void) {
 }
 
 int main() {
-    // Register cleanup functions
+    // Register cleanup 
     atexit(cleanup1);
     atexit(cleanup2);
 

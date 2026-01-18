@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, io, bytes, binary]
 keywords: [bytes, bytearray, encode, decode]
 use_cases: [binary data, network packets, image processing]
-prerequisites: ["py.io.files", "py.basics.strings"]
+prerequisites: ["py.io.files", "python.basics.strings"]
 related: ["py.io.files"]
 next_topics: []
 ---

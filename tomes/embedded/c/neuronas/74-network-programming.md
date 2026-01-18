@@ -1,5 +1,5 @@
 ---
-id: 74-network-programming
+id: "c.network.sockets"
 title: Network Programming Basics
 category: system
 difficulty: advanced
@@ -22,15 +22,15 @@ use_cases:
   - Socket programming
   - Network protocols
 prerequisites:
-  - file-operations
-  - pointers
-  - structs
+  - 
+  - 
+  - 
 related:
-  - file-operations
-  - threads
-  - process-management
+  - 
+  - 
+  - 
 next_topics:
-  - security-bestpractices
+  - c.bestpractices.security
 ---
 
 # Network Programming Basics
@@ -113,7 +113,7 @@ int main(void) {
         return 1;
     }
 
-    // Listen for connections
+    // Listen for connec.stdlib.stdions
     if (listen(server_fd, 5) == -1) {
         perror("Listen failed");
         close(server_fd);
@@ -122,7 +122,7 @@ int main(void) {
 
     printf("Server listening on port %d\n", PORT);
 
-    // Accept connection
+    // Accept connec.stdlib.stdion
     client_fd = accept(server_fd, (struct sockaddr *)&client_addr,
                        &addr_len);
     if (client_fd == -1) {
@@ -146,7 +146,7 @@ int main(void) {
         send(client_fd, response, strlen(response), 0);
     }
 
-    // Close connections
+    // Close connec.stdlib.stdions
     close(client_fd);
     close(server_fd);
 
@@ -195,7 +195,7 @@ int main(void) {
     // Connect to server
     if (connect(sockfd, (struct sockaddr *)&server_addr,
                 sizeof(server_addr)) == -1) {
-        perror("Connection failed");
+        perror("Connec.stdlib.stdion failed");
         close(sockfd);
         return 1;
     }
@@ -458,7 +458,7 @@ int listen_socket(int sockfd, int backlog) {
     return 0;
 }
 
-int accept_connection(int sockfd, struct sockaddr_in *client_addr,
+int accept_connec.stdlib.stdion(int sockfd, struct sockaddr_in *client_addr,
                       socklen_t *addr_len) {
     int client_fd = accept(sockfd, (struct sockaddr *)client_addr, addr_len);
     if (client_fd == -1) {
@@ -487,7 +487,7 @@ int main(void) {
 
     struct sockaddr_in client_addr;
     socklen_t addr_len = sizeof(client_addr);
-    int client_fd = accept_connection(server_fd, &client_addr, &addr_len);
+    int client_fd = accept_connec.stdlib.stdion(server_fd, &client_addr, &addr_len);
     if (client_fd == -1) return 1;
 
     printf("Client connected\n");
@@ -525,9 +525,9 @@ int main(void) {
         .tv_sec = 10,
         .tv_usec = 0
     };
-    if (setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO,
+    if (setsockopt(sockfd, SOL_SOCKET, SO_Rc.stdlib.timeO,
                    &timeout, sizeof(timeout)) == -1) {
-        perror("setsockopt SO_RCVTIMEO failed");
+        perror("setsockopt SO_Rc.stdlib.timeO failed");
     }
 
     // Set send timeout
@@ -633,7 +633,7 @@ int main(void) {
 ```c
 // GOOD - Check all return values
 if (connect(sockfd, (struct sockaddr *)&addr, sizeof(addr)) == -1) {
-    perror("Connection failed");
+    perror("Connec.stdlib.stdion failed");
     close(sockfd);
     return 1;
 }
@@ -672,7 +672,7 @@ while (total_received < expected_size) {
 ```c
 // Set timeout to prevent hanging
 struct timeval timeout = {.tv_sec = 30, .tv_usec = 0};
-setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
+setsockopt(sockfd, SOL_SOCKET, SO_Rc.stdlib.timeO, &timeout, sizeof(timeout));
 setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout));
 ```
 
@@ -711,7 +711,7 @@ recv(sockfd, buffer, size, 0);
 
 // CORRECT - Use timeout or non-blocking mode
 struct timeval timeout = {.tv_sec = 5, .tv_usec = 0};
-setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
+setsockopt(sockfd, SOL_SOCKET, SO_Rc.stdlib.timeO, &timeout, sizeof(timeout));
 recv(sockfd, buffer, size, 0);
 ```
 

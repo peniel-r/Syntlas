@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, typing, union, optional]
 keywords: [Union, Optional, None]
 use_cases: [nullable values, multiple types]
-prerequisites: ["py.basics.types"]
+prerequisites: ["python.basics.types"]
 related: ["py.typing.generics"]
 next_topics: []
 ---

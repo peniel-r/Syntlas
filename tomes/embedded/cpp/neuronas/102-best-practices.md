@@ -6,8 +6,8 @@ difficulty: beginner
 tags: [cpp, best-practices, guide]
 keywords: [idioms, safety, modern cpp]
 use_cases: [writing clean code]
-prerequisites: ["cpp.basic-syntax"]
-related: ["cpp.modern.auto"]
+prerequisites: ["cpp.basic.syntax"]
+related: ["cpp.modern.type-inference"]
 next_topics: []
 ---
 

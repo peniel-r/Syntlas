@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, typing, generics, typevar]
 keywords: [TypeVar, Generic, List, Dict]
 use_cases: [reusable components, type safety]
-prerequisites: ["py.basics.types"]
+prerequisites: ["python.basics.types"]
 related: ["py.typing.protocol"]
 next_topics: []
 ---

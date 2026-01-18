@@ -13,7 +13,7 @@ keywords: [for, while, do-while, range-for]
 prerequisites: ["cpp.basic.controlflow"]
 next: ["cpp.basic.functions", "cpp.stl.vector"]
 related:
-  - id: "cpp.modern.range-for"
+  - id: "cpp.modern.ranges"
     type: complement
     weight: 90
 version:

@@ -7,8 +7,8 @@ tags: [python, functions, def, parameters]
 keywords: [def, return, parameters, arguments, scope]
 use_cases: [code organization, reusability, abstraction]
 prerequisites: ["python.controlflow.for"]
-related: ["python.functions.lambda", "python.functions.decorators"]
-next_topics: ["python.functions.scope"]
+related: ["py.functions.lambda", "python.patterns.decorators"]
+next_topics: ["py.functions.closures"]
 ---
 
 # Function Definitions

@@ -8,7 +8,7 @@ keywords: [concatenation, slicing, methods, f-strings]
 use_cases: [text processing, string manipulation, formatting output]
 prerequisites: ["python.basics.types"]
 related: ["python.datastructures.lists"]
-next_topics: ["python.basics.controlflow"]
+next_topics: ["python.controlflow.if"]
 ---
 
 # String Operations

@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [python, oop, methods, decorators]
 keywords: [@classmethod, @staticmethod, cls]
 use_cases: [factory methods, utility functions]
-prerequisites: ["py.oop.classes", "py.patterns.decorators"]
-related: ["py.oop.classes"]
+prerequisites: ["python.classes", "python.patterns.decorators"]
+related: ["python.classes"]
 next_topics: []
 ---
 

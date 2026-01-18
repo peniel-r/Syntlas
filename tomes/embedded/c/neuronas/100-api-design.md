@@ -1,10 +1,10 @@
 ---
-id: 100-api-design
+id: "c.bestpractices.api"
 title: API Design Principles
 category: bestpractices
 difficulty: advanced
 tags:
-  - api-design
+  - 
   - interface-design
   - libraries
 keywords:
@@ -18,14 +18,14 @@ use_cases:
   - Public interfaces
   - Component design
 prerequisites:
-  - functions
-  - headers
-  - compilation
+  - 
+  - 
+  - 
 related:
-  - shared-libraries
-  - static-libraries
+  - 
+  - 
 next_topics:
-  - documentation
+  - 
 ---
 
 # API Design Principles
@@ -36,7 +36,7 @@ Good API design is crucial for usable, maintainable libraries.
 
 ```c
 // GOOD - Consistent naming convention
-// Prefix for library functions (e.g., mylib_)
+// Prefix for library  (e.g., mylib_)
 mylib_init();
 mylib_cleanup();
 mylib_process();
@@ -187,7 +187,7 @@ MyLibContext *mylib_create(void);
 int mylib_init(MyLibContext *ctx);
 void mylib_destroy(MyLibContext *ctx);
 
-// Inline functions
+// Inline 
 static inline int mylib_get_version(void) {
     return MYLIB_VERSION;
 }
@@ -259,7 +259,7 @@ ProgressInfo info = {progress_handler, NULL};
 mylib_process_with_progress("input.txt", &info, &result);
 ```
 
-## Documentation Comments
+##  Comments
 
 ```c
 /**
@@ -268,7 +268,7 @@ mylib_process_with_progress("input.txt", &info, &result);
  * @param ctx Pointer to context structure
  * @return MYLIB_SUCCESS on success, error code on failure
  *
- * @note Must be called before any other library functions
+ * @note Must be called before any other library 
  * @see mylib_destroy()
  */
 MyLibError mylib_init(MyLibContext *ctx);
@@ -304,7 +304,7 @@ MyLibError mylib_process(MyLibContext *ctx,
  * @param key Configuration key
  * @return Value or NULL if not found
  *
- * @note Thread-safe: Multiple threads can call concurrently
+ * @note Thread-safe: Multiple  can call concurrently
  */
 const char *mylib_get_config(const MyLibContext *ctx, const char *key);
 
@@ -316,7 +316,7 @@ const char *mylib_get_config(const MyLibContext *ctx, const char *key);
  * @param value Value to set
  * @return MYLIB_SUCCESS on success, error code on failure
  *
- * @note NOT thread-safe: Must be called with external synchronization
+ * @note NOT thread-safe: Must be called with external c.ipc.sync
  */
 MyLibError mylib_set_config(MyLibContext *ctx,
                             const char *key,
@@ -331,7 +331,7 @@ MyLibError mylib_set_config(MyLibContext *ctx,
 // GOOD - Minimal API surface
 void mylib_process(Context *ctx);
 
-// BAD - Too many similar functions
+// BAD - Too many similar 
 void mylib_process_fast(Context *ctx);
 void mylib_process_slow(Context *ctx);
 void mylib_process_safe(Context *ctx);

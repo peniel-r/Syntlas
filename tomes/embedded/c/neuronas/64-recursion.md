@@ -1,9 +1,9 @@
 ---
 id: "c.algorithms.recursion"
 title: "Recursive Algorithms"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: intermediate
-tags: [c, algorithms, recursion, backtracking, divide-and-conquer]
+tags: [c, c.algorithms.sorting, recursion, backtracking, divide-and-conquer]
 keywords: [recursion, backtracking, divide and conquer, tail recursion]
 use_cases: [tree traversal, combinatorial problems, optimization]
 prerequisites: [c.functions]
@@ -11,7 +11,7 @@ related: [c.algorithms.dynamic]
 next_topics: [c.algorithms.backtracking]
 ---
 
-# Recursive Algorithms
+# Recursive c.algorithms.sorting
 
 ## Basic Recursion
 

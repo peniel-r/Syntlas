@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [python, testing, stdlib]
 keywords: [unittest, TestCase, assertEqual]
 use_cases: [unit testing, test suites]
-prerequisites: ["py.oop.classes"]
+prerequisites: ["python.classes"]
 related: ["py.testing.pytest"]
 next_topics: ["py.testing.pytest"]
 ---

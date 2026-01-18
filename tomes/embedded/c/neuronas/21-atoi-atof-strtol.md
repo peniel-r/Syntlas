@@ -6,8 +6,8 @@ difficulty: beginner
 tags: [c, stdlib, atoi, atof, strtol, strtod, conversion]
 keywords: [atoi, atof, strtol, strtod, strtoul, string, conversion, number]
 use_cases: [parsing command line args, reading config files, input validation]
-prerequisites: ["c.strings", "c.arrays"]
-related: ["c.stdlib.scanf", "c.io"]
+prerequisites: ["c.stdlib.string", "c.arrays"]
+related: ["c.stdlib.stdio", "c.stdlib.stdio"]
 next_topics: ["c.error.errno"]
 ---
 

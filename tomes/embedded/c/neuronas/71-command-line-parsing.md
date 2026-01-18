@@ -1,5 +1,5 @@
 ---
-id: 71-command-line-parsing
+id: "c.cli.parsing"
 title: Command Line Parsing
 category: system
 difficulty: intermediate
@@ -20,14 +20,14 @@ use_cases:
   - Script parameters
   - Tool arguments
 prerequisites:
-  - functions
-  - arrays
-  - pointers
+  - 
+  - 
+  - 
 related:
-  - string-functions
-  - file-operations
+  - 
+  - 
 next_topics:
-  - logging
+  - 
 ---
 
 # Command Line Parsing
@@ -279,7 +279,7 @@ typedef struct {
 
 bool validate_args(Args *args) {
     if (args->threads < 1 || args->threads > 16) {
-        fprintf(stderr, "Error: Threads must be between 1 and 16\n");
+        fprintf(stderr, "Error:  must be between 1 and 16\n");
         return false;
     }
 
@@ -321,7 +321,7 @@ Args parse_args(int argc, char *argv[]) {
             args.output = argv[i];
         } else if (strcmp(argv[i], "--threads") == 0 || strcmp(argv[i], "-t") == 0) {
             if (++i >= argc) {
-                fprintf(stderr, "Error: --threads requires argument\n");
+                fprintf(stderr, "Error: -- requires argument\n");
                 exit(1);
             }
             args.threads = atoi(argv[i]);
@@ -340,7 +340,7 @@ Args parse_args(int argc, char *argv[]) {
             printf("\nOptions:\n");
             printf("  -i, --input FILE      Input file\n");
             printf("  -o, --output FILE     Output file\n");
-            printf("  -t, --threads NUM     Number of threads (1-16)\n");
+            printf("  -t, -- NUM     Number of  (1-16)\n");
             printf("  -b, --buffer SIZE     Buffer size (256-1048576)\n");
             printf("  -v, --verbose         Verbose output\n");
             printf("  -q, --quiet           Quiet mode\n");

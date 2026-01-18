@@ -6,21 +6,21 @@ difficulty: intermediate
 tags: [c, bestpractices, memory, leaks, safety]
 keywords: [memory, leak, safety, alloc, free]
 use_cases: [robust code, debugging, reliability]
-prerequisites: ["c.pointers", "c.stdlib"]
-related: ["c.stdlib.exit"]
+prerequisites: ["c.pointers", "c.stdlib.misc"]
+related: ["c.stdlib.exit_advanced"]
 next_topics: ["c.bestpractices.safety"]
 ---
 
 # Memory Best Practices
 
-## Initialize Pointers
+## Initialize
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
 
 int main() {
-    // Always initialize pointers
+    // Always initialize 
     int* ptr = NULL;
 
     // Check before use
@@ -88,7 +88,7 @@ int main() {
 }
 ```
 
-## Double Free Protection
+## Double Free Protec.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -112,7 +112,7 @@ int main() {
 }
 ```
 
-## Memory Leak Detection
+## Memory Leak Detec.stdlib.stdion
 
 ```c
 #include <stdio.h>

@@ -5,7 +5,7 @@ category: stdlib
 difficulty: intermediate
 tags: [c, malloc, calloc, realloc, free, dynamic, heap, pointer]
 keywords: [malloc, calloc, realloc, free, memory, allocation, pointer]
-use_cases: [dynamic arrays, memory management, heap allocation, pointer arithmetic]
+use_cases: [dynamic , memory management, heap allocation, pointer arithmetic]
 prerequisites: ["c.pointers"]
 related: ["c.stdlib.string"]
 next_topics: ["c.functions"]
@@ -13,7 +13,7 @@ next_topics: ["c.functions"]
 
 # Dynamic Memory Allocation
 
-C's <stdlib.h> provides functions for dynamic memory allocation.
+C's <stdlib.h> provides  for dynamic memory allocation.
 
 ## malloc - Basic Allocation
 

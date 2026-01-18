@@ -1,5 +1,5 @@
 ---
-id: 78-build-systems
+id: "c.build.systems"
 title: Build Systems
 category: tools
 difficulty: intermediate
@@ -7,32 +7,32 @@ tags:
   - make
   - cmake
   - build
-  - compilation
+  - 
 keywords:
   - make
   - cmake
   - build system
-  - compilation
+  - 
   - dependencies
 use_cases:
   - Automating builds
   - Managing dependencies
-  - Cross-compilation
+  - Cross-
   - Project organization
 prerequisites:
-  - preprocessor
-  - compilation
+  - c.preprocessor
+  - 
   - command-line
 related:
-  - preprocessor
-  - file-operations
+  - c.preprocessor
+  - 
 next_topics:
-  - makefiles
+  - 
 ---
 
 # Build Systems
 
-Build systems automate the compilation process, manage dependencies, and ensure efficient rebuilding.
+Build systems automate the  process, manage dependencies, and ensure efficient rebuilding.
 
 ## Basic Makefile
 
@@ -111,7 +111,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 	@echo "Build complete: $(TARGET) ($(CFLAGS))"
 
-# Compilation rule
+#  rule
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -389,7 +389,7 @@ ctest -R utils_tests --verbose
 ## Makefile Pattern Rules
 
 ```makefile
-# Pattern rules for generic compilation
+# Pattern rules for generic 
 CC = gcc
 CFLAGS = -Wall -Wextra
 
@@ -438,7 +438,7 @@ clean:
 .PHONY: clean
 ```
 
-## Cross-Compilation with CMake
+## Cross- with CMake
 
 ```cmake
 cmake_minimum_required(VERSION 3.10)
@@ -451,7 +451,7 @@ message(STATUS "System: ${CMAKE_SYSTEM_NAME}")
 message(STATUS "Processor: ${CMAKE_SYSTEM_PROCESSOR}")
 message(STATUS "Compiler: ${CMAKE_C_COMPILER}")
 
-# Conditional compilation
+# Conditional 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     message(STATUS "Building for Linux")
     add_definitions(-DPLATFORM_LINUX)
@@ -481,7 +481,7 @@ set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 ```
 
-## Makefile Variables and Functions
+## Makefile Variables and 
 
 ```makefile
 # Variables
@@ -490,7 +490,7 @@ CFLAGS = -Wall -Wextra
 SOURCES = $(wildcard *.c)
 OBJECTS = $(SOURCES:.c=.o)
 
-# Functions
+# 
 # Substitution: $(patsubst pattern,replacement,text)
 OBJS = $(patsubst %.c,%.o,$(SOURCES))
 
@@ -516,10 +516,10 @@ CFLAGS += -DGIT_COMMIT=\"$(COMMIT_HASH)\"
 
 ## Best Practices
 
-### Organize Makefiles
+### Organize 
 
 ```makefile
-# Good structure with clear sections
+# Good structure with clear sec.stdlib.stdions
 
 # === Configuration ===
 CC = gcc

@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [rust, std, net, tcp, udp]
 keywords: [TcpListener, TcpStream, UdpSocket, IpAddr]
 use_cases: [network services, clients, servers]
-prerequisites: ["rust.io", "rust.threading"]
+prerequisites: ["rust.stdlib.io", "rust.threading"]
 related: ["rust.async"]
 next_topics: []
 ---

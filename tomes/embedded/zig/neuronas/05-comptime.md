@@ -8,7 +8,7 @@ keywords: [comptime, @compileError, @typeInfo, @typeInfo, builtin]
 use_cases: [type safety, generic programming, compile-time computations]
 prerequisites: []
 related: ["zig.stdlib.allocators"]
-next_topics: ["zig.reflection"]
+next_topics: ["zig.comptime.typeinfo"]
 ---
 
 # Comptime and Compile-Time Evaluation

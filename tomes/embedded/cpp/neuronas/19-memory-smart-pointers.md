@@ -13,10 +13,10 @@ keywords: [unique-ptr, shared-ptr, weak-ptr, memory-management]
 prerequisites: ["cpp.basic.pointers", "cpp.oo.classes"]
 next: ["cpp.memory.move-semantics", "cpp.modern.rule-of-five"]
 related:
-  - id: "cpp.memory.dynamic-allocation"
+  - id: "cpp.memory.new-delete"
     type: alternative
     weight: 80
-  - id: "cpp.modern.rule-of-zero"
+  - id: "cpp.memory.raii"
     type: complement
     weight: 90
 version:
@@ -89,4 +89,4 @@ std::unique_ptr<int, decltype(&customDeleter)> ptr(new int(42), customDeleter);
 ## See Also
 
 - [Move Semantics](cpp.modern.move-semantics) - Understanding move operations
-- [Rule of Zero](cpp.modern.rule-of-zero) - Avoid manual resource management
+- [Rule of Zero](cpp.memory.raii) - Avoid manual resource management

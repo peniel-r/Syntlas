@@ -11,9 +11,9 @@ category: stdlib
 difficulty: intermediate
 keywords: [algorithm, sort, find, transform, for-each]
 prerequisites: ["cpp.stl.vector", "cpp.stl.iterator"]
-next: ["cpp.stl.lambda", "cpp.modern.ranges"]
+next: ["cpp.modern.lambdas", "cpp.modern.ranges"]
 related:
-  - id: "cpp.stl.lambda"
+  - id: "cpp.modern.lambdas"
     type: complement
     weight: 90
   - id: "cpp.modern.ranges"
@@ -160,5 +160,5 @@ v.erase(newEnd, v.end());
 
 ## See Also
 
-- [Lambdas](cpp.stl.lambda) - Function objects for algorithms
+- [Lambdas](cpp.modern.lambdas) - Function objects for algorithms
 - [Ranges](cpp.modern.ranges) - Modern algorithm interface (C++20)

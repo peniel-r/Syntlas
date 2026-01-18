@@ -6,8 +6,8 @@ difficulty: intermediate
 tags: [rust, std, fs, file, io]
 keywords: [File, read_to_string, write_all, metadata]
 use_cases: [file manipulation, data persistence]
-prerequisites: ["rust.result", "rust.io"]
-related: ["rust.std.path", "rust.io"]
+prerequisites: ["rust.result", "rust.stdlib.io"]
+related: ["rust.std.path", "rust.stdlib.io"]
 next_topics: ["rust.std.path"]
 ---
 

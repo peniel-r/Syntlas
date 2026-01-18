@@ -1,10 +1,10 @@
 ---
-id: 86-atomics
+id: "c.ipc.atomics"
 title: Atomic Operations
 category: system
 difficulty: advanced
 tags:
-  - atomics
+  - c.ipc.atomics
   - lock-free
   - c11
   - memory-order
@@ -16,22 +16,22 @@ keywords:
   - atomic operations
 use_cases:
   - Lock-free programming
-  - High-performance synchronization
+  - High-performance c.ipc.sync
   - Simple counters
   - Flags
 prerequisites:
-  - pointers
-  - memory-management
+  - 
+  - c.dynamic.alloc
 related:
-  - synchronization
-  - threads
+  - c.ipc.sync
+  - 
 next_topics:
-  - signal-handling
+  - 
 ---
 
 # Atomic Operations
 
-Atomic operations provide lock-free synchronization for simple operations.
+Atomic operations provide lock-free c.ipc.sync for simple operations.
 
 ## Basic Atomic Types (C11)
 
@@ -205,7 +205,7 @@ int main(void) {
 }
 ```
 
-## Spin Lock with Atomics
+## Spin Lock with c.ipc.atomics
 
 ```c
 #include <stdatomic.h>
@@ -236,7 +236,7 @@ SpinLock lock;
 spinlock_init(&lock);
 
 spinlock_lock(&lock);
-// Critical section
+// Critical sec.stdlib.stdion
 spinlock_unlock(&lock);
 ```
 
@@ -268,10 +268,10 @@ atomic_flag_clear_explicit(&flag, memory_order_release);
 atomic_int x = ATOMIC_VAR_INIT(0);
 atomic_int y = ATOMIC_VAR_INIT(0);
 
-// Relaxed - No synchronization
+// Relaxed - No c.ipc.sync
 atomic_store_explicit(&x, 1, memory_order_relaxed);
 
-// Acquire/Release - Pair for synchronization
+// Acquire/Release - Pair for c.ipc.sync
 atomic_thread_fence(memory_order_release);
 atomic_store_explicit(&x, 1, memory_order_relaxed);
 
@@ -343,7 +343,7 @@ counter_init(&counter);
 int current = counter_increment(&counter);
 ```
 
-## Reference Counting with Atomics
+## Reference Counting with c.ipc.atomics
 
 ```c
 #include <stdatomic.h>
@@ -397,7 +397,7 @@ atomic_store(&x, 1);
 // Use relaxed for simple counters
 atomic_fetch_add(&counter, 1);  // memory_order_relaxed
 
-// Use acquire/release for synchronization
+// Use acquire/release for c.ipc.sync
 atomic_thread_fence(memory_order_release);
 atomic_store_explicit(&flag, 1, memory_order_relaxed);
 ```
@@ -417,7 +417,7 @@ if (atomic_is_lock_free(&a)) {
 }
 ```
 
-### Avoid Overusing Atomics
+### Avoid Overusing c.ipc.atomics
 
 ```c
 // GOOD - Simple operation
@@ -439,13 +439,13 @@ atomic_int data;
 // Thread 1 reads A, Thread 2 changes A->B->A
 // Thread 1's CAS with A as expected succeeds but state changed
 
-// SOLUTION - Use version counters or tagged pointers
+// SOLUTION - Use version counters or tagged 
 ```
 
 ### 2. Wrong Memory Ordering
 
 ```c
-// WRONG - Incorrect synchronization
+// WRONG - Incorrect c.ipc.sync
 atomic_store(&flag, 1);
 data = 42;  // Might not be visible before flag!
 
@@ -459,10 +459,10 @@ atomic_store_explicit(&flag, 1, memory_order_relaxed);
 
 ```c
 // WRONG - Assuming all operations are totally ordered
-// Different threads may see different orders without proper ordering
+// Different  may see different orders without proper ordering
 
 // CORRECT - Use sequentially consistent when needed
 atomic_store_explicit(&x, 1, memory_order_seq_cst);
 ```
 
-> **Note: Atomic operations are powerful but complex. Use the simplest memory ordering that works. Test thoroughly on different architectures. For complex operations, consider using locks or higher-level synchronization primitives.
+> **Note: Atomic operations are powerful but complex. Use the simplest memory ordering that works. Test thoroughly on different architectures. For complex operations, consider using locks or higher-level c.ipc.sync primitives.

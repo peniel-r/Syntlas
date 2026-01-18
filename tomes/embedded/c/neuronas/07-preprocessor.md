@@ -3,9 +3,9 @@ id: "c.preprocessor"
 title: "Preprocessor Directives"
 category: language
 difficulty: intermediate
-tags: [c, preprocessor, macros, #define, #ifdef, #pragma]
+tags: [c, preprocessor, c.preprocessor.macros, #define, #ifdef, #pragma]
 keywords: [define, undef, ifdef, ifndef, elif, else, endif, pragma, include]
-use_cases: [conditional compilation, macros, platform-specific code, code generation]
+use_cases: [conditional , c.preprocessor.macros, platform-specific code, code generation]
 prerequisites: []
 related: ["c.functions"]
 next_topics: []
@@ -13,9 +13,9 @@ next_topics: []
 
 # Preprocessor Directives
 
-C's preprocessor handles conditional compilation and macros before compilation.
+C's preprocessor handles conditional  and c.preprocessor.macros before compilation.
 
-## #define - Create Macros
+## #define - Create c.preprocessor.macros
 
 ```c
 #define PI 3.14159
@@ -34,7 +34,7 @@ int main() {
 }
 ```
 
-## #ifdef / #ifndef - Conditional Compilation
+## #ifdef / #ifndef - Conditional 
 
 ```c
 #define PLATFORM_WINDOWS
@@ -92,7 +92,7 @@ struct PackedStruct {
 #pragma pack(pop)
 ```
 
-## Function-like Macros
+## Function-like c.preprocessor.macros
 
 ```c
 // Macro with statement
@@ -117,7 +117,7 @@ int main() {
 }
 ```
 
-## #undef - Remove Macros
+## #undef - Remove c.preprocessor.macros
 
 ```c
 #define TEMP_MACRO 1
@@ -134,17 +134,17 @@ int main() {
 }
 ```
 
-## Conditional Compilation
+## Conditional 
 
 ```c
-// Platform detection
+// Platform detec.stdlib.stdion
 #if defined(_WIN32) || defined(_WIN64)
     #include <windows.h>
 #else
     #include <unistd.h>
 #endif
 
-// Compiler detection
+// Compiler detec.stdlib.stdion
 #if defined(__GNUC__)
     #define COMPILER "GCC"
 #elif defined(_MSC_VER)
@@ -206,7 +206,7 @@ int main() {
     extern int assert_failed[(condition) ? 1 : -1]; \
     int main() { COMPILE_TIME_CHECK(1 == 1) }
 
-### Debug/Release macros
+### Debug/Release c.preprocessor.macros
 
 ```c
 #ifdef _DEBUG
@@ -253,7 +253,7 @@ int main() {
 ### Version checks
 
 ```c
-// Feature detection
+// Feature detec.stdlib.stdion
 #if __STDC_VERSION__ >= 201112L
     // Code requiring C11 or later
 #endif
@@ -264,4 +264,4 @@ int main() {
 #endif
 ```
 
-> **Note**: Preprocessor code executes before compilation. Use it judiciously - prefer const and inline functions over complex macros.
+> **Note**: Preprocessor code executes before compilation. Use it judiciously - prefer const and inline  over complex macros.

@@ -3,7 +3,7 @@
 id: "cpp.oo.constructors"
 title: "Constructors and Destructors"
 tags: [cpp, oop, constructors, intermediate]
-links: ["cpp.oo.classes", "cpp.oo.copy"]
+links: ["cpp.oo.classes", "cpp.oo.constructors"]
 hash: "sha256:0000000000000000000000000000000000000000000000000000000000000"
 
 # TIER 2: STANDARD
@@ -13,7 +13,7 @@ keywords: [constructor, destructor, initialization, member-list]
 prerequisites: ["cpp.oo.classes"]
 next: ["cpp.oo.inheritance", "cpp.modern.move-semantics"]
 related:
-  - id: "cpp.oo.copy"
+  - id: "cpp.oo.constructors"
     type: complement
     weight: 90
 version:
@@ -132,5 +132,5 @@ public:
 
 ## See Also
 
-- [Copy and Move](cpp.oo.copy) - Deep copy vs move semantics
+- [Copy and Move](cpp.oo.constructors) - Deep copy vs move semantics
 - [Rule of Five](cpp.modern.rule-of-five) - Complete resource management

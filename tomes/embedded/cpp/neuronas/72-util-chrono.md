@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [cpp, std, time, chrono]
 keywords: [chrono, duration, time_point, steady_clock]
 use_cases: [timing, delays, timestamps]
-prerequisites: ["cpp.basics.variables"]
+prerequisites: ["cpp.basic.variables"]
 related: ["cpp.util.ratio"]
 next_topics: []
 ---

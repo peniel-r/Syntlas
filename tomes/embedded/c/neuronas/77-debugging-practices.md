@@ -1,5 +1,5 @@
 ---
-id: 77-debugging-practices
+id: "c.bestpractices.debugging"
 title: Debugging Practices
 category: bestpractices
 difficulty: intermediate
@@ -18,17 +18,17 @@ use_cases:
   - Troubleshooting bugs
   - Performance analysis
   - Memory debugging
-  - Code inspection
+  - Code inspec.stdlib.stdion
 prerequisites:
-  - memory-management
-  - pointers
-  - error-handling
+  - c.dynamic.alloc
+  - 
+  - 
 related:
-  - error-handling
-  - logging
-  - memory-bestpractices
+  - 
+  - 
+  - 
 next_topics:
-  - build-systems
+  - 
 ---
 
 # Debugging Practices
@@ -127,7 +127,7 @@ gdb ./sample
 # c - char
 # f - float
 # s - string
-# i - instruction
+# i - instruc.stdlib.stdion
 ```
 
 ## Call Stack Navigation
@@ -415,7 +415,7 @@ void *thread1_func(void *arg) {
     printf("Thread 1: Trying to acquire mutex 2\n");
     pthread_mutex_lock(&mutex2);
 
-    printf("Thread 1: Critical section\n");
+    printf("Thread 1: Critical sec.stdlib.stdion\n");
 
     pthread_mutex_unlock(&mutex2);
     pthread_mutex_unlock(&mutex1);
@@ -431,7 +431,7 @@ void *thread2_func(void *arg) {
     printf("Thread 2: Trying to acquire mutex 1\n");
     pthread_mutex_lock(&mutex1);
 
-    printf("Thread 2: Critical section\n");
+    printf("Thread 2: Critical sec.stdlib.stdion\n");
 
     pthread_mutex_unlock(&mutex1);
     pthread_mutex_unlock(&mutex2);
@@ -451,7 +451,7 @@ bool try_lock_with_timeout(pthread_mutex_t *mutex, int timeout_ms) {
 }
 ```
 
-## Memory Corruption Detection
+## Memory Corruption Detec.stdlib.stdion
 
 ```c
 #include <stdio.h>
@@ -594,4 +594,4 @@ gcc -g -O0 -o program program.c
 gdb ./program  # Full debugging information
 ```
 
-> **Note**: Effective debugging requires a systematic approach: understand the problem, reproduce it, isolate the cause, fix it, and verify the fix. Use tools like GDB, Valgrind, and sanitizers to automate detection of common issues. Always compile with debugging symbols during development.
+> **Note**: Effective debugging requires a systematic approach: understand the problem, reproduce it, isolate the cause, fix it, and verify the fix. Use tools like GDB, Valgrind, and sanitizers to automate detec.stdlib.stdion of common issues. Always compile with debugging symbols during development.

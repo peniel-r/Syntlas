@@ -343,7 +343,7 @@ int main() {
 }
 ```
 
-## Type Safety Macros
+## Type Safety c.preprocessor.macros
 
 ```c
 #include <stdio.h>

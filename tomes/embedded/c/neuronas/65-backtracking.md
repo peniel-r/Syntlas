@@ -1,9 +1,9 @@
 ---
 id: "c.algorithms.backtracking"
 title: "Backtracking"
-category: algorithms
+category: c.algorithms.sorting
 difficulty: advanced
-tags: [c, algorithms, backtracking, search, pruning]
+tags: [c, c.algorithms.sorting, backtracking, search, pruning]
 keywords: [backtracking, pruning, search, constraint satisfaction]
 use_cases: [puzzle solving, optimization, constraint problems]
 prerequisites: [c.algorithms.recursion]

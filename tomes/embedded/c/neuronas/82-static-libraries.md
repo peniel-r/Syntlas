@@ -1,10 +1,10 @@
 ---
-id: 82-static-libraries
+id: "c.build.static"
 title: Static Libraries
 category: system
 difficulty: intermediate
 tags:
-  - static-libraries
+  - 
   - ar
   - linking
   - archive
@@ -20,13 +20,13 @@ use_cases:
   - Code distribution
   - Performance
 prerequisites:
-  - compilation
-  - build-systems
+  - 
+  - 
 related:
-  - shared-libraries
-  - build-systems
+  - 
+  - 
 next_topics:
-  - dynamic-loading
+  - c.build.dynamic
 ---
 
 # Static Libraries
@@ -209,7 +209,7 @@ gcc main.c -L. -l -o shared_main
 // Use static library
 extern int add(int a, int b);
 
-// Use shared library functions
+// Use shared library 
 extern int multiply(int a, int b);
 
 int main(void) {
@@ -348,10 +348,10 @@ clean:
     #define LIB_HANDLE void*
 #endif
 
-// Static functions available always
+// Static  available always
 int static_function(void);
 
-// Dynamic functions require loading
+// Dynamic  require loading
 int dynamic_function(void);
 ```
 
@@ -461,7 +461,7 @@ gcc main.c liba.a libb.a libc.a -o main
 #ifndef MYLIB_H
 #define MYLIB_H
 
-// Public functions
+// Public 
 int mylib_init(void);
 void mylib_cleanup(void);
 
@@ -475,7 +475,7 @@ typedef struct {
 
 #endif
 
-// Internal functions in .c files only
+// Internal  in .c files only
 static int internal_helper(void) {
 }
 ```
@@ -496,10 +496,10 @@ gcc main.c liba.a libb.a -o main
 ### 2. Circular Dependencies
 
 ```c
-// liba.c uses libb functions
+// liba.c uses libb 
 extern int libb_func(void);
 
-// libb.c uses liba functions
+// libb.c uses liba 
 extern int liba_func(void);
 
 // WRONG - Can't resolve circular dependency

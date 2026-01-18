@@ -1,13 +1,13 @@
 ---
-id: "zig.memory.c-allocator"
+id: "zig.memory.management.c-allocator"
 title: "C Allocator"
 category: memory
 difficulty: intermediate
 tags: [zig, memory, c, malloc]
 keywords: [c_allocator, malloc]
 use_cases: [c interop]
-prerequisites: ["zig.interop.c"]
-related: ["zig.memory.allocators"]
+prerequisites: ["zig.interop.cimport"]
+related: ["zig.memory.management.allocators"]
 next_topics: []
 ---
 

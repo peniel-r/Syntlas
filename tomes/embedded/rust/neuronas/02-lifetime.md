@@ -7,7 +7,7 @@ tags: [rust, lifetime, borrow-checker, annotations]
 keywords: [lifetime, 'a, 'static, struct, fn]
 use_cases: [reference validity, preventing use-after-free]
 prerequisites: ["rust.ownership"]
-related: ["rust.borrowing"]
+related: ["rust.intro"]
 next_topics: ["rust.stdlib.collections"]
 ---
 

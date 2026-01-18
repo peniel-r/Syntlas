@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [python, patterns, unpacking, tuple]
 keywords: [unpacking, tuple unpacking, star operator]
 use_cases: [swapping variables, returning multiple values]
-prerequisites: ["py.basics.tuples"]
+prerequisites: ["python.datastructures.tuples"]
 related: ["py.functions.args-kwargs"]
 next_topics: []
 ---

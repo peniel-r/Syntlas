@@ -8,7 +8,7 @@ keywords: [typing, List, Dict, Optional, Union, Callable]
 use_cases: [code documentation, IDE support, static analysis]
 prerequisites: ["python.functions.def", "python.classes"]
 related: ["python.functions.def"]
-next_topics: ["python.mypy"]
+next_topics: ["python.typing"]
 ---
 
 # Type Hints

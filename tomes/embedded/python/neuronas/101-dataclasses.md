@@ -8,7 +8,7 @@ keywords: [@dataclass, field, frozen, asdict]
 use_cases: [data modeling, configs, immutable records]
 prerequisites: ["python.classes"]
 related: ["python.typing", "python.stdlib.collections"]
-next_topics: ["python.stdlib.typing"]
+next_topics: ["python.typing"]
 ---
 
 # Dataclasses

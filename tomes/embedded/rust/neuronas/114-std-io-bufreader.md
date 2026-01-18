@@ -1,12 +1,12 @@
 ---
-id: "rust.std.io.bufreader"
+id: "rust.stdlib.io.bufreader"
 title: "BufReader (std::io::BufReader)"
 category: stdlib
 difficulty: intermediate
 tags: [rust, std, io, buffer]
 keywords: [BufReader, BufWriter, read_line]
 use_cases: [efficient io, reading lines]
-prerequisites: ["rust.io"]
+prerequisites: ["rust.stdlib.io"]
 related: ["rust.std.fs"]
 next_topics: []
 ---

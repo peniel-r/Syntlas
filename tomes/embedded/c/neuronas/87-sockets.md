@@ -1,5 +1,5 @@
 ---
-id: 87-sockets
+id: "c.network.sockets_advanced"
 title: Socket Programming
 category: system
 difficulty: advanced
@@ -21,14 +21,14 @@ use_cases:
   - Distributed systems
   - Network protocols
 prerequisites:
-  - file-operations
-  - pointers
-  - structs
+  - 
+  - 
+  - 
 related:
-  - network-programming
-  - inter-process-communication
+  - 
+  - c.ipc.main
 next_topics:
-  - file-descriptors
+  - c.stdlib.fd
 ---
 
 # Socket Programming
@@ -76,7 +76,7 @@ int main(void) {
         return 1;
     }
 
-    // Listen for connections
+    // Listen for connec.stdlib.stdions
     if (listen(server_fd, 5) == -1) {
         perror("Listen failed");
         close(server_fd);
@@ -85,7 +85,7 @@ int main(void) {
 
     printf("Server listening on port %d\n", PORT);
 
-    // Accept connection
+    // Accept connec.stdlib.stdion
     client_fd = accept(server_fd, (struct sockaddr *)&client_addr, &addr_len);
     if (client_fd == -1) {
         perror("Accept failed");
@@ -152,7 +152,7 @@ int main(void) {
 
     // Connect to server
     if (connect(sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
-        perror("Connection failed");
+        perror("Connec.stdlib.stdion failed");
         close(sockfd);
         return 1;
     }
@@ -355,7 +355,7 @@ int main(void) {
             break;
         }
 
-        // New connection
+        // New connec.stdlib.stdion
         if (FD_ISSET(server_fd, &read_fds)) {
             new_socket = accept(server_fd, (struct sockaddr *)&client_addr, &addr_len);
             if (new_socket < 0) {
@@ -363,7 +363,7 @@ int main(void) {
                 continue;
             }
 
-            printf("New connection\n");
+            printf("New connec.stdlib.stdion\n");
 
             // Add to client array
             for (int i = 0; i < MAX_CLIENTS; i++) {
@@ -416,7 +416,7 @@ setsockopt(sockfd, SOL_SOCKET, SO_RCVBUF, &recv_buf, sizeof(recv_buf));
 
 // Set timeout
 struct timeval timeout = {.tv_sec = 10, .tv_usec = 0};
-setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
+setsockopt(sockfd, SOL_SOCKET, SO_Rc.stdlib.timeO, &timeout, sizeof(timeout));
 setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout));
 
 // Enable keep-alive
@@ -437,7 +437,7 @@ if (sockfd == -1) {
 }
 
 if (connect(sockfd, ...) == -1) {
-    perror("Connection failed");
+    perror("Connec.stdlib.stdion failed");
     close(sockfd);
     return 1;
 }
@@ -461,7 +461,7 @@ while (total_sent < data_size) {
 ```c
 // Prevent blocking forever
 struct timeval timeout = {.tv_sec = 30, .tv_usec = 0};
-setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
+setsockopt(sockfd, SOL_SOCKET, SO_Rc.stdlib.timeO, &timeout, sizeof(timeout));
 setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout));
 ```
 

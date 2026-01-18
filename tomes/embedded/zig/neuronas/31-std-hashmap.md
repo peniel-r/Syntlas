@@ -6,7 +6,7 @@ difficulty: intermediate
 tags: [zig, stdlib, map, hashmap]
 keywords: [AutoHashMap, put, get]
 use_cases: [key-value storage]
-prerequisites: ["zig.memory.allocators"]
+prerequisites: ["zig.memory.management.allocators"]
 related: ["zig.std.stringhashmap"]
 next_topics: ["zig.std.stringhashmap"]
 ---

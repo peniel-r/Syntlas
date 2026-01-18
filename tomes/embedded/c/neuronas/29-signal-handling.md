@@ -71,7 +71,7 @@ int main() {
     signal(SIGUSR1, handle_sigusr1);
 
     printf("Process ID: %d\n", getpid());
-    printf("Send signals with: kill -<signal> %d\n", getpid());
+    printf("Send c.stdlib.signal with: kill -<signal> %d\n", getpid());
 
     while (1) {
         sleep(1);
@@ -159,7 +159,7 @@ int main() {
 }
 ```
 
-## Blocking Signals
+## Blocking c.stdlib.signal
 
 ```c
 #include <stdio.h>
@@ -187,7 +187,7 @@ int main() {
     sleep(1);
     printf("Signal was blocked\n");
 
-    // Unblock and handle pending signals
+    // Unblock and handle pending c.stdlib.signal
     sigprocmask(SIG_UNBLOCK, &block_mask, NULL);
     printf("SIGINT unblocked - handling pending signal\n");
 
@@ -208,7 +208,7 @@ void handle_signal(int sig) {
 }
 
 int main() {
-    // Block multiple signals
+    // Block multiple c.stdlib.signal
     sigset_t mask;
     sigemptyset(&mask);
     sigaddset(&mask, SIGINT);
@@ -219,7 +219,7 @@ int main() {
     signal(SIGTERM, handle_signal);
     signal(SIGUSR1, handle_signal);
 
-    // Block signals
+    // Block c.stdlib.signal
     sigprocmask(SIG_BLOCK, &mask, NULL);
     printf("Signals blocked\n");
 
@@ -233,7 +233,7 @@ int main() {
 }
 ```
 
-## Pending Signals
+## Pending c.stdlib.signal
 
 ```c
 #include <stdio.h>
@@ -257,11 +257,11 @@ int main() {
     sigprocmask(SIG_BLOCK, &mask, NULL);
     printf("Blocked SIGINT and SIGUSR1\n");
 
-    // Send signals
+    // Send c.stdlib.signal
     kill(getpid(), SIGINT);
     kill(getpid(), SIGUSR1);
 
-    // Check pending signals
+    // Check pending c.stdlib.signal
     sigset_t pending;
     sigpending(&pending);
 
@@ -276,7 +276,7 @@ int main() {
 
     // Unblock
     sigprocmask(SIG_UNBLOCK, &mask, NULL);
-    printf("Unblocked - signals will be handled\n");
+    printf("Unblocked - c.stdlib.signal will be handled\n");
 
     return 0;
 }
@@ -422,4 +422,4 @@ int main() {
 }
 ```
 
-> **Warning**: Signal handlers should be minimal. Avoid using non-reentrant functions in signal handlers. Only set flags of type `volatile sig_atomic_t`.
+> **Warning**: Signal handlers should be minimal. Avoid using non-reentrant  in signal handlers. Only set flags of type `volatile sig_atomic_t`.

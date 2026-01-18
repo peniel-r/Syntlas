@@ -6,7 +6,7 @@ difficulty: beginner
 tags: [c, stdlib, environment, getenv, setenv]
 keywords: [getenv, setenv, putenv, unsetenv, environ]
 use_cases: [configuration, path handling, system integration]
-prerequisites: ["c.strings"]
+prerequisites: ["c.stdlib.string"]
 related: ["c.stdlib.system"]
 next_topics: ["c.stdlib.process"]
 ---
