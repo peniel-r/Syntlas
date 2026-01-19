@@ -272,7 +272,7 @@ fn runList(
     output_config: OutputConfig,
 ) !void {
     if (args.tomes or (args.tome_name == null and !args.neuronas)) {
-        // List tomes
+        // List tomes (both installed and embedded)
         const installed_tomes = try tome_mod.installer.listInstalled(allocator);
         defer {
             for (installed_tomes) |*t| t.deinit(allocator);
@@ -280,14 +280,36 @@ fn runList(
         }
         
         var tome_names = std.ArrayList([]const u8){};
-        try tome_names.ensureTotalCapacity(allocator, installed_tomes.len);
+        try tome_names.ensureTotalCapacity(allocator, installed_tomes.len + 10); // Space for installed + some embedded
         defer {
             for (tome_names.items) |item| allocator.free(item);
             tome_names.deinit(allocator);
         }
         
+        // Add installed tomes
         for (installed_tomes) |tome| {
             try tome_names.append(allocator, try allocator.dupe(u8, tome.name));
+        }
+        
+        // Add embedded tomes
+        var embedded_dir = try std.fs.cwd().openDir("tomes/embedded", .{ .iterate = true });
+        defer embedded_dir.close();
+        
+        var iter = embedded_dir.iterate();
+        while (try iter.next()) |entry| {
+            if (entry.kind == .directory) {
+                // Check if already in list (avoid duplicates)
+                var found = false;
+                for (tome_names.items) |existing| {
+                    if (std.mem.eql(u8, existing, entry.name)) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    try tome_names.append(allocator, try allocator.dupe(u8, entry.name));
+                }
+            }
         }
         
         const output = switch (output_config.formatter) {
