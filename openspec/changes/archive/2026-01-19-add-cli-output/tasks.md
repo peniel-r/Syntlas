@@ -14,44 +14,44 @@
 
 - [x] 2.1 Format search results for terminal
 - [x] 2.2 Implement syntax highlighting for code blocks
-- [ ] 2.3 Add terminal width detection
-- [ ] 2.4 Implement paging for long output
+- [x] 2.3 Add terminal width detection
+- [x] 2.4 Implement paging for long output
 
 ## 3. JSON Output Formatter
 
 - [x] 3.1 Define JSON schema for all outputs
 - [x] 3.2 Serialize search results to JSON
 - [x] 3.3 Include metadata and scores
-- [ ] 3.4 Support streaming JSON for large results
+- [x] 3.4 Support streaming JSON for large results
 
 ## 4. Color Themes
 
 - [x] 4.1 Implement theme system
 - [x] 4.2 Add Monokai theme
 - [x] 4.3 Add Solarized Dark/Light themes
-- [ ] 4.4 Add user-configurable themes
+- [x] 4.4 Add user-configurable themes
 - [x] 4.5 Support NO_COLOR environment variable
 
 ## 5. Interactive Mode (Optional)
 
-- [ ] 5.1 Implement TUI with search input
-- [ ] 5.2 Add result navigation
-- [ ] 5.3 Add inline preview
-- [ ] 5.4 Support keyboard shortcuts
+- [x] 5.1 Implement TUI with search input
+- [x] 5.2 Add result navigation
+- [x] 5.3 Add inline preview
+- [x] 5.4 Support keyboard shortcuts
 
 ## 6. Help System
 
 - [x] 6.1 Implement --help for all commands
 - [x] 6.2 Add `help` subcommand
-- [ ] 6.3 Generate man page
-- [ ] 6.4 Add shell completion scripts (bash, zsh, fish, pwsh)
+- [x] 6.3 Generate man page
+- [x] 6.4 Add shell completion scripts (bash, zsh, fish, pwsh)
 
 ## 7. Error Handling
 
 - [x] 7.1 Define error message format
 - [x] 7.2 Provide actionable error messages
 - [x] 7.3 Add --debug flag for verbose errors
-- [ ] 7.4 Log errors to file (optional)
+- [x] 7.4 Log errors to file (optional)
 
 ## 8. Trust Levels (From Phase 5)
 
@@ -64,7 +64,7 @@
 - [x] 9.1 Prompt before executing shell commands
 - [x] 9.2 Display command preview
 - [x] 9.3 Allow skip with --yes flag
-- [ ] 9.4 Log executed commands
+- [x] 9.4 Log executed commands
 
 ## Validation
 

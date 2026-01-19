@@ -288,6 +288,7 @@ fn formatCodeLine(writer: anytype, allocator: std.mem.Allocator, line: []const u
         // Check for comments
         if (i + 1 < line.len and line[i] == '/' and (line[i + 1] == '/' or line[i + 1] == '*')) {
             const comment_colored = try themes.colorizeText(allocator, theme, "comment", line[i..], true);
+            defer allocator.free(comment_colored);
             try writer.writeAll(comment_colored);
             break;
         }
@@ -321,6 +322,7 @@ fn formatCodeLine(writer: anytype, allocator: std.mem.Allocator, line: []const u
                 const next_char = if (i + kw.len < line.len) line[i + kw.len] else ' ';
                 if (!std.ascii.isAlphanumeric(next_char) and next_char != '_') {
                     const kw_colored = try themes.colorizeText(allocator, theme, "keyword", kw, true);
+                    defer allocator.free(kw_colored);
                     try writer.writeAll(kw_colored);
                     i += kw.len;
                     keyword_found = true;

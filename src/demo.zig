@@ -1,71 +1,57 @@
 const std = @import("std");
-const config = @import("config/mod.zig");
 const search = @import("search/mod.zig");
 const tome = @import("tome/mod.zig");
 const core = @import("core/mod.zig");
+const builder_mod = @import("index/builder.zig");
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     defer _ = gpa.deinit();
     const allocator = gpa.allocator();
 
-    // Demo: Search for pointers in C tome
+    // Demo: Search for pointers
     const query = "pointers";
-    const tome_filter = "c";
     
     std.debug.print("Syntlas Demo - Neural Documentation Navigator\n", .{});
     std.debug.print("===========================================\n\n", .{});
     
     std.debug.print("Loading embedded tomes...\n", .{});
     const embedded_dir = "tomes/embedded";
-    var tomes = std.ArrayList(tome.Tome).init(allocator);
-    defer {
-        for (tomes.items) |t| {
-            t.deinit(allocator);
-        }
-        tomes.deinit();
-    }
     
-    // Load all embedded tomes
-    var dir = try std.fs.cwd().openIterableDir(embedded_dir, .{});
-    defer dir.close();
+    // Use TomeLoader to load all tomes
+    var loader = tome.loader.TomeLoader.init(allocator);
+    defer loader.deinit();
     
-    var iterator = dir.iterateAssumeFirstType();
-    while (try iterator.next()) |entry| {
-        if (entry.kind == .directory) {
-            const tome_path = try std.fmt.allocPrint(allocator, "{s}/{s}", .{ embedded_dir, entry.name });
-            defer allocator.free(tome_path);
-            
-            if (try tome.loadTome(allocator, tome_path)) |loaded_tome| {
-                std.debug.print("  Loaded {s} tome ({d} neuronas)\n", .{ loaded_tome.name, loaded_tome.neuronas.count() });
-                try tomes.append(loaded_tome);
-            } else |_| {
-                std.debug.print("  Skipped {s} (invalid or empty)\n", .{entry.name});
-            }
-        }
-    }
+    try loader.loadAllEmbeddedTomes(embedded_dir);
     
-    std.debug.print("\nBuilding search index...\n", .{});
+    const neuronas = loader.getNeuronas();
+    const contents = loader.getContents();
+    std.debug.print("Loaded {d} neuronas\n\n", .{neuronas.len});
     
-    // Build search index from all tomes
-    var search_engine = try search.SearchEngine.init(allocator);
-    defer search_engine.deinit(allocator);
+    std.debug.print("Building search index...\n", .{});
     
-    for (tomes.items) |t| {
-        try search_engine.addTome(t);
-    }
+    // Build search indices
+    var builder = builder_mod.IndexBuilder.init(allocator);
+    defer builder.deinit();
     
-    try search_engine.buildIndex();
-    std.debug.print("  Index built with {d} neuronas\n\n", .{search_engine.neuronaCount()});
+    _ = try builder.buildFromCollection(neuronas, contents);
+    
+    // Create search engine with built indices
+    var engine = search.engine.SearchEngine.init(
+        allocator,
+        &builder.inverted_index,
+        &builder.graph_index,
+        &builder.metadata_index,
+        &builder.use_case_index,
+    );
+    
+    std.debug.print("  Index built\n\n", .{});
     
     // Perform search
     std.debug.print("Searching for: '{s}'\n", .{query});
     const start_time = std.time.nanoTimestamp();
     
-    const results = try search_engine.search(allocator, query, .{
-        .difficulty = null,
-        .limit = 5,
-    });
+    const results = try engine.search(query, .{ .difficulty = null }, .{});
     defer allocator.free(results);
     
     const end_time = std.time.nanoTimestamp();
@@ -75,13 +61,12 @@ pub fn main() !void {
     
     // Display results
     for (results, 0..) |result, i| {
-        std.debug.print("{d}. {s} (score: {d:.4})\n", .{ i + 1, result.neurona.id, result.score });
-        std.debug.print("   Title: {s}\n", .{result.neurona.title});
+        std.debug.print("{d}. {s} (score: {d:.4})\n", .{ i + 1, result.id, result.score });
         
         if (result.snippet) |snippet| {
             std.debug.print("   Snippet: {s}\n", .{snippet});
         }
-        std.debug.print("\n");
+        std.debug.print("\n", .{});
     }
     
     std.debug.print("\nDemo complete!\n", .{});
