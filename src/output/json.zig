@@ -20,7 +20,6 @@ pub fn formatSearchResults(allocator: std.mem.Allocator, results: []const Activa
     try root.object.put("query_time_ms", JsonValue{ .number = query_time_ms });
 
     var results_array = std.ArrayListUnmanaged(JsonValue){};
-    defer results_array.deinit(allocator);
 
     for (results) |result| {
         var result_obj = std.StringArrayHashMap(JsonValue).init(allocator);
@@ -40,7 +39,10 @@ pub fn formatSearchResults(allocator: std.mem.Allocator, results: []const Activa
     try root.object.put("count", JsonValue{ .number = @floatFromInt(results.len) });
     try root.object.put("results", JsonValue{ .array = results_array });
 
-    return serializeJsonValue(allocator, root);
+    const output = try serializeJsonValue(allocator, root);
+    
+    deinit(&root, allocator);
+    return output;
 }
 
 pub fn formatNeurona(allocator: std.mem.Allocator, neurona: *const schema.Neurona, content: []const u8) ![]const u8 {
@@ -57,7 +59,6 @@ pub fn formatNeurona(allocator: std.mem.Allocator, neurona: *const schema.Neuron
 
     // Tags
     var tags_array = std.ArrayListUnmanaged(JsonValue){};
-    defer tags_array.deinit(allocator);
     for (neurona.tags) |tag| {
         try tags_array.append(allocator, JsonValue{ .string = tag });
     }
@@ -65,7 +66,6 @@ pub fn formatNeurona(allocator: std.mem.Allocator, neurona: *const schema.Neuron
 
     // Keywords
     var keywords_array = std.ArrayListUnmanaged(JsonValue){};
-    defer keywords_array.deinit(allocator);
     for (neurona.keywords) |keyword| {
         try keywords_array.append(allocator, JsonValue{ .string = keyword });
     }
@@ -76,21 +76,18 @@ pub fn formatNeurona(allocator: std.mem.Allocator, neurona: *const schema.Neuron
 
     // Synapses
     var prerequisites_array = std.ArrayListUnmanaged(JsonValue){};
-    defer prerequisites_array.deinit(allocator);
     for (neurona.prerequisites) |synapse| {
         try prerequisites_array.append(allocator, JsonValue{ .string = synapse.id });
     }
     try neurona_obj.put("prerequisites", JsonValue{ .array = prerequisites_array });
 
     var related_array = std.ArrayListUnmanaged(JsonValue){};
-    defer related_array.deinit(allocator);
     for (neurona.related) |synapse| {
         try related_array.append(allocator, JsonValue{ .string = synapse.id });
     }
     try neurona_obj.put("related", JsonValue{ .array = related_array });
 
     var next_topics_array = std.ArrayListUnmanaged(JsonValue){};
-    defer next_topics_array.deinit(allocator);
     for (neurona.next_topics) |synapse| {
         try next_topics_array.append(allocator, JsonValue{ .string = synapse.id });
     }
@@ -98,7 +95,9 @@ pub fn formatNeurona(allocator: std.mem.Allocator, neurona: *const schema.Neuron
 
     try root.object.put("neurona", JsonValue{ .object = neurona_obj });
 
-    return serializeJsonValue(allocator, root);
+    const output = try serializeJsonValue(allocator, root);
+    deinit(&root, allocator);
+    return output;
 }
 
 pub fn formatError(allocator: std.mem.Allocator, error_msg: []const u8) ![]const u8 {
@@ -107,7 +106,9 @@ pub fn formatError(allocator: std.mem.Allocator, error_msg: []const u8) ![]const
     try root.object.put("success", JsonValue{ .boolean = false });
     try root.object.put("error", JsonValue{ .string = error_msg });
 
-    return serializeJsonValue(allocator, root);
+    const output = try serializeJsonValue(allocator, root);
+    deinit(&root, allocator);
+    return output;
 }
 
 pub fn formatSuccess(allocator: std.mem.Allocator, message: []const u8) ![]const u8 {
@@ -116,7 +117,9 @@ pub fn formatSuccess(allocator: std.mem.Allocator, message: []const u8) ![]const
     try root.object.put("success", JsonValue{ .boolean = true });
     try root.object.put("message", JsonValue{ .string = message });
 
-    return serializeJsonValue(allocator, root);
+    const output = try serializeJsonValue(allocator, root);
+    deinit(&root, allocator);
+    return output;
 }
 
 pub fn formatTomeList(allocator: std.mem.Allocator, tomes: []const []const u8) ![]const u8 {
@@ -125,7 +128,6 @@ pub fn formatTomeList(allocator: std.mem.Allocator, tomes: []const []const u8) !
     try root.object.put("success", JsonValue{ .boolean = true });
 
     var tomes_array = std.ArrayListUnmanaged(JsonValue){};
-    defer tomes_array.deinit(allocator);
     for (tomes) |tome| {
         try tomes_array.append(allocator, JsonValue{ .string = tome });
     }
@@ -133,7 +135,9 @@ pub fn formatTomeList(allocator: std.mem.Allocator, tomes: []const []const u8) !
     try root.object.put("tomes", JsonValue{ .array = tomes_array });
     try root.object.put("count", JsonValue{ .number = @floatFromInt(tomes.len) });
 
-    return serializeJsonValue(allocator, root);
+    const output = try serializeJsonValue(allocator, root);
+    deinit(&root, allocator);
+    return output;
 }
 
 fn serializeJsonValue(allocator: std.mem.Allocator, value: JsonValue) ![]const u8 {
@@ -191,6 +195,25 @@ fn writeEscapedString(writer: anytype, s: []const u8) !void {
             '\t' => try writer.writeAll("\\t"),
             else => try writer.writeByte(c),
         }
+    }
+}
+
+pub fn deinit(self: *JsonValue, allocator: std.mem.Allocator) void {
+    switch (self.*) {
+        .object => |*obj| {
+            var iter = obj.iterator();
+            while (iter.next()) |entry| {
+                deinit(entry.value_ptr, allocator);
+            }
+            obj.deinit();
+        },
+        .array => |*arr| {
+            for (arr.items) |*item| {
+                deinit(item, allocator);
+            }
+            arr.deinit(allocator);
+        },
+        .string, .number, .boolean, .null => {},
     }
 }
 
