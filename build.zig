@@ -196,6 +196,24 @@ pub fn build(b: *std.Build) void {
     verify6_step.dependOn(&run_verify6.step);
     b.installArtifact(verify6_exe);
 
+    // Demo executable (preserves previous main.zig demo code)
+    const demo_exe = b.addExecutable(.{
+        .name = "demo",
+        .root_module = b.createModule(.{
+            .root_source_file = b.path("src/demo.zig"),
+            .target = target,
+            .optimize = optimize,
+            .imports = &.{
+                .{ .name = "Syntlas", .module = mod },
+            },
+        }),
+    });
+
+    const demo_step = b.step("demo", "Run demo executable");
+    const run_demo = b.addRunArtifact(demo_exe);
+    demo_step.dependOn(&run_demo.step);
+    b.installArtifact(demo_exe);
+
     // Just like flags, top level steps are also listed in the `--help` menu.
     //
     // The Zig build system is entirely implemented in userland, which means
